@@ -26,8 +26,24 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   grunt.initConfig({
+    sass: {
+      dist: {
+          files: {
+              '<%= yeoman.app %>/styles/scss/hello.css': '<%= yeoman.app %>/styles/scss/hello.scss'
+          }
+      },
+      dev: {
+          options: {
+              style: 'expanded'
+          },
+          files: {
+              '<%= yeoman.app %>/styles/scss/hello.css': '<%= yeoman.app %>/styles/scss/hello.scss'
+          }
+      }
+    },
     yeoman: yeomanConfig,
     watch: {
       coffee: {
@@ -266,7 +282,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'express:dist', 'express-keepalive']);
     }
@@ -275,10 +291,15 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'express:livereload',
-      'open',
+      //'open',
       'watch'
     ]);
   });
+
+  grunt.registerTask('server', function (target) {
+        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+        grunt.task.run([target ? ('serve:' + target) : 'serve']);
+    });
 
   grunt.registerTask('test', [
     'clean:server',
@@ -295,6 +316,7 @@ module.exports = function (grunt) {
     'copy',
     'cdnify',
     'ngmin',
+    'sass',
     'cssmin',
     'uglify',
     'rev',
