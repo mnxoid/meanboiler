@@ -27,6 +27,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
     sass: {
@@ -46,6 +47,13 @@ module.exports = function (grunt) {
     },
     yeoman: yeomanConfig,
     watch: {
+      sass: {
+        options: {
+          livereload: true
+        },
+        files: ['<%= yeoman.app %>/styles/scss/{,*/}*.scss'],
+        tasks: ['sass']
+      },
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
         tasks: ['coffee:dist']
@@ -61,6 +69,8 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/styles/scss/{,*/}*.scss',
+          '<%= yeoman.app %>/styles/scss/{,*/}*.scss',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]

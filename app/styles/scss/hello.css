@@ -3,4 +3,49 @@ body {
   color: #333;
 }
 
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: none;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style-position: inside;
+  font: 14px "Oswald", sans-serif;
+  padding: 10px;
+}
+
+.top-menu li {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 0;
+}
+.top-menu li:hover {
+  background: #cccccc;
+}
+
+.top-menu li.active {
+  background: #ff9856;
+  color: #000;
+}
+.top-menu li.active:hover {
+  background: #ef5d00;
+}
+
+.top-menu a {
+  color: #000000;
+}
+
+#comp-name {
+  font: 200% Helvetica, sans-serif;
+  font-weight: 100;
+  text-transform: lowercase;
+}
+
 /*# sourceMappingURL=hello.css.map */

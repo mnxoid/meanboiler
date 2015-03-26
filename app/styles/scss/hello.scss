@@ -1,8 +1,54 @@
 $font-stack:    Helvetica, sans-serif;
+$menu-font:		'Oswald', sans-serif;
 $primary-color: #333;
+$orange: #ff9856;
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }
 
+nav a {
+    text-decoration: none;
+    &:hover {
+    	text-decoration: none;
+    }
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-position: inside;
+    font: 14px $menu-font;
+    padding: 10px;
+}
+
+.top-menu li {
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 0;
+    &:hover {
+    	background: darken(#fff, 20%)
+    }
+}
+
+.top-menu li.active {
+  background: $orange;
+  color: #000;
+  &:hover {
+    	background: darken($orange, 20%)
+    }
+}
+
+.top-menu a {
+    color: #000000;
+}
+
+#comp-name {
+	font: 200% $font-stack;
+	font-weight: 100;
+	text-transform: lowercase;
+}
