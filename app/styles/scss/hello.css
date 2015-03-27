@@ -40,20 +40,20 @@ body {
   font-weight: 700;
 }
 
-body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+/* Active nav link */
+body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
   /*background-color: $orange;/*/
   background-color: inherit;
   border-bottom: 5px solid #f9a251;
   color: #777;
 }
-body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus:hover, .navbar-default .navbar-nav > .active > a:hover:hover {
-  background-color: #fbbc82;
-  color: #fff;
+body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: inherit;
+  color: inherit;
 }
 
+/* Nav link */
 body .navbar-default .navbar-nav > li > a:hover {
-  color: #919191;
-  background-color: #fde4cc;
   border-bottom: 5px solid #fcca9b;
 }
 

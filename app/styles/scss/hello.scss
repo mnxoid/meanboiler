@@ -34,22 +34,23 @@ body {
 }
 
 
-
-body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+/* Active nav link */
+body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a {
   /*background-color: $orange;/*/
   background-color: inherit;
   border-bottom: 5px solid $orange;
   color: $font-color-primary;
+
   &:hover {
-    background-color: lighten($orange, 10%);
-    color: #fff;
+    background-color: inherit;
+    color: inherit;
   }
+
 }
 
+/* Nav link */
 body .navbar-default .navbar-nav>li>a {
   &:hover {
-    color: lighten($font-color-primary, 10%);
-    background-color: lighten($orange, 25%);
     border-bottom: 5px solid lighten($orange, 15%);
   }
 }
