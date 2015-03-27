@@ -10,7 +10,7 @@
 
     <!-- build:css({.tmp,app}) styles/main.css -->
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
     <!--<link rel="stylesheet" href="styles/main.css">-->
     <link rel="stylesheet" href="styles/scss/hello.css">
@@ -37,18 +37,20 @@
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <form class="navbar-form navbar-left" role="search">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Search</button>
-                      </span>
-                    </div>
+                  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Go!</button>
+    </span>
+  </div><!-- /input-group -->
                 </form>
               </li>
               <li ng-if="!loggedIn"><a href="#">Log in</a></li>
               <li ng-if="!loggedIn"><a href="#">Sign up</a></li>
+              <!--
               <li ng-if="loggedIn">Hello, John Doe</li>
               <li ng-if="loggedIn">Log out</li>
+              -->
             </ul>
           </div><!-- /.navbar-collapse -->
 
