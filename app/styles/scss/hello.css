@@ -28,6 +28,7 @@ body {
 .navbar {
   width: 80%;
   border-radius: 0px;
+  background-color: white;
 }
 
 .navbar-nav > ul > li {
@@ -118,6 +119,14 @@ p > button {
   margin-left: 1em;
   margin-right: 1em;
   width: 50%;
+}
+
+.sidebar {
+  background-color: #f8f8f8;
+}
+.sidebar h1 {
+  font-weight: 700;
+  margin-bottom: 1em;
 }
 
 /*# sourceMappingURL=hello.css.map */

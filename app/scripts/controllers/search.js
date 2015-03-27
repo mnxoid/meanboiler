@@ -2,9 +2,18 @@
 
 angular.module('meanApp')
   .controller('SearchCtrl', function ($scope) {
-    $scope.tasks = [
-      'Configure MongoDB',
-      'Manage Git repos',
-      'Implement chat'
+    $scope.results = [
+      'http://placehold.it/150x200',
+      'http://placehold.it/150x200',
+      'http://placehold.it/150x200',
+      'http://placehold.it/150x200',
+      'http://placehold.it/150x200',
+      'http://placehold.it/150x200'
     ];
+
+    $scope.featured = [
+      'http://placehold.it/200x200',
+      'http://placehold.it/200x200',
+      'http://placehold.it/200x200',
+    ]
   });

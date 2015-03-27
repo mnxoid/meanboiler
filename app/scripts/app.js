@@ -15,7 +15,7 @@
             })
             .when('/search', {
                 templateUrl: 'views/search.html',
-                //controller: 'SearchCtrl'
+                controller: 'SearchCtrl'
             })
             .when('/notfound', {
                 templateUrl: 'views/404.html',
@@ -31,7 +31,7 @@
     })
     .run(function($rootScope) {
         $rootScope.sel = function(a) {
-            if ($rootScope.active==a) {
+            if ($rootScope.active === a) {
                 return "active";
             };
         }

@@ -21,6 +21,7 @@ body {
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
+  background-color: lighten(#f8f8f8, 50%);
 }
 
 .navbar-nav > ul > li {
@@ -115,4 +116,12 @@ p > button {
   margin-left: 1em;
   margin-right: 1em;
   width: 50%;
+}
+
+.sidebar {
+  background-color: $grey-primary;
+  h1 {
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
 }

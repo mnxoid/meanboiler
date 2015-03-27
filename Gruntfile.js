@@ -54,14 +54,14 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/scss/{,*/}*.scss'],
         tasks: ['sass']
       },
-      coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee:dist']
-      },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
-      },
+      //coffee: {
+      //  files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+      //  tasks: ['coffee:dist']
+      //},
+      //coffeeTest: {
+      //  files: ['test/spec/{,*/}*.coffee'],
+    //    tasks: ['coffee:test']
+      //},
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
