@@ -11,9 +11,10 @@ body {
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
-    background-color: #eee;
+    background-color: #fafafa;
     border-radius: 6px;
     padding: 60px;
+    text-align:center;
 }
 
 .hero-unit h1 {
