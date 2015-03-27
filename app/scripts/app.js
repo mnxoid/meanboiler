@@ -1,8 +1,9 @@
 'use strict';
 (function(){
 
-    var app = angular.module('meanApp', ['ui.bootstrap']);
-    app.config(function ($routeProvider) {
+    var app = angular
+      .module('meanApp', ['ui.bootstrap'])
+      .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -27,8 +28,8 @@
             .otherwise({
                 redirectTo: '/notfound'
             });
-    });
-    app.run(function($rootScope) {
+    })
+    .run(function($rootScope) {
         $rootScope.sel = function(a) {
             if ($rootScope.active==a) {
                 return "active";

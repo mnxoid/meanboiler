@@ -9,7 +9,7 @@
 /* Sizing */
 body {
   font: 1.5em ProximaNova, sans-serif;
-  color: #333;
+  color: #777;
   overflow-y: hidden;
   height: 100%;
 }
@@ -27,6 +27,7 @@ body {
 
 .navbar {
   width: 80%;
+  border-radius: 0px;
 }
 
 .navbar-nav > ul > li {
@@ -39,24 +40,28 @@ body {
 }
 
 body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: #ff9856;
-  color: #fff;
+  /*background-color: $orange;/*/
+  background-color: inherit;
+  border-bottom: 5px solid #f9a251;
+  color: #777;
 }
 body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus:hover, .navbar-default .navbar-nav > .active > a:hover:hover {
-  background-color: #ffb789;
+  background-color: #fbbc82;
+  color: #fff;
 }
 
 body .navbar-default .navbar-nav > li > a:hover {
-  color: gray;
-  background-color: #ffe6d6;
+  color: #919191;
+  background-color: #fde4cc;
+  border-bottom: 5px solid #fcca9b;
 }
 
 body .navbar-right > li:last-child > a {
-  color: #ff9856;
+  color: #f9a251;
 }
 body .navbar-right > li:last-child > a:hover {
   color: #fff;
-  background-color: #ff9856;
+  background-color: #f9a251;
 }
 
 .container {
@@ -81,12 +86,12 @@ body .navbar-right > li:last-child > a:hover {
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open > .dropdown-toggle.btn-primary {
   margin-top: 2em;
-  border: 2px solid #ff9856;
+  border: 2px solid #f9a251;
   background-color: #fff;
-  color: #ff9856;
+  color: #f9a251;
 }
 .btn-primary.active:hover, .btn-primary.focus:hover, .btn-primary:active:hover, .btn-primary:focus:hover, .btn-primary:hover, .open > .dropdown-toggle.btn-primary:hover {
-  background-color: #ff9856;
+  background-color: #f9a251;
   border: none;
   color: #fff;
 }
