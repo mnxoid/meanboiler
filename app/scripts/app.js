@@ -13,12 +13,16 @@
                 templateUrl: 'views/todo.html',
                 controller: 'TodoCtrl'
             })
-	    .when('/search', {
+            .when('/search', {
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             })
+            .when('/notfound', {
+                templateUrl: 'views/404.html',
+                controller: 'NfCtrl'
+            })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/notfound'
             });
     });
 
