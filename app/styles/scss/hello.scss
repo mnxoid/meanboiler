@@ -52,6 +52,7 @@ body .navbar-right>li:last-child>a{
   }
 }
 
+
 .container {
   /*background-color: #fff;*/
   width: $jumbo-width;
@@ -60,9 +61,18 @@ body .navbar-right>li:last-child>a{
 }
 
 .row {
-  width: $main_width;
+  width: 100%;//$main_width;
   text-align: justify;
+  &:first-child {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  &:last-child {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
 }
+
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open>.dropdown-toggle.btn-primary {
   margin-top: 2em;

@@ -1,7 +1,6 @@
 'use strict';
 (function(){
 
-
     var app = angular.module('meanApp', ['ui.bootstrap']);
     app.config(function ($routeProvider) {
         $routeProvider
@@ -13,12 +12,20 @@
                 templateUrl: 'views/todo.html',
                 controller: 'TodoCtrl'
             })
-	           .when('/search', {
+            .when('/search', {
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             })
+            .when('/notfound', {
+                templateUrl: 'views/404.html',
+                controller: 'NfCtrl'
+            })
+            .when('/test', {
+                templateUrl: 'views/test.html',
+                controller: 'TestCtrl'
+            })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/notfound'
             });
     });
 
