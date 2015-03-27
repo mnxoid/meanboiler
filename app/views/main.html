@@ -1,0 +1,19 @@
+<div class="container mx-auto">
+  <carousel interval="myInterval">
+    <slide ng-repeat="slide in slides" active="slide.active">
+      <img ng-src="{{slide.image}}">
+        <div class="carousel-caption">
+          <h4>Slide {{$index+1}}</h4>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+
+  <div class="row mx-auto">
+    <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
+    <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
+    <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
+  </div>
+
+  <button class="mx-auto btn-primary btn-lg" type="submit">Get Started</button>
+</div>

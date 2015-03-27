@@ -1,0 +1,91 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+  font: $font-size-reg $font-stack;
+  color: $font-color-primary;
+  height:100%;
+}
+
+.mx-auto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar{
+  width: $navbar-width;
+}
+
+.navbar-nav > ul > li {
+  font-size: $font-size-nav;
+}
+
+.navbar-brand {
+  font-size: $font-size-big;
+  font-weight: 700;
+}
+
+
+
+body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: $orange;
+  color: #fff;
+  &:hover {
+    background-color: lighten($orange, 10%);
+  }
+}
+
+body .navbar-default .navbar-nav>li>a {
+  &:hover {
+    color: lighten($font-color-primary, 30%);
+    background-color: lighten($orange, 25%);
+  }
+}
+
+body .navbar-right>li:last-child>a{
+  color: $orange;
+  &:hover {
+    color: #fff;
+    background-color: $orange;
+  }
+}
+
+.container {
+  /*background-color: #fff;*/
+  width: $jumbo-width;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.row {
+  width: $main_width;
+  text-align: justify;
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open>.dropdown-toggle.btn-primary {
+  margin-top: 2em;
+  background-color: $orange;
+  border: none;
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    color: $orange;
+    border: 2px solid $orange;
+  }
+}
+
+/* slider */
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
+}
