@@ -1,11 +1,11 @@
 @import "_variables";
 @import "_mixins";
-@import 'bootstrap/bootstrap';
+//@import 'bootstrap/bootstrap';
 
-.btn-custom {
+/*.btn-custom {
   @extend .btn-info;
   background-color: $orange; 
-}
+}*/
 
 body {
   font: $font-size-reg $font-stack;
