@@ -23,6 +23,10 @@
                 templateUrl: 'views/404.html',
                 controller: 'NfCtrl'
             })
+            .when('/test', {
+                templateUrl: 'views/test.html',
+                controller: 'TestCtrl'
+            })
             .otherwise({
                 redirectTo: '/notfound'
             });
