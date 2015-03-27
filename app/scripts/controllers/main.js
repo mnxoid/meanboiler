@@ -5,16 +5,16 @@ angular.module('meanApp')
     $scope.myInterval = 3000;
     $scope.slides = [
       {
-        image: 'http://lorempixel.com/400/200/'
+        image: 'http://placehold.it/1080x500'
       },
       {
-        image: 'http://lorempixel.com/400/200/food'
+        image: 'http://placehold.it/1080x500'
       },
       {
-        image: 'http://lorempixel.com/400/200/sports'
+        image: 'http://placehold.it/1080x500'
       },
       {
-        image: 'http://lorempixel.com/400/200/people'
+        image: 'http://placehold.it/1080x500'
       }
     ];
 });

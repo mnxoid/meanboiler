@@ -53,14 +53,16 @@ body .navbar-right > li:last-child > a:hover {
   background-color: #ff9856;
 }
 
-.jumbotron {
-  background-color: #fff;
-  width: 75%;
+.container {
+  /*background-color: #fff;*/
+  width: 80%;
+  padding: 0;
+  margin-bottom: 2em;
 }
 
 .row {
-  width: 75%;
-  text-align: center;
+  width: 80%;
+  text-align: justify;
 }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open > .dropdown-toggle.btn-primary {
@@ -82,7 +84,6 @@ body .navbar-right > li:last-child > a:hover {
 
 img {
   margin: auto;
-  width: 400px;
 }
 
 #slides_control {

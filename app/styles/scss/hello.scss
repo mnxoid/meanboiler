@@ -51,14 +51,17 @@ body .navbar-right>li:last-child>a{
   }
 }
 
-.jumbotron {
-  background-color: #fff;
+
+.container {
+  /*background-color: #fff;*/
   width: $jumbo-width;
+  padding: 0;
+  margin-bottom: 2em;
 }
 
 .row {
   width: $main_width;
-  text-align: center;
+  text-align: justify;
 }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open>.dropdown-toggle.btn-primary {
@@ -79,7 +82,6 @@ body .navbar-right>li:last-child>a{
 }
 img{
   margin:auto;
-  width: 400px;
 }
 #slides_control {
   position:absolute;
