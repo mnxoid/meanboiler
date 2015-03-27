@@ -13,7 +13,7 @@
                 templateUrl: 'views/todo.html',
                 controller: 'TodoCtrl'
             })
-	    .when('/search', {
+	           .when('/search', {
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             })
