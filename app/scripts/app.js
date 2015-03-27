@@ -2,7 +2,7 @@
 (function(){
 
 
-    var app = angular.module('meanApp', []);
+    var app = angular.module('meanApp', ['ui.bootstrap']);
     app.config(function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -12,6 +12,10 @@
             .when('/todo', {
                 templateUrl: 'views/todo.html',
                 controller: 'TodoCtrl'
+            })
+	    .when('/search', {
+                templateUrl: 'views/search.html',
+                controller: 'SearchCtrl'
             })
             .otherwise({
                 redirectTo: '/'

@@ -1,63 +1,90 @@
-$font-stack:    Helvetica, sans-serif;
-$menu-font:		'Oswald', sans-serif;
-$primary-color: #333;
-$orange: #ff9856;
+@import "_variables";
+@import "_mixins";
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+  font: $font-size-reg $font-stack;
+  color: $font-color-primary;
+  height:100%;
 }
 
-nav a {
-    text-decoration: none;
-    &:hover {
-    	text-decoration: none;
-    }
-    &:visited {
-    	text-decoration: none;
-    }
-    &:link {
-    	text-decoration: none;
-    }
-    &:active {
-    	text-decoration: none;
-    }
+.mx-auto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
+.navbar{
+  width: $navbar-width;
 }
 
-nav li {
-    list-style-position: inside;
-    font: 14px $menu-font;
-    padding: 10px;
+.navbar-nav > ul > li {
+  font-size: $font-size-nav;
 }
 
-.top-menu li {
-    display: inline-block;
-    padding: 10px 30px;
-    margin: 0;
-    &:hover {
-    	background: darken(#fff, 20%)
-    }
+.navbar-brand {
+  font-size: $font-size-big;
+  font-weight: 700;
 }
 
-.top-menu li.active {
-  background: $orange;
-  color: #000;
+
+
+body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: $orange;
+  color: #fff;
   &:hover {
-    	background: darken($orange, 20%)
-    }
+    background-color: lighten($orange, 10%);
+  }
 }
 
-.top-menu a {
-    color: #000000;
+body .navbar-default .navbar-nav>li>a {
+  &:hover {
+    color: lighten($font-color-primary, 30%);
+    background-color: lighten($orange, 25%);
+  }
 }
 
-#comp-name {
-	font: 200% $font-stack;
-	font-weight: 100;
-	text-transform: lowercase;
+body .navbar-right>li:last-child>a{
+  color: $orange;
+  &:hover {
+    color: #fff;
+    background-color: $orange;
+  }
+}
+
+.jumbotron {
+  background-color: #fff;
+  width: $jumbo-width;
+}
+
+.row {
+  width: $main_width;
+  text-align: center;
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open>.dropdown-toggle.btn-primary {
+  margin-top: 2em;
+  background-color: $orange;
+  border: none;
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    color: $orange;
+    border: 2px solid $orange;
+  }
+}
+
+/* slider */
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
 }
