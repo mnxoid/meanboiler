@@ -1,9 +1,6 @@
 'use strict';
 (function(){
 
-    var mongoose = require('mongoose');//MongoDb
-    mongoose.connect('mongodb://localhost/test');
-
     var app = angular.module('meanApp', ['ui.bootstrap']);
     app.config(function ($routeProvider) {
         $routeProvider
