@@ -65,6 +65,14 @@ body .navbar-right > li:last-child > a:hover {
   width: 100%;
   text-align: justify;
 }
+.row:first-child {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.row:last-child {
+  margin-right: 0px;
+  padding-right: 0px;
+}
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open > .dropdown-toggle.btn-primary {
   margin-top: 2em;
