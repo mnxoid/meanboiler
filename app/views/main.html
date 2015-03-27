@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="mx-auto">
   <carousel interval="myInterval">
     <slide ng-repeat="slide in slides" active="slide.active">
       <img ng-src="{{slide.image}}">
@@ -9,10 +9,10 @@
     </carousel>
   </div>
 
-  <div class="row mx-auto">
+  <div class="row mx-auto" style="margin-top: 50px">
+    <div class="col-md-4" style="margin-left: 0px; padding-left: 0px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
     <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
-    <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
-    <div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
+    <div class="col-md-4" style="margin-right: 0px; padding-right: 0px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at finibus nibh, ac bibendum nibh. Suspendisse potenti.</div>
   </div>
 
   <button class="mx-auto btn-primary btn-lg" type="submit">Get Started</button>
