@@ -14,11 +14,11 @@
             })
             .when('/search', {
                 templateUrl: 'views/search.html',
-                controller: 'SearchCtrl'
+                //controller: 'SearchCtrl'
             })
             .when('/notfound', {
                 templateUrl: 'views/404.html',
-                controller: 'NfCtrl'
+                //controller: 'NfCtrl'
             })
             .when('/test', {
                 templateUrl: 'views/test.html',
@@ -27,6 +27,13 @@
             .otherwise({
                 redirectTo: '/notfound'
             });
+    });
+    app.run(function($rootScope) {
+        $rootScope.sel = function(a) {
+            if ($rootScope.active==a) {
+                return "active";
+            };
+        }
     });
 
 }.call(this));
