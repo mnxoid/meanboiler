@@ -45,6 +45,10 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
     background-color: inherit;
     color: inherit;
   }
+  // &:hover {
+  //   background-color: lighten($orange, 10%);
+  //   color: #fff;
+  // }
 
 }
 
@@ -53,6 +57,11 @@ body .navbar-default .navbar-nav>li>a {
   &:hover {
     border-bottom: 5px solid lighten($orange, 15%);
   }
+  // &:hover {
+  //   color: lighten($font-color-primary, 10%);
+  //   background-color: lighten($orange, 25%);
+  //   border-bottom: 5px solid lighten($orange, 15%);
+  // }
 }
 
 body .navbar-right>li:last-child>a{

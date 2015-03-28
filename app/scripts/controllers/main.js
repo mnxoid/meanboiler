@@ -6,16 +6,16 @@ angular.module('meanApp')
     $scope.myInterval = 3000;
     $scope.slides = [
       {
-        image: 'http://lorempixel.com/1280/500/business'
+        image: 'http://lorempixel.com/1280/500/business/1'
       },
       {
-        image: 'http://lorempixel.com/1280/500/sports'
+        image: 'http://lorempixel.com/1280/500/business/2'
       },
       {
-        image: 'http://lorempixel.com/1280/500/fashion'
+        image: 'http://lorempixel.com/1280/500/business/3'
       },
       {
-        image: 'http://lorempixel.com/1280/500/people'
+        image: 'http://lorempixel.com/1280/500/business/4'
       }
     ];
 
