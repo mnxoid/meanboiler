@@ -39,11 +39,16 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
   /*background-color: $orange;/*/
   background-color: inherit;
   border-bottom: 5px solid $orange;
-  color: $font-color-primary;
+  //color: $font-color-primary;
+  span {
+    color: $orange;
+  }
+  span:hover {
+
+  }
 
   &:hover {
     background-color: inherit;
-    color: inherit;
   }
   // &:hover {
   //   background-color: lighten($orange, 10%);
@@ -67,9 +72,9 @@ body .navbar-default .navbar-nav>li>a {
 body .navbar-right>li:last-child>a{
   color: $orange;
   &:hover {
-    color: #fff;
-    background-color: $orange;
+    color: $orange;
   }
+
 }
 
 

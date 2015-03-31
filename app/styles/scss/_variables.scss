@@ -1,9 +1,14 @@
 /* Fonts */
 @font-face {
   font-family: ProximaNova;
-  src: url('../../fonts/proximanova-regular.otf');
+  src: url('../../fonts/Proxima Nova R.otf');
 }
-$font-stack:    ProximaNova, sans-serif;
+
+@font-face {
+  font-family: RalewayR;
+  src: url('../../fonts/Raleway-Regular.ttf');
+}
+$font-stack:    ProximaNova, RalewayR, sans-serif;
 
 /* Font Colors */
 $font-color-primary: #777;
