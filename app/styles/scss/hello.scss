@@ -4,7 +4,7 @@
 body {
   font: $font-size-reg $font-stack;
   color: $font-color-primary;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   height:100%;
 }
 
@@ -143,6 +143,10 @@ p > button {
 
 .txtblock {
   font-size:1.15em;
-  font-family:Raleway;
+  font-family:RalewayR;
   text-align:center;
+}
+
+.footer {
+  background-color: darken(#fff,60%);
 }
