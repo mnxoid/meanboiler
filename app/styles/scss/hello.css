@@ -133,4 +133,10 @@ p > button {
   margin-bottom: 1em;
 }
 
+.txtblock {
+  font-size: 1.15em;
+  font-family: Raleway;
+  text-align: center;
+}
+
 /*# sourceMappingURL=hello.css.map */
