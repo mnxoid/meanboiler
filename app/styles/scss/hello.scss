@@ -106,7 +106,7 @@ body .navbar-right>li:last-child>a{
   color: $orange;
   &:hover {
     background-color: $orange;
-    border: none;
+    border: 2px solid #fff;
     color: #fff;
   }
 }

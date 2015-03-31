@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
   font-family: ProximaNova;
-  src: url("../../fonts/proximanova-regular.otf");
+  src: url("../../fonts/Proxima Nova R.otf");
 }
 @font-face {
   font-family: RalewayR;
@@ -97,7 +97,7 @@ body .navbar-right > li:last-child > a:hover {
 }
 .btn-primary.active:hover, .btn-primary.focus:hover, .btn-primary:active:hover, .btn-primary:focus:hover, .btn-primary:hover, .open > .dropdown-toggle.btn-primary:hover {
   background-color: #f9a251;
-  border: none;
+  border: 2px solid #fff;
   color: #fff;
 }
 
