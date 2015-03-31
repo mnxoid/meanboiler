@@ -4,7 +4,7 @@
 body {
   font: $font-size-reg $font-stack;
   color: $font-color-primary;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   height:100%;
 }
 
@@ -139,4 +139,14 @@ p > button {
     font-weight: 700;
     margin-bottom: 1em;
   }
+}
+
+.txtblock {
+  font-size:1.15em;
+  font-family:RalewayR;
+  text-align:center;
+}
+
+.footer {
+  background-color: darken(#fff,60%);
 }

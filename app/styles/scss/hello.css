@@ -14,7 +14,6 @@
 body {
   font: 1.5em ProximaNova, RalewayR, sans-serif;
   color: #777;
-  overflow-y: hidden;
   height: 100%;
 }
 
@@ -71,7 +70,7 @@ body .navbar-right > li:last-child > a:hover {
 
 .container {
   /*background-color: #fff;*/
-  width: 80%;
+  width: 70%;
   padding: 0;
   margin-bottom: 2em;
 }
@@ -131,6 +130,16 @@ p > button {
 .sidebar h1 {
   font-weight: 700;
   margin-bottom: 1em;
+}
+
+.txtblock {
+  font-size: 1.15em;
+  font-family: RalewayR;
+  text-align: center;
+}
+
+.footer {
+  background-color: #666666;
 }
 
 /*# sourceMappingURL=hello.css.map */
