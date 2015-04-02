@@ -1,0 +1,163 @@
+/* Fonts */
+@font-face {
+  font-family: ProximaNova;
+  src: url("../../fonts/Proxima Nova R.otf");
+}
+@font-face {
+  font-family: RalewayR;
+  src: url("../../fonts/Raleway-Regular.ttf");
+}
+/* Font Colors */
+/* Font sizes */
+/* Colors */
+/* Sizing */
+body {
+  font: 1.5em ProximaNova, RalewayR, sans-serif;
+  color: #777;
+  height: 100%;
+}
+
+.mx-auto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-auto-noblock {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  width: 80%;
+  border-radius: 0px;
+  background-color: white;
+}
+
+.navbar-nav > ul > li {
+  font-size: 1.75em;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* Active nav link */
+body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
+  /*background-color: $orange;/*/
+  background-color: inherit;
+  border-bottom: 5px solid #f9a251;
+}
+body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
+  color: #f9a251;
+}
+body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: inherit;
+}
+
+/* Nav link */
+body .navbar-default .navbar-nav > li > a:hover {
+  border-bottom: 5px solid #fcca9b;
+}
+
+body .navbar-right > li:last-child > a {
+  color: #f9a251;
+}
+body .navbar-right > li:last-child > a:hover {
+  color: #f9a251;
+}
+
+.container {
+  /*background-color: #fff;*/
+  width: 70%;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.row {
+  width: 100%;
+  text-align: justify;
+}
+.row:first-child {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.row:last-child {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open > .dropdown-toggle.btn-primary {
+  margin-top: 2em;
+  border: 2px solid #f9a251;
+  background-color: #fff;
+  color: #f9a251;
+}
+.btn-primary.active:hover, .btn-primary.focus:hover, .btn-primary:active:hover, .btn-primary:focus:hover, .btn-primary:hover, .open > .dropdown-toggle.btn-primary:hover {
+  background-color: #f9a251;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* slider */
+#slides_control > div {
+  height: 200px;
+}
+
+img {
+  margin: auto;
+}
+
+#slides_control {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 20px;
+  margin-left: -200px;
+}
+
+p > button {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 50%;
+}
+
+.sidebar {
+  background-color: #f8f8f8;
+}
+.sidebar h1 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.txtblock {
+  font-size: 1.15em;
+  font-family: RalewayR;
+  text-align: center;
+}
+
+.footer {
+  background-color: #666666;
+}
+
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 500px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  padding: 60px;
+  text-align: center;
+}
+
+.hero-unit h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/*# sourceMappingURL=main.css.map */
