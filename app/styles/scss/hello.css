@@ -138,6 +138,10 @@ p > button {
   text-align: center;
 }
 
+.row .col-md-4 {
+  background-color: #f8f8f8;
+}
+
 .footer {
   background-color: #666666;
 }
