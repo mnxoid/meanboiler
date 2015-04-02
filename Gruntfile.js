@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
           files: {
-              '<%= yeoman.app %>/styles/scss/hello.css': '<%= yeoman.app %>/styles/scss/hello.scss'
+              '<%= yeoman.app %>/styles/scss/main.css': '<%= yeoman.app %>/styles/scss/main.scss'
           }
       },
       dev: {
