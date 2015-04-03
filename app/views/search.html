@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-md-3 col-sm-2 sidebar" style="height:100%;padding:2em;">
       <h1>Search</h1>
@@ -43,6 +44,7 @@
 
 <div class="col-md-9 col-sm-10" style="height:100%;padding:2em;">
   <h2 style="font-weight:700;">Featured</h2>
+  <!--
   <ul style="list-style-type:none;padding:0;">
     <li ng-repeat="feat in featured" style="display:inline-block;margin:0.75em;">
       <div class="">
@@ -50,15 +52,28 @@
       </div>
     </li>
   </ul>
-
+-->
 
   <h2 style="font-weight:700;">Results</h2>
-    <ul style="list-style-type:none;padding:0;">
+    <ul style="list-style-type:none;padding:0;" class="grid cs-style-3">
+      <!--
       <li ng-repeat="res in results" style="display:inline-block;margin:0.75em;">
         <div class="">
           <img ng-src="{{res}}" alt="" />
         </div>
       </li>
+    -->
+      <li ng-repeat="res in results">
+        <figure>
+          <img ng-src="{{res}}" alt="img01">
+          <figcaption>
+            <h3>Hall</h3>
+            <span>Betaplace</span>
+            <a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+          </figcaption>
+        </figure>
+      </li>
+
     </ul>
   </div>
 
