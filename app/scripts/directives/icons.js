@@ -24,10 +24,8 @@ angular.module('meanApp')
   })
   .directive('csvg', function() {
     return {
-      restrict: "E",
-      replace: true,
-      templateUrl: function(elem, attr) {
-        return attr.src;
-      }
+      templateUrl: function(elem, attr){
+      return attr.src;
     }
+    };
   })

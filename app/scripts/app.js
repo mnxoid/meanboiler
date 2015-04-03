@@ -2,7 +2,7 @@
 (function(){
 
     var app = angular
-      .module('meanApp', ['ui.bootstrap'])
+      .module('meanApp', ['ui.bootstrap','ngRoute'])
       .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
