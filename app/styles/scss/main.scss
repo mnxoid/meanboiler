@@ -113,3 +113,59 @@ p > button {
 .footer {
   background-color: darken(#fff,60%);
 }
+
+svg {
+  /*max-width: 95%;
+  max-height: 95%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;*/
+  path {
+    fill-opacity: 1;
+    //stroke: #000;
+    //stroke-width: 3;
+    stroke-dasharray: 217;
+    stroke-dashoffset: 0;
+    animation: draw 5s infinite linear;
+    -webkit-animation: draw 5s linear;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 217;
+    stroke-width: 2;
+    fill-opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-width: 0.25;
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes draw {
+  0% {
+    stroke-dashoffset: 217;
+    stroke-width: 2;
+    fill-opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-width: 0.25;
+    stroke-dashoffset: 0;
+  }
+}
