@@ -23,7 +23,7 @@
 
 .grid li {
   display: inline-block;
-  width: 440px;
+  width: 200px;
   margin: 0;
   padding: 20px;
   text-align: left;
@@ -88,7 +88,7 @@
 }
 
 .cs-style-3 figcaption {
-  height: 100px;
+  height: 75%;
   width: 100%;
   top: auto;
   bottom: 0;
@@ -131,34 +131,6 @@
     min-width: 300px;
   }
 }
-.txtblock {
-  font-size: 1.15em;
-  font-family: RalewayR;
-  text-align: center;
-}
-
-.footer {
-  background-color: #666666;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 500px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #fafafa;
-  border-radius: 6px;
-  padding: 60px;
-  text-align: center;
-}
-
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
 .navbar {
   width: 80%;
   border-radius: 0px;
@@ -287,6 +259,34 @@ p > button {
 .sidebar h1 {
   font-weight: 700;
   margin-bottom: 1em;
+}
+
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 500px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  padding: 60px;
+  text-align: center;
+}
+
+.hero-unit h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.txtblock {
+  font-size: 1em;
+  font-family: RalewayR;
+  text-align: center;
+}
+
+.footer {
+  background-color: #666666;
 }
 
 /*# sourceMappingURL=main.css.map */
