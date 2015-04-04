@@ -12,6 +12,61 @@
 /* Colors */
 /* Sizing */
 /* card */
+.navbar {
+  width: 80%;
+  border-radius: 0px;
+  background-color: white;
+}
+
+.navbar-nav > ul > li {
+  font-size: 1.75em;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* Active nav link */
+body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
+  /*background-color: $orange;/*/
+  background-color: inherit;
+  border-bottom: 5px solid #f9a251;
+}
+body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
+  color: #f9a251;
+}
+body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: inherit;
+}
+
+/* Nav link */
+body .navbar-default .navbar-nav > li > a {
+  border-bottom: 5px solid #fff;
+}
+body .navbar-default .navbar-nav > li > a:hover {
+  border-bottom: 5px solid #fcca9b;
+}
+
+body .navbar-right > li:last-child > a {
+  color: #f9a251;
+}
+body .navbar-right > li:last-child > a:hover {
+  color: #f9a251;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.5em ProximaNova, RalewayR, sans-serif;
+  color: #777;
+  height: 100%;
+}
+
 .grid {
   border: 1px dashed #fafafa;
   padding: 20px 20px 100px 20px;
@@ -131,61 +186,6 @@
     min-width: 300px;
   }
 }
-.navbar {
-  width: 80%;
-  border-radius: 0px;
-  background-color: white;
-}
-
-.navbar-nav > ul > li {
-  font-size: 1.75em;
-}
-
-.navbar-brand {
-  font-size: 2em;
-  font-weight: 700;
-}
-
-/* Active nav link */
-body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
-  /*background-color: $orange;/*/
-  background-color: inherit;
-  border-bottom: 5px solid #f9a251;
-}
-body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
-  color: #f9a251;
-}
-body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: inherit;
-}
-
-/* Nav link */
-body .navbar-default .navbar-nav > li > a {
-  border-bottom: 5px solid #fff;
-}
-body .navbar-default .navbar-nav > li > a:hover {
-  border-bottom: 5px solid #fcca9b;
-}
-
-body .navbar-right > li:last-child > a {
-  color: #f9a251;
-}
-body .navbar-right > li:last-child > a:hover {
-  color: #f9a251;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font: 1.5em ProximaNova, RalewayR, sans-serif;
-  color: #777;
-  height: 100%;
-}
-
 .mx-auto {
   display: block;
   margin-left: auto;

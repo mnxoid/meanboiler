@@ -13,6 +13,8 @@ body {
   height:100%;
 }
 
+@include previews(200px,75%);
+
 .mx-auto {
   display: block;
   margin-left: auto;
