@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanApp')
-  .controller('SearchCtrl', function ($scope, $rootScope) {
+  .controller('SearchCtrl', function ($scope, $rootScope, $http) {
     $rootScope.active = 6;
     $scope.results = [
       'http://lorempixel.com/160/200/city/1',
@@ -16,5 +16,14 @@ angular.module('meanApp')
       'http://placehold.it/200x200',
       'http://placehold.it/200x200',
       'http://placehold.it/200x200',
-    ]
+    ];
+
+    $http.get('/api/halls')
+        .success(function(data) {
+            $scope.halls = data;
+            console.log(data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
   });
