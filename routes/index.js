@@ -12,6 +12,18 @@ function getTodos(res){
 		});
 };
 
+function getHalls(res){
+	Hall.find(function(err, halls) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(halls); // return all todos in JSON format
+		});
+};
+
+
 module.exports = function (app) {
 
 		app.get('/api/halls', function(req, res) {
@@ -24,12 +36,13 @@ module.exports = function (app) {
 		});
 
 		app.post('/api/halls', function(req, res) {
+
 			Hall.create({
 				name     : req.body.name,
 				location : req.body.location,
 				capacity : req.body.capacity,
 				price    : req.body.price
-			}), function (err, hall) {
+			}, function(err, hall) {
 				if (err)
 					res.send(err);
 
@@ -39,7 +52,7 @@ module.exports = function (app) {
 					res.json(halls);
 				});
 
-			}
+			});
 		});
 
 		app.delete('/api/halls/:hall_id', function(req, res) {
@@ -57,10 +70,10 @@ module.exports = function (app) {
 			});
 		});
 
-		app.get('/api/halls/:hall_id', function(req, res) {
-			// redirect to hall #id view;
-			console.log('this is hall view');
-		});
+		// app.get('/api/halls/:hall_id', function(req, res) {
+		// 	// redirect to hall #id view;
+		// 	console.log('this is hall view');
+		// });
 
     app.get('/api/todos', function(req, res) {
 

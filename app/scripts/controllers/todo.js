@@ -61,7 +61,6 @@ angular.module('meanApp')
     $scope.createHall = function() {
         $http.post('/api/halls/', $scope.formDataHall)
             .success(function(data) {
-              console.log(data);
               $scope.formDataHall = {}; // clear the form so our user is ready to enter another
               $scope.halls = data;
               console.log('Halls:',  data);
@@ -74,7 +73,7 @@ angular.module('meanApp')
     $scope.deleteHall = function(id) {
       $http.delete('/api/halls/' + id)
         .success(function(data) {
-          $scope.halls = data;
+            $scope.halls = data;
             console.log('Halls:',  data);
         })
         .error(function(data) {
