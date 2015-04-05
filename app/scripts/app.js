@@ -19,7 +19,7 @@
             })
             .when('/notfound', {
                 templateUrl: 'views/404.html',
-                controller: 'NfCtrl'
+                //controller: 'NfCtrl'
             })
             .when('/test', {
                 templateUrl: 'views/test.html',
