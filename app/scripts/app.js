@@ -2,33 +2,28 @@
 (function(){
 
     var app = angular
-      .module('meanApp', ['ui.bootstrap','ngRoute'])
-      .config(function ($routeProvider) {
-        $routeProvider
-            .when('/', {
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl'
-            })
-            .when('/todo', {
-                templateUrl: 'views/todo.html',
-                controllerAs: 'TodoCtrl'
-                //controller: 'TodoCtrl'
-            })
-            .when('/search', {
-                templateUrl: 'views/search.html',
-                controller: 'SearchCtrl'
-            })
-            .when('/notfound', {
-                templateUrl: 'views/404.html',
-                controller: 'NfCtrl'
-            })
-            .when('/test', {
-                templateUrl: 'views/test.html',
-                controller: 'TestCtrl'
-            })
-            .otherwise({
-                redirectTo: '/notfound'
-            });
+      .module('meanApp', ['ui.bootstrap', 'ui.router'])
+      .config(function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/notfound');
+
+        $stateProvider
+          .state('home', {
+            url: '/',
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+          })
+          .state('todo', {
+            url: '/todo',
+            templateUrl: 'views/todo.html',
+            controller: 'TodoCtrl',
+            resolve: {
+              halls: function(Hall) {
+                return Hall.get();
+              }
+            }
+
+         });
     })
     .run(function($rootScope) {
         $rootScope.sel = function(a) {
