@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanApp')
-  .controller('TodoCtrl', function ($scope,$rootScope,$http) {
+  .controller('TodoCtrl', function ($scope,$rootScope,$http, Hall) {
     $rootScope.active = 4;
     $scope.formData = {};
     $scope.formDataHall = {};
@@ -49,6 +49,18 @@ angular.module('meanApp')
     |-------- HALLS ------------
     ==========================*/
 
+    /* Immediately load all halls */
+    Hall
+      .get()
+      .success(function(data) {
+        $scope.halls = data;
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+
+
+/*
     $http.get('/api/halls')
         .success(function(data) {
             $scope.halls = data;
@@ -57,8 +69,19 @@ angular.module('meanApp')
         .error(function(data) {
             console.log('Error: ' + data);
         });
-
+*/
     $scope.createHall = function() {
+      Hall
+        .create($scope.formDataHall)
+        .success(function(data) {
+          $scope.formDataHall = {};
+          $scope.halls = data;
+          console.log('Halls:',  data);
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        })
+      /*
         $http.post('/api/halls/', $scope.formDataHall)
             .success(function(data) {
               $scope.formDataHall = {}; // clear the form so our user is ready to enter another
@@ -68,9 +91,21 @@ angular.module('meanApp')
             .error(function(data) {
               console.log('Error: ' + data);
             });
+            */
     };
 
     $scope.deleteHall = function(id) {
+      Hall
+        .delete(id)
+        .success(function(data) {
+          $scope.halls = data;
+          console.log('Halls:',  data);
+        })
+        .error(function(e) {
+          console.log('Error: ' + e);
+        });
+
+        /*
       $http.delete('/api/halls/' + id)
         .success(function(data) {
             $scope.halls = data;
@@ -79,6 +114,7 @@ angular.module('meanApp')
         .error(function(data) {
           console.log('Error: ' + data);
         });
+        */
     };
 
 });
