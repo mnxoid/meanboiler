@@ -1,4 +1,5 @@
 var Todo = require('../models/todo');
+var Hall = require('../models/halls');
 
 function getTodos(res){
 	Todo.find(function(err, todos) {
@@ -12,6 +13,54 @@ function getTodos(res){
 };
 
 module.exports = function (app) {
+
+		app.get('/api/halls', function(req, res) {
+			Hall.find(function(err, halls) {
+				if (err)
+					res.send(err);
+
+				res.json(halls);
+			});
+		});
+
+		app.post('/api/halls', function(req, res) {
+			Hall.create({
+				name     : req.body.name,
+				location : req.body.location,
+				capacity : req.body.capacity,
+				price    : req.body.price
+			}), function (err, hall) {
+				if (err)
+					res.send(err);
+
+				Hall.find(function(err, halls) {
+					if (err)
+						res.send(err);
+					res.json(halls);
+				});
+
+			}
+		});
+
+		app.delete('/api/halls/:hall_id', function(req, res) {
+			Hall.remove({
+					_id : req.params.hall_id
+			}, function(err, todo) {
+					if (err)
+							res.send(err);
+
+					Hall.find(function(err, todos) {
+							if (err)
+									res.send(err)
+							res.json(todos);
+					});
+			});
+		});
+
+		app.get('/api/halls/:hall_id', function(req, res) {
+			// redirect to hall #id view;
+			console.log('this is hall view');
+		});
 
     app.get('/api/todos', function(req, res) {
 
@@ -64,7 +113,13 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/', function (req, res, next) {
+		app.get('*', function(req, res) {
+        res.sendfile('./app/index.html');
+    });
+/*
+    app.get('*', function (req, res, next) {
         res.render('index');
     });
+
+		*/
 };
