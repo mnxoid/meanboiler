@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('meanApp')
-  .controller('TodoCtrl', function ($scope,$rootScope,$http, Hall) {
+  .controller('TodoCtrl', function ($state, $scope,$rootScope,$http, Hall, halls) {
     $rootScope.active = 4;
     $scope.formData = {};
     $scope.formDataHall = {};
-    $scope.halls = undefined;
+    $scope.halls = halls.data;
+
 
     /*==========================
     |-------- TODOS ------------
@@ -46,6 +47,10 @@ angular.module('meanApp')
             });
     };
 
+
+    /*=========================|
+    |-------- HALLS -----------|
+    |=========================*/
 
     $scope.createHall = function() {
       Hall
