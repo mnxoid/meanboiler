@@ -3,9 +3,9 @@
 angular.module('meanApp')
   .controller('TodoCtrl', function ($scope,$rootScope,$http, Hall) {
     $rootScope.active = 4;
-    $scope.formData = {};
-    $scope.formDataHall = {};
-    $scope.halls = undefined;
+    this.formData = {};
+    this.formDataHall = {};
+    this.halls = undefined;
 
     /*==========================
     |-------- TODOS ------------
@@ -14,7 +14,7 @@ angular.module('meanApp')
     // when landing on the page, get all todos and show them
     $http.get('/api/todos')
         .success(function(data) {
-            $scope.todos = data;
+            this.todos = data;
             console.log(data);
         })
         .error(function(data) {
@@ -25,8 +25,8 @@ angular.module('meanApp')
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.todos = data;
+                this.formData = {}; // clear the form so our user is ready to enter another
+                this.todos = data;
                 console.log('Todos:',  data);
             })
             .error(function(data) {
@@ -38,7 +38,7 @@ angular.module('meanApp')
     $scope.deleteTodo = function(id) {
         $http.delete('/api/todos/' + id)
             .success(function(data) {
-                $scope.todos = data;
+                this.todos = data;
                 console.log(data);
             })
             .error(function(data) {
@@ -53,7 +53,7 @@ angular.module('meanApp')
     Hall
       .get()
       .success(function(data) {
-        $scope.halls = data;
+        this.halls = data;
       })
       .error(function(data) {
         console.log('Error: ' + data);
@@ -74,8 +74,8 @@ angular.module('meanApp')
       Hall
         .create($scope.formDataHall)
         .success(function(data) {
-          $scope.formDataHall = {};
-          $scope.halls = data;
+          this.formDataHall = {};
+          this.halls = data;
           console.log('Halls:',  data);
         })
         .error(function(data) {

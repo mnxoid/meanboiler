@@ -11,7 +11,8 @@
             })
             .when('/todo', {
                 templateUrl: 'views/todo.html',
-                controller: 'TodoCtrl'
+                controllerAs: 'TodoCtrl'
+                //controller: 'TodoCtrl'
             })
             .when('/search', {
                 templateUrl: 'views/search.html',
