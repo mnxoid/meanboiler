@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('meanApp')
-  .controller('TodoCtrl', function ($state, $scope,$rootScope,$http, Hall, halls) {
+angular.module('RHalls')
+  .controller('TodoCtrl', function ($state, $scope,$rootScope,$http, $hall, halls) {
     $scope.pageClass = 'page-todo';
     $rootScope.active = 4;
     $scope.formData = {};
@@ -54,7 +54,7 @@ angular.module('meanApp')
     |=========================*/
 
     $scope.createHall = function() {
-      Hall
+      $hall
         .create($scope.formDataHall)
         .success(function(data) {
           $scope.formDataHall = {};
@@ -67,7 +67,7 @@ angular.module('meanApp')
     };
 
     $scope.deleteHall = function(id) {
-      Hall
+      $hall
         .delete(id)
         .success(function(data) {
           $scope.halls = data;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meanApp')
+angular.module('RHalls')
   .controller('MainCtrl', function ($scope,$rootScope, $location) {
     $scope.pageClass = 'page-home';
     $rootScope.active = 1;

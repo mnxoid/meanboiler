@@ -2,7 +2,7 @@
 (function(){
 
     var app = angular
-      .module('meanApp', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
+      .module('RHalls', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
       .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/404');
@@ -18,8 +18,8 @@
             templateUrl: 'views/todo.html',
             controller: 'TodoCtrl',
             resolve: {
-              halls: function(Hall) {
-                return Hall.get();
+              halls: function($hall) {
+                return $hall.get();
               }
             }
 

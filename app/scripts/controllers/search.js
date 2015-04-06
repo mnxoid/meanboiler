@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meanApp')
+angular.module('RHalls')
   .controller('SearchCtrl', function ($scope, $rootScope, $http) {
     $rootScope.active = 6;
     $scope.results = [

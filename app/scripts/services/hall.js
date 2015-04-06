@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('meanApp')
-  .factory('Hall', ['$http', function($http) {
+angular.module('RHalls')
+  .factory('$hall', ['$http', function($http) {
       return {
         get: function() {
           return $http.get('/api/halls');

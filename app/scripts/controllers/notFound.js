@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meanApp')
+angular.module('RHalls')
   .controller('NfCtrl', function ($scope,$rootScope,$location) {
   	$rootScope.active = 6;
     $scope.home = function() {
