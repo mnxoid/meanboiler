@@ -2,10 +2,10 @@
 (function(){
 
     var app = angular
-      .module('meanApp', ['ui.bootstrap', 'ui.router'])
+      .module('meanApp', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
       .config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/notfound');
+        $urlRouterProvider.otherwise('/404');
 
         $stateProvider
           .state('home', {
@@ -23,7 +23,22 @@
               }
             }
 
-         });
+         })
+         .state('404', {
+           url: '/404',
+           templateUrl: 'views/404.html',
+           controller: 'nfctrl'
+         })
+         .state('test', {
+           url: '/test',
+           templateUrl: 'views/test.html',
+           controller: 'test'
+         })
+         .state('search', {
+           url: '/search',
+           templateUrl: 'views/search.html',
+           controller: 'search'
+         })
     })
     .run(function($rootScope) {
         $rootScope.sel = function(a) {

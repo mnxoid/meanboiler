@@ -2,6 +2,7 @@
 
 angular.module('meanApp')
   .controller('TodoCtrl', function ($state, $scope,$rootScope,$http, Hall, halls) {
+    $scope.pageClass = 'page-todo';
     $rootScope.active = 4;
     $scope.formData = {};
     $scope.formDataHall = {};
