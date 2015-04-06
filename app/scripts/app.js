@@ -27,17 +27,17 @@
          .state('404', {
            url: '/404',
            templateUrl: 'views/404.html',
-           controller: 'nfctrl'
+           controller: 'NotFoundCtrl'
          })
          .state('test', {
            url: '/test',
            templateUrl: 'views/test.html',
-           controller: 'test'
+           controller: 'TestCtrl'
          })
          .state('search', {
            url: '/search',
            templateUrl: 'views/search.html',
-           controller: 'search'
+           controller: 'SearchCtrl'
          })
     })
     .run(function($rootScope) {

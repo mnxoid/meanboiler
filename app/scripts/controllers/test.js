@@ -1,7 +1,9 @@
 'use strict';
 
+function TestCtrl ($scope, $rootScope) {
+  $rootScope.active = 5;
+  $scope.test = "Hello, world!";
+}
+
 angular.module('RHalls')
-  .controller('TestCtrl', function ($scope,$rootScope) {
-  	$rootScope.active = 5;
-    $scope.test = "Hello, world!";
-  });
+  .controller('TestCtrl', TestCtrl);
