@@ -1,16 +1,19 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-  background-color: lighten(#f8f8f8, 50%);
+  border: none;
+  background-color: rgba(0,0,0,0);
 }
 
 .navbar-nav > ul > li {
   font-size: $font-size-nav;
+  //color: #fff;
 }
 
-.navbar-brand {
+.navbar-default .navbar-brand {
   font-size: $font-size-big;
   font-weight: 700;
+  color: #fff;
 }
 
 
@@ -39,10 +42,11 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
     border-bottom: 5px solid lighten($orange, 15%);
   }
+  color: #fff;
   // &:hover {
   //   color: lighten($font-color-primary, 10%);
   //   background-color: lighten($orange, 25%);

@@ -15,16 +15,18 @@
 .navbar {
   width: 80%;
   border-radius: 0px;
-  background-color: white;
+  border: none;
+  background-color: transparent;
 }
 
 .navbar-nav > ul > li {
   font-size: 1.75em;
 }
 
-.navbar-brand {
+.navbar-default .navbar-brand {
   font-size: 2em;
   font-weight: 700;
+  color: #fff;
 }
 
 /* Active nav link */
@@ -42,7 +44,8 @@ body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-na
 
 /* Nav link */
 body .navbar-default .navbar-nav > li > a {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid transparent;
+  color: #fff;
 }
 body .navbar-default .navbar-nav > li > a:hover {
   border-bottom: 5px solid #fcca9b;
@@ -65,6 +68,10 @@ body {
   font: 1.5em ProximaNova, RalewayR, sans-serif;
   color: #777;
   height: 100%;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .grid {
