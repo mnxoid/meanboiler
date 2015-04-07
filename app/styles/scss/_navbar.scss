@@ -1,23 +1,20 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-<<<<<<< HEAD
-  border: 0px;
-/*  background-color: lighten(#f8f8f8, 50%);*/
+
+  
   background: rgba(0,0,0,0);
   background-color: none;
-=======
+
   border: none;
-  background-color: rgba(0,0,0,0);
+  
   z-index: 2;
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
 }
 
 
 .navbar-default .navbar-nav>li>a {
   font-family: 'ProximaNova Light';
   font-size: $font-size-nav;
-<<<<<<< HEAD
   color: #fff;
 }
 
@@ -31,8 +28,6 @@ body .navbar-brand {
 }
 .navbar-default .navbar-brand {
   color: #fff;
-=======
-  //color: #fff;
 }
 
 .navbar-default .navbar-brand {
@@ -42,7 +37,6 @@ body .navbar-brand {
   &:focus {
     color: #fff;
   }
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
 }
 
 
@@ -72,10 +66,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
-<<<<<<< HEAD
   border: none;
-=======
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
   border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
