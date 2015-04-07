@@ -17,6 +17,7 @@
   border-radius: 0px;
   border: none;
   background-color: transparent;
+  z-index: 2;
 }
 
 .navbar-nav > ul > li {
@@ -26,6 +27,9 @@
 .navbar-default .navbar-brand {
   font-size: 2em;
   font-weight: 700;
+  color: #fff;
+}
+.navbar-default .navbar-brand:focus {
   color: #fff;
 }
 
@@ -50,12 +54,24 @@ body .navbar-default .navbar-nav > li > a {
 body .navbar-default .navbar-nav > li > a:hover {
   border-bottom: 5px solid #fcca9b;
 }
+body .navbar-default .navbar-nav > li > a:active {
+  background-color: transparent;
+}
 
 body .navbar-right > li:last-child > a {
   color: #f9a251;
 }
 body .navbar-right > li:last-child > a:hover {
   color: #f9a251;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.navbar-header {
+  color: #fff;
 }
 
 *, *:after, *:before {
