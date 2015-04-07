@@ -1,23 +1,15 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-<<<<<<< HEAD
   border: 0px;
-/*  background-color: lighten(#f8f8f8, 50%);*/
   background: rgba(0,0,0,0);
   background-color: none;
-=======
-  border: none;
-  background-color: rgba(0,0,0,0);
-  z-index: 2;
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
 }
 
 
 .navbar-default .navbar-nav>li>a {
   font-family: 'ProximaNova Light';
   font-size: $font-size-nav;
-<<<<<<< HEAD
   color: #fff;
 }
 
@@ -31,18 +23,6 @@ body .navbar-brand {
 }
 .navbar-default .navbar-brand {
   color: #fff;
-=======
-  //color: #fff;
-}
-
-.navbar-default .navbar-brand {
-  font-size: $font-size-big;
-  font-weight: 700;
-  color: #fff;
-  &:focus {
-    color: #fff;
-  }
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
 }
 
 
@@ -72,19 +52,12 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
-<<<<<<< HEAD
   border: none;
-=======
->>>>>>> 5f2a19447842db9e0ed0453c61bca9c8991f7d7f
   border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
     border-bottom: 5px solid lighten($orange, 15%);
   }
-  &:active{
-    background-color: rgba(0,0,0,0);
-  }
-  color: #fff;
   // &:hover {
   //   color: lighten($font-color-primary, 10%);
   //   background-color: lighten($orange, 25%);
@@ -98,12 +71,4 @@ body .navbar-right>li:last-child>a{
     color: $orange;
   }
 
-}
-//buggy:
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  background-color: rgba(0,0,0,0);
-  color: #fff;
-}
-.navbar-header {
-  color: #fff;
 }
