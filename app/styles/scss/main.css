@@ -1,550 +1,72 @@
-/* Fonts */
-@font-face {
-  font-family: ProximaNova;
-  src: url("../../fonts/Proxima Nova R.otf");
-}
-@font-face {
-  font-family: 'ProximaNova Light';
-  src: url("../../fonts/Proxima Nova L.otf");
-}
-@font-face {
-  font-family: RalewayR;
-  src: url("../../fonts/Raleway-Regular.ttf");
-}
-/* Font Colors */
-/* Font sizes */
-/* Colors */
-/* Sizing */
-/* card */
-.navbar {
-  width: 80%;
-  border-radius: 0px;
-  border: 0px;
-  /*  background-color: lighten(#f8f8f8, 50%);*/
-  background: transparent;
-  background-color: none;
-}
+/*
+Error: Invalid CSS after "  border: 0px": expected "{", was ";"
+        on line 5 of app/styles/scss/_navbar.scss
+        from line 4 of app/styles/scss/main.scss
 
-.navbar-default .navbar-nav > li > a {
-  font-family: 'ProximaNova Light';
-  font-size: 1.2em;
-  color: #fff;
-}
+1: .navbar{
+2:   width: $navbar-width;
+3:   border-radius: 0px;
+4: <<<<<<< HEAD
+5:   border: 0px;
+6: /*  background-color: lighten(#f8f8f8, 50%);*\/
+7:   background: rgba(0,0,0,0);
+8:   background-color: none;
+9: =======
+10:   border: none;
 
-body .navbar-brand {
-  font-size: 2em;
-  font-weight: 700;
-  color: #fff;
-}
-body .navbar-brand:hover {
-  color: #fff;
-}
-
-.navbar-default .navbar-brand {
-  color: #fff;
-}
-
-/* Active nav link */
-body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
-  /*background-color: $orange;/*/
-  background-color: inherit;
-  border-bottom: 5px solid #f9a251;
-  color: #fff;
-}
-body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
-  color: #f9a251;
-}
-body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: inherit;
-}
-
-/* Nav link */
-body .navbar-default .navbar-nav > li > a {
-  border: none;
-  border-bottom: 5px solid transparent;
-}
-body .navbar-default .navbar-nav > li > a:hover {
-  color: #fff;
-  border-bottom: 5px solid #fcca9b;
-}
-
-body .navbar-right > li:last-child > a {
-  color: #f9a251;
-}
-body .navbar-right > li:last-child > a:hover {
-  color: #f9a251;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  overflow: hidden;
-}
-
-body {
-  font: 1.5em ProximaNova, RalewayR, sans-serif;
-  color: #777;
-  height: 100%;
-}
-
-header {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.container {
-  width: 100%;
-  /**/
-  position: absolute;
-  top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  /**/
-  padding: 0;
-  margin-bottom: 2em;
-}
-
-.grid {
-  border: 1px dashed #fafafa;
-  padding: 20px 20px 100px 20px;
-  max-width: 1300px;
-  margin: 0 auto;
-  list-style: none;
-  text-align: center;
-}
-
-.grid li {
-  display: inline-block;
-  width: 200px;
-  margin: 0;
-  padding: 20px;
-  text-align: left;
-  position: relative;
-}
-
-.grid figure {
-  margin: 0;
-  position: relative;
-}
-
-.grid figure img {
-  max-width: 100%;
-  display: block;
-  position: relative;
-}
-
-.grid figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  background: #2c3f52;
-  color: #ed4e6e;
-}
-
-.grid figcaption h3 {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
-.grid figcaption span:before {
-  content: 'Detail: ';
-}
-
-.grid figcaption a {
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 2px;
-  display: inline-block;
-  background: #ed4e6e;
-  color: #fff;
-}
-
-/* Style -3 */
-.cs-style-3 figure {
-  overflow: hidden;
-}
-
-.cs-style-3 figure img {
-  transition: transform 0.4s;
-  -webkit-transition: -webkit-transform 0.4s;
-  -moz-transition: -moz-transform 0.4s;
-}
-
-.no-touch .cs-style-3 figure:hover img,
-.cs-style-3 figure:hover img {
-  transform: translateY(-50px);
-  -moz-transform: translateY(-50px);
-  -webkit-transform: translateY(-50px);
-}
-
-.cs-style-3 figcaption {
-  height: 75%;
-  width: 100%;
-  top: auto;
-  bottom: 0;
-  opacity: 0;
-  transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  transition: transform 0.4s, opacity 0.1s 0.3s;
-  -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.no-touch .cs-style-3 figure:hover figcaption,
-.cs-style-3 figure:hover figcaption {
-  opacity: 1;
-  transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -webkit-transform: translateY(0px);
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
-  -moz-transition: -moz-transform 0.4s, opacity 0.1s;
-  transition: transform 0.4s, opacity 0.1s;
-}
-
-.cs-style-3 figcaption a {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-@media screen and (max-width: 31.5em) {
-  .grid {
-    padding: 10px 10px 100px 10px;
-  }
-
-  .grid li, #navi {
-    width: 100%;
-    min-width: 300px;
-  }
-}
-.mx-auto {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mx-auto-noblock {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.row {
-  width: 100%;
-  text-align: justify;
-}
-.row:first-child {
-  margin-left: 0px;
-  padding-left: 0px;
-}
-.row:last-child {
-  margin-right: 0px;
-  padding-right: 0px;
-}
-
-.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open > .dropdown-toggle.btn-primary {
-  margin-top: 2em;
-  border: 2px solid #f9a251;
-  background-color: #fff;
-  color: #f9a251;
-}
-.btn-primary.active:hover, .btn-primary.focus:hover, .btn-primary:active:hover, .btn-primary:focus:hover, .btn-primary:hover, .open > .dropdown-toggle.btn-primary:hover {
-  background-color: #f9a251;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-/* slider */
-#slides_control > div {
-  height: 300px;
-}
-
-img {
-  margin: auto;
-}
-
-#slides_control {
-  position: absolute;
-  width: 400px;
-  left: 50%;
-  top: 20px;
-  margin-left: -200px;
-}
-
-p > button {
-  display: inline-block;
-  margin-left: 1em;
-  margin-right: 1em;
-  width: 50%;
-}
-
-.sidebar {
-  background-color: #f8f8f8;
-}
-.sidebar h1 {
-  font-weight: 700;
-  margin-bottom: 1em;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 500px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #fafafa;
-  border-radius: 6px;
-  padding: 60px;
-  text-align: center;
-}
-
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.txtblock {
-  font-size: 1.2em;
-  font-weight: 300;
-  font-family: RalewayR;
-  text-align: center;
-  margin-top: 1em;
-}
-
-.footer {
-  background-color: #666666;
-}
-
-svg {
-  /*max-width: 95%;
-  max-height: 95%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;*/
-}
-svg path {
-  fill-opacity: 1;
-  stroke-width: 0.25;
-  stroke-dasharray: 217;
-  stroke-dashoffset: 0;
-  animation: draw 3s infinite linear;
-  -webkit-animation: draw 3s linear;
-}
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 217;
-    stroke-width: 1;
-    fill-opacity: 0;
-  }
-  80% {
-    stroke-dashoffset: 0;
-    stroke-width: 1;
-    fill-opacity: 0;
-  }
-  100% {
-    fill-opacity: 1;
-    stroke-width: 0.25;
-    stroke-dashoffset: 0;
-  }
-}
-@-webkit-keyframes draw {
-  0% {
-    stroke-dashoffset: 217;
-    stroke-width: 1;
-    fill-opacity: 0;
-  }
-  80% {
-    stroke-dashoffset: 0;
-    stroke-width: 1;
-    fill-opacity: 0;
-  }
-  100% {
-    fill-opacity: 1;
-    stroke-width: 0.25;
-    stroke-dashoffset: 0;
-  }
-}
-/* ANIMATIONS
-============================================================================= */
-.page.ng-leave {
-  z-index: 9999;
-}
-
-.page.ng-enter {
-  z-index: 8888;
-}
-
-/* page specific animations ------------------------ */
-/* home -------------------------- */
-.page-home.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-home.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-/* page-todo ------------------------ */
-.page-todo.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-todo.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-404.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-404.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-search.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-search.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-test.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-test.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-/* slide in from the right */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@-moz-keyframes slideInRight {
-  from {
-    -moz-transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(0);
-  }
-}
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(0);
-  }
-}
-/* slide in from the bottom */
-@keyframes slideOutLeft {
-  to {
-    transform: translateX(-100%);
-  }
-}
-@-moz-keyframes slideOutLeft {
-  to {
-    -moz-transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes slideOutLeft {
-  to {
-    -webkit-transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveToLeftFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-  }
-}
-@keyframes moveToLeftFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveFromLeftFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-  }
-}
-@keyframes moveFromLeftFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveToRightFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-  }
-}
-@keyframes moveToRightFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
-@-webkit-keyframes moveFromRightFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-  }
-}
-@keyframes moveFromRightFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+app/styles/scss/_navbar.scss:5
+app/styles/scss/main.scss:4
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:1167:in `expected'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:1096:in `tok!'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:641:in `block'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:712:in `declaration_or_ruleset'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:636:in `ruleset'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:660:in `block_child'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:650:in `block_contents'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:117:in `stylesheet'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/scss/parser.rb:42:in `parse'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/engine.rb:299:in `to_tree'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:88:in `block in with_import'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:88:in `with_import'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:407:in `run'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:63:in `process_result'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+E:/Software/Heroku/ruby-1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
+E:/Software/Heroku/ruby-1.9.3/bin/sass:23:in `load'
+E:/Software/Heroku/ruby-1.9.3/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  border: 0px\": expected \"{\", was \";\"\A         on line 5 of app/styles/scss/_navbar.scss\A         from line 4 of app/styles/scss/main.scss\A \A 1: .navbar{\A 2:   width: $navbar-width;\A 3:   border-radius: 0px;\A 4: <<<<<<< HEAD\A 5:   border: 0px;\A 6: /*  background-color: lighten(#f8f8f8, 50%);*/\A 7:   background: rgba(0,0,0,0);\A 8:   background-color: none;\A 9: =======\A 10:   border: none;"; }
