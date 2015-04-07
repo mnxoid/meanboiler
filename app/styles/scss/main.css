@@ -19,9 +19,9 @@
 .navbar {
   width: 80%;
   border-radius: 0px;
-  border: none;
+  border: 0px;
   /*  background-color: lighten(#f8f8f8, 50%);*/
-  background-color: transparent;
+  background: transparent;
   background-color: none;
 }
 
@@ -34,6 +34,11 @@
 .navbar-brand {
   font-size: 2em;
   font-weight: 700;
+  color: #fff;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
 }
 
 /* Active nav link */
@@ -41,6 +46,7 @@ body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .a
   /*background-color: $orange;/*/
   background-color: inherit;
   border-bottom: 5px solid #f9a251;
+  color: #fff;
 }
 body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
   color: #f9a251;
@@ -52,6 +58,7 @@ body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-na
 /* Nav link */
 body .navbar-default .navbar-nav > li > a {
   border: none;
+  border-bottom: 5px solid transparent;
 }
 body .navbar-default .navbar-nav > li > a:hover {
   border-bottom: 5px solid #fcca9b;
@@ -78,6 +85,10 @@ body {
   font: 1.5em ProximaNova, RalewayR, sans-serif;
   color: #777;
   height: 100%;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -257,7 +268,6 @@ body {
 
 img {
   margin: auto;
-  -webkit-filter: blur(2px) grayscale(0.3);
 }
 
 #slides_control {

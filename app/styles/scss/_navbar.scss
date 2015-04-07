@@ -1,9 +1,9 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-  border: none;
+  border: 0px;
 /*  background-color: lighten(#f8f8f8, 50%);*/
-  background-color: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0);
   background-color: none;
 }
 
@@ -17,6 +17,10 @@
 .navbar-brand {
   font-size: $font-size-big;
   font-weight: 700;
+  color: #fff;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
 }
 
 
@@ -26,6 +30,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
   background-color: inherit;
   border-bottom: 5px solid $orange;
   //color: $font-color-primary;
+  color: #fff;
   span {
     color: $orange;
   }
@@ -46,6 +51,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
   border: none;
+  border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
     border-bottom: 5px solid lighten($orange, 15%);
   }
