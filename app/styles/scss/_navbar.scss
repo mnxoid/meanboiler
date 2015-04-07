@@ -1,11 +1,17 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-  background-color: lighten(#f8f8f8, 50%);
+  border: none;
+/*  background-color: lighten(#f8f8f8, 50%);*/
+  background-color: rgba(0, 0, 0, 0);
+  background-color: none;
 }
 
-.navbar-nav > ul > li {
+
+.navbar-default .navbar-nav>li>a {
+  font-family: 'ProximaNova Light';
   font-size: $font-size-nav;
+  color: #fff;
 }
 
 .navbar-brand {
@@ -39,7 +45,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
-  border-bottom: 5px solid #fff;
+  border: none;
   &:hover {
     border-bottom: 5px solid lighten($orange, 15%);
   }

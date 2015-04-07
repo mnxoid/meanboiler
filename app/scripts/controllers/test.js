@@ -6,5 +6,6 @@ function TestCtrl ($scope, $rootScope) {
   $scope.test = "Hello, world!";
 }
 
-angular.module('RHalls')
+angular
+  .module('RHalls')
   .controller('TestCtrl', TestCtrl);

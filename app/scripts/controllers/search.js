@@ -28,5 +28,6 @@ function SearchCtrl ($scope, $rootScope, $http) {
       });
 }
 
-angular.module('RHalls')
+angular
+  .module('RHalls')
   .controller('SearchCtrl', SearchCtrl);

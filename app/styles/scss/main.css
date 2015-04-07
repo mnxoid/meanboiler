@@ -4,6 +4,10 @@
   src: url("../../fonts/Proxima Nova R.otf");
 }
 @font-face {
+  font-family: 'ProximaNova Light';
+  src: url("../../fonts/Proxima Nova L.otf");
+}
+@font-face {
   font-family: RalewayR;
   src: url("../../fonts/Raleway-Regular.ttf");
 }
@@ -15,11 +19,16 @@
 .navbar {
   width: 80%;
   border-radius: 0px;
-  background-color: white;
+  border: none;
+  /*  background-color: lighten(#f8f8f8, 50%);*/
+  background-color: transparent;
+  background-color: none;
 }
 
-.navbar-nav > ul > li {
-  font-size: 1.75em;
+.navbar-default .navbar-nav > li > a {
+  font-family: 'ProximaNova Light';
+  font-size: 1.2em;
+  color: #fff;
 }
 
 .navbar-brand {
@@ -42,7 +51,7 @@ body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-na
 
 /* Nav link */
 body .navbar-default .navbar-nav > li > a {
-  border-bottom: 5px solid #fff;
+  border: none;
 }
 body .navbar-default .navbar-nav > li > a:hover {
   border-bottom: 5px solid #fcca9b;
@@ -73,6 +82,17 @@ body {
 
 .container {
   width: 100%;
+  /**/
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /**/
+  padding: 0;
+  margin-bottom: 2em;
 }
 
 .grid {
@@ -205,12 +225,6 @@ body {
   margin-right: auto;
 }
 
-.container {
-  width: 80%;
-  padding: 0;
-  margin-bottom: 2em;
-}
-
 .row {
   width: 100%;
   text-align: justify;
@@ -238,11 +252,12 @@ body {
 
 /* slider */
 #slides_control > div {
-  height: 200px;
+  height: 300px;
 }
 
 img {
   margin: auto;
+  -webkit-filter: blur(2px) grayscale(0.3);
 }
 
 #slides_control {
@@ -287,9 +302,11 @@ p > button {
 }
 
 .txtblock {
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: 300;
   font-family: RalewayR;
   text-align: center;
+  margin-top: 1em;
 }
 
 .footer {

@@ -11,5 +11,6 @@ function NotFoundCtrl ($scope,$rootScope,$location) {
   };
 }
 
-angular.module('RHalls')
+angular
+  .module('RHalls')
   .controller('NotFoundCtrl', NotFoundCtrl);

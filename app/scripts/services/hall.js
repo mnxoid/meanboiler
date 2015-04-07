@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('RHalls')
+angular
+  .module('RHalls')
   .factory('$hall', ['$http', function($http) {
       return {
         get: function() {
