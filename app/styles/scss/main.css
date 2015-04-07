@@ -31,9 +31,12 @@
   color: #fff;
 }
 
-.navbar-brand {
+body .navbar-brand {
   font-size: 2em;
   font-weight: 700;
+  color: #fff;
+}
+body .navbar-brand:hover {
   color: #fff;
 }
 
@@ -61,6 +64,7 @@ body .navbar-default .navbar-nav > li > a {
   border-bottom: 5px solid transparent;
 }
 body .navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
   border-bottom: 5px solid #fcca9b;
 }
 
