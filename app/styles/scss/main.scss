@@ -78,6 +78,15 @@ header {
   }
 }
 
+input[type='text'].form-control {
+  outline: none;
+/*  border: 1px solid #fafafa;*/
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 /* slider */
 #slides_control > div{
   height: 300px;
