@@ -22,6 +22,7 @@
   border: 0px;
   background: transparent;
   background-color: none;
+  z-index: 2;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -40,6 +41,11 @@ body .navbar-brand:hover {
 }
 
 .navbar-default .navbar-brand {
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+}
+.navbar-default .navbar-brand:focus {
   color: #fff;
 }
 

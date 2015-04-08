@@ -4,8 +4,8 @@
   border: 0px;
   background: rgba(0,0,0,0);
   background-color: none;
+  z-index: 2;
 }
-
 
 .navbar-default .navbar-nav>li>a {
   font-family: 'ProximaNova Light';
@@ -21,8 +21,14 @@ body .navbar-brand {
     color: #fff;
   }
 }
+
 .navbar-default .navbar-brand {
+  font-size: $font-size-big;
+  font-weight: 700;
   color: #fff;
+  &:focus {
+    color: #fff;
+  }
 }
 
 
