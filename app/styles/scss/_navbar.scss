@@ -1,16 +1,11 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-
-  
+  border: 0px;
   background: rgba(0,0,0,0);
   background-color: none;
-
-  border: none;
-  
   z-index: 2;
 }
-
 
 .navbar-default .navbar-nav>li>a {
   font-family: 'ProximaNova Light';
@@ -25,9 +20,6 @@ body .navbar-brand {
   &:hover {
     color: #fff;
   }
-}
-.navbar-default .navbar-brand {
-  color: #fff;
 }
 
 .navbar-default .navbar-brand {
@@ -72,10 +64,6 @@ body .navbar-default .navbar-nav>li>a {
     color: #fff;
     border-bottom: 5px solid lighten($orange, 15%);
   }
-  &:active{
-    background-color: rgba(0,0,0,0);
-  }
-  color: #fff;
   // &:hover {
   //   color: lighten($font-color-primary, 10%);
   //   background-color: lighten($orange, 25%);
@@ -89,12 +77,4 @@ body .navbar-right>li:last-child>a{
     color: $orange;
   }
 
-}
-//buggy:
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  background-color: rgba(0,0,0,0);
-  color: #fff;
-}
-.navbar-header {
-  color: #fff;
 }

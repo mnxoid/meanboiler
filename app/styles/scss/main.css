@@ -19,9 +19,9 @@
 .navbar {
   width: 80%;
   border-radius: 0px;
+  border: 0px;
   background: transparent;
   background-color: none;
-  border: none;
   z-index: 2;
 }
 
@@ -37,10 +37,6 @@ body .navbar-brand {
   color: #fff;
 }
 body .navbar-brand:hover {
-  color: #fff;
-}
-
-.navbar-default .navbar-brand {
   color: #fff;
 }
 
@@ -71,14 +67,10 @@ body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-na
 body .navbar-default .navbar-nav > li > a {
   border: none;
   border-bottom: 5px solid transparent;
-  color: #fff;
 }
 body .navbar-default .navbar-nav > li > a:hover {
   color: #fff;
   border-bottom: 5px solid #fcca9b;
-}
-body .navbar-default .navbar-nav > li > a:active {
-  background-color: transparent;
 }
 
 body .navbar-right > li:last-child > a {
@@ -88,15 +80,172 @@ body .navbar-right > li:last-child > a:hover {
   color: #f9a251;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: transparent;
-  color: #fff;
+/* ANIMATIONS
+============================================================================= */
+.page.ng-leave {
+  z-index: 9999;
 }
 
-.navbar-header {
-  color: #fff;
+.page.ng-enter {
+  z-index: 8888;
 }
 
+/* page specific animations ------------------------ */
+/* home -------------------------- */
+.page-home.ng-leave {
+  -webkit-animation: moveToLeftFade 0.5s both ease-in;
+  -moz-animation: moveToLeftFade 0.5s both ease-in;
+  animation: moveToLeftFade 0.5s both ease-in;
+}
+
+.page-home.ng-enter {
+  -webkit-animation: moveFromRightFade 0.5s both ease-in;
+  -moz-animation: moveFromRightFade 0.5s both ease-in;
+  animation: moveFromRightFade 0.5s both ease-in;
+}
+
+/* page-todo ------------------------ */
+.page-todo.ng-leave {
+  -webkit-animation: moveToLeftFade 0.5s both ease-in;
+  -moz-animation: moveToLeftFade 0.5s both ease-in;
+  animation: moveToLeftFade 0.5s both ease-in;
+}
+
+.page-todo.ng-enter {
+  -webkit-animation: moveFromRightFade 0.5s both ease-in;
+  -moz-animation: moveFromRightFade 0.5s both ease-in;
+  animation: moveFromRightFade 0.5s both ease-in;
+}
+
+.page-404.ng-leave {
+  -webkit-animation: moveToLeftFade 0.5s both ease-in;
+  -moz-animation: moveToLeftFade 0.5s both ease-in;
+  animation: moveToLeftFade 0.5s both ease-in;
+}
+
+.page-404.ng-enter {
+  -webkit-animation: moveFromRightFade 0.5s both ease-in;
+  -moz-animation: moveFromRightFade 0.5s both ease-in;
+  animation: moveFromRightFade 0.5s both ease-in;
+}
+
+.page-search.ng-leave {
+  -webkit-animation: moveToLeftFade 0.5s both ease-in;
+  -moz-animation: moveToLeftFade 0.5s both ease-in;
+  animation: moveToLeftFade 0.5s both ease-in;
+}
+
+.page-search.ng-enter {
+  -webkit-animation: moveFromRightFade 0.5s both ease-in;
+  -moz-animation: moveFromRightFade 0.5s both ease-in;
+  animation: moveFromRightFade 0.5s both ease-in;
+}
+
+.page-test.ng-leave {
+  -webkit-animation: moveToLeftFade 0.5s both ease-in;
+  -moz-animation: moveToLeftFade 0.5s both ease-in;
+  animation: moveToLeftFade 0.5s both ease-in;
+}
+
+.page-test.ng-enter {
+  -webkit-animation: moveFromRightFade 0.5s both ease-in;
+  -moz-animation: moveFromRightFade 0.5s both ease-in;
+  animation: moveFromRightFade 0.5s both ease-in;
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+  }
+}
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes moveToLeftFade {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes moveToLeftFade {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes moveFromLeftFade {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes moveFromLeftFade {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes moveToRightFade {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(100%);
+  }
+}
+@keyframes moveToRightFade {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+@-webkit-keyframes moveFromRightFade {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(100%);
+  }
+}
+@keyframes moveFromRightFade {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -404,172 +553,6 @@ svg path {
     fill-opacity: 1;
     stroke-width: 0.25;
     stroke-dashoffset: 0;
-  }
-}
-/* ANIMATIONS
-============================================================================= */
-.page.ng-leave {
-  z-index: 9999;
-}
-
-.page.ng-enter {
-  z-index: 8888;
-}
-
-/* page specific animations ------------------------ */
-/* home -------------------------- */
-.page-home.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-home.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-/* page-todo ------------------------ */
-.page-todo.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-todo.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-404.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-404.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-search.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-search.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-.page-test.ng-leave {
-  -webkit-animation: moveToLeftFade 0.5s both ease-in;
-  -moz-animation: moveToLeftFade 0.5s both ease-in;
-  animation: moveToLeftFade 0.5s both ease-in;
-}
-
-.page-test.ng-enter {
-  -webkit-animation: moveFromRightFade 0.5s both ease-in;
-  -moz-animation: moveFromRightFade 0.5s both ease-in;
-  animation: moveFromRightFade 0.5s both ease-in;
-}
-
-/* slide in from the right */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@-moz-keyframes slideInRight {
-  from {
-    -moz-transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(0);
-  }
-}
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(0);
-  }
-}
-/* slide in from the bottom */
-@keyframes slideOutLeft {
-  to {
-    transform: translateX(-100%);
-  }
-}
-@-moz-keyframes slideOutLeft {
-  to {
-    -moz-transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes slideOutLeft {
-  to {
-    -webkit-transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveToLeftFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-  }
-}
-@keyframes moveToLeftFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveFromLeftFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-  }
-}
-@keyframes moveFromLeftFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes moveToRightFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-  }
-}
-@keyframes moveToRightFade {
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
-@-webkit-keyframes moveFromRightFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-  }
-}
-@keyframes moveFromRightFade {
-  from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
   }
 }
 
