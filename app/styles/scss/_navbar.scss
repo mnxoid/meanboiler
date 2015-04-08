@@ -1,16 +1,34 @@
 .navbar{
   width: $navbar-width;
   border-radius: 0px;
-  background-color: lighten(#f8f8f8, 50%);
+  border: 0px;
+  background: rgba(0,0,0,0);
+  background-color: none;
+  z-index: 2;
 }
 
-.navbar-nav > ul > li {
+.navbar-default .navbar-nav>li>a {
+  font-family: 'ProximaNova Light';
   font-size: $font-size-nav;
+  color: #fff;
 }
 
-.navbar-brand {
+body .navbar-brand {
   font-size: $font-size-big;
   font-weight: 700;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.navbar-default .navbar-brand {
+  font-size: $font-size-big;
+  font-weight: 700;
+  color: #fff;
+  &:focus {
+    color: #fff;
+  }
 }
 
 
@@ -20,6 +38,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
   background-color: inherit;
   border-bottom: 5px solid $orange;
   //color: $font-color-primary;
+  color: #fff;
   span {
     color: $orange;
   }
@@ -39,8 +58,10 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
 
 /* Nav link */
 body .navbar-default .navbar-nav>li>a {
-  border-bottom: 5px solid #fff;
+  border: none;
+  border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
+    color: #fff;
     border-bottom: 5px solid lighten($orange, 15%);
   }
   // &:hover {

@@ -5,9 +5,15 @@
 }
 
 @font-face {
+  font-family: 'ProximaNova Light';
+  src: url('../../fonts/Proxima Nova L.otf');
+}
+
+@font-face {
   font-family: RalewayR;
   src: url('../../fonts/Raleway-Regular.ttf');
 }
+
 $font-stack:    ProximaNova, RalewayR, sans-serif;
 
 /* Font Colors */
@@ -15,7 +21,7 @@ $font-color-primary: #777;
 
 /* Font sizes */
 $font-size-reg: 1.5em;
-$font-size-nav: 1.75em;
+$font-size-nav: 1.2em;
 $font-size-big: 2em;
 
 /* Colors */
