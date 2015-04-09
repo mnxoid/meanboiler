@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meanApp')
+angular.module('RHalls')
   .directive('csvg', function() {
     return {
       templateUrl: function(elem, attr){

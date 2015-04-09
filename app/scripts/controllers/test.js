@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('meanApp')
-  .controller('TestCtrl', function ($scope,$rootScope) {
-  	$rootScope.active = 5;
-    $scope.test = "Hello, world!";
-  });
+function TestCtrl ($scope, $rootScope) {
+  $scope.pageClass = 'page-test';
+  $rootScope.active = 5;
+  $scope.test = "Hello, world!";
+}
+
+angular
+  .module('RHalls')
+  .controller('TestCtrl', TestCtrl);
