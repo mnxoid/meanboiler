@@ -2,7 +2,7 @@
 (function(){
 
     var app = angular
-      .module('RHalls', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
+      .module('RHalls', ['ui.bootstrap', 'ui.router'])
       .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/404');
@@ -38,6 +38,14 @@
            url: '/search',
            templateUrl: 'views/search.html',
            controller: 'SearchCtrl'
+         })
+         .state('about', {
+           url: '/about',
+           templateUrl: 'views/about.html'
+         })
+         .state('contact', {
+           url: '/contact',
+           templateUrl: 'views/contact.html'
          })
     })
     .run(function($rootScope) {
