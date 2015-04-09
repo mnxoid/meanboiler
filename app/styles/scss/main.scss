@@ -2,12 +2,12 @@
 @import "_mixins";
 @import "_preview";
 @import "_navbar";
-@import "_animations";
+//@import "_animations";
 
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-html         { overflow:hidden; }
+//html         { overflow:hidden; }
 
 body {
   font: $font-size-reg $font-stack;
@@ -21,22 +21,24 @@ header {
 
 header {
   background: rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
 }
 
-.container        {
-	width:100%;
-  /**/
-  position: absolute;
-  top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  /**/
-  padding: 0;
-  margin-bottom: 2em;
-}
+// .container        {
+// 	width:100%;
+//   /**/
+//   position: absolute;
+//   top: 0;
+//   margin-left: auto;
+//   margin-right: auto;
+//   left: 0;
+//   right: 0;
+//   z-index: -1;
+//   /**/
+//   padding: 0;
+//   margin-bottom: 2em;
+// }
 
 
 
@@ -71,10 +73,12 @@ header {
   border: 2px solid $orange;
   background-color: #fff;
   color: $orange;
+  text-decoration: none;
   &:hover {
     background-color: $orange;
     border: 2px solid #fff;
     color: #fff;
+    text-decoration: none;
   }
 }
 
