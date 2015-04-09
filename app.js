@@ -5,6 +5,7 @@ var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override');
+    
 mongoose.connect('mongodb://localhost/mnxoid');
 var app = express();
 app.directory = __dirname;
@@ -15,8 +16,8 @@ require('./routes')(app);
 module.exports = app;
 
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({'extended':'true'}));            
-app.use(bodyParser.json());                                     
+app.use(bodyParser.urlencoded({'extended':'true'}));
+app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
