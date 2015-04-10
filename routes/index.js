@@ -71,8 +71,7 @@ module.exports = function (app) {
 		});
 
 		// app.get('/api/halls/:hall_id', function(req, res) {
-		// 	// redirect to hall #id view;
-		// 	console.log('this is hall view');
+		//  return data about this hall
 		// });
 
     app.get('/api/todos', function(req, res) {
@@ -92,7 +91,6 @@ module.exports = function (app) {
 
     app.post('/api/todos', function(req, res) {
 
-        // create a todo, information comes from AJAX request from Angular
         Todo.create({
             text : req.body.text,
             done : false
@@ -100,7 +98,6 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
 
-            // get and return all the todos after you create another
             Todo.find(function(err, todos) {
                 if (err)
                     res.send(err)
@@ -117,7 +114,6 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
 
-            // get and return all the todos after you create another
             Todo.find(function(err, todos) {
                 if (err)
                     res.send(err)
@@ -126,13 +122,8 @@ module.exports = function (app) {
         });
     });
 
-		app.get('*', function(req, res) {
+	app.get('*', function(req, res) {
         res.sendfile('./app/index.html');
     });
-/*
-    app.get('*', function (req, res, next) {
-        res.render('index');
-    });
 
-		*/
 };

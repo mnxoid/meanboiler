@@ -14,6 +14,16 @@
                     templateUrl: 'views/main.html',
                     controller: 'MainCtrl'
                 })
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'views/login.html',
+                    controller: 'AuthCtrl'
+                })
+                .state('signup', {
+                    url: '/signup',
+                    templateUrl: 'views/signup.html',
+                    controller: 'AuthCtrl'
+                })
                 .state('todo', {
                     url: '/todo',
                     templateUrl: 'views/todo.html',
