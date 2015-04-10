@@ -17,11 +17,27 @@ angular
         };
 
         return {
+            signup: function(data) {
+                var signup = $http.post('auth/signup', data);
+                signup
+                    .success(function(data) {
+                        console.log(data);
+                    })
+                    .error(function(e) {
+                        throw e;
+                    });
+                return signup;
+            },
             login: function(data) {
                 var login = $http.post('/auth/login', data);
                 login
-                    .success(cacheSession)
-                    .error(error);
+                    .success(function(data) {
+                        console.log(data);
+                        cacheSession();
+                    })
+                    .error(function(e) {
+                        throw e;
+                    });
                 return login;
             },
             logout: function() {

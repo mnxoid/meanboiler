@@ -1,5 +1,7 @@
 var Todo = require('../models/todo');
 var Hall = require('../models/halls');
+var User = require('../models/user');
+var passport = require('passport');
 
 function getTodos(res){
 	Todo.find(function(err, todos) {
@@ -32,26 +34,18 @@ module.exports = function (app) {
 
     app.post('/auth/signup', function(req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
-            //
+            res.json(user);
         })(req, res, next);
     });
 
     app.post('/auth/login', function(req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-
-         /*
-          // example from the docs:
-
-          if (err) { return next(err); }
-          if (!user) { return res.redirect('/login'); }
-          req.logIn(user, function(err) {
-          if (err) { return next(err); }
-          return res.redirect('/users/' + user.username);
-          });
-
-          */
-
+            User.find(function(err, user) {
+                if (err)
+                    res.send(err);
+                res.json(user);
+            });
         })(req, res, next);
     });
 
@@ -100,9 +94,16 @@ module.exports = function (app) {
 		});
 	});
 
-		// app.get('/api/halls/:hall_id', function(req, res) {
+	app.get('/api/halls/:hall_id', function(req, res) {
 		//  return data about this hall
-		// });
+        Hall.find({
+            _id: req.params.hall_id
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            res.json(hall);
+        });
+    });
 
     app.get('/api/todos', function(req, res) {
 
