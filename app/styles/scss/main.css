@@ -348,6 +348,14 @@ svg path {
   -webkit-animation: draw 3s linear;
 }
 
+.circular {
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
 @keyframes draw {
   0% {
     stroke-dashoffset: 217;
