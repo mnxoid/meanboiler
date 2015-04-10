@@ -26,49 +26,79 @@ function getHalls(res){
 
 module.exports = function (app) {
 
-		app.get('/api/halls', function(req, res) {
-			Hall.find(function(err, halls) {
+    // auth:
+
+    // isuue here: scripts/services/auth.js should interact with this 2 routes
+
+    app.post('/auth/signup', function(req, res, next) {
+        passport.authenticate('local-signup', function (err, user, info) {
+            //
+        })(req, res, next);
+    });
+
+    app.post('/auth/login', function(req, res, next) {
+        passport.authenticate('local-login', function (err, user, info) {
+            if (err) { return next(err); }
+
+         /*
+          // example from the docs:
+
+          if (err) { return next(err); }
+          if (!user) { return res.redirect('/login'); }
+          req.logIn(user, function(err) {
+          if (err) { return next(err); }
+          return res.redirect('/users/' + user.username);
+          });
+
+          */
+
+        })(req, res, next);
+    });
+
+
+    app.get('/api/halls', function(req, res) {
+        Hall.find(function(err, halls) {
+            if (err)
+				res.send(err);
+
+			res.json(halls);
+		});
+	});
+
+	app.post('/api/halls', function(req, res) {
+
+		Hall.create({
+			name     : req.body.name,
+			location : req.body.location,
+			capacity : req.body.capacity,
+			price    : req.body.price
+		}, function(err, hall) {
+			if (err)
+				res.send(err);
+
+            Hall.find(function(err, halls) {
 				if (err)
 					res.send(err);
-
 				res.json(halls);
 			});
+
 		});
+	});
 
-		app.post('/api/halls', function(req, res) {
+	app.delete('/api/halls/:hall_id', function(req, res) {
+		Hall.remove({
+            _id : req.params.hall_id
+		}, function(err, todo) {
+            if (err)
+                res.send(err);
 
-			Hall.create({
-				name     : req.body.name,
-				location : req.body.location,
-				capacity : req.body.capacity,
-				price    : req.body.price
-			}, function(err, hall) {
-				if (err)
-					res.send(err);
-
-				Hall.find(function(err, halls) {
-					if (err)
-						res.send(err);
-					res.json(halls);
-				});
-
-			});
+            Hall.find(function(err, todos) {
+                if (err)
+                    res.send(err)
+                res.json(todos);
+            });
 		});
-
-		app.delete('/api/halls/:hall_id', function(req, res) {
-			Hall.remove({
-					_id : req.params.hall_id
-			}, function(err, todo) {
-					if (err)
-							res.send(err);
-
-					Hall.find(function(err, todos) {
-							if (err)
-									res.send(err)
-							res.json(todos);
-					});
-			});
-		});
+	});
 
 		// app.get('/api/halls/:hall_id', function(req, res) {
 		//  return data about this hall
@@ -81,7 +111,7 @@ module.exports = function (app) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
-                res.send(err)
+                res.send(err);
 
             res.json(todos); // return all todos in JSON format
         });
