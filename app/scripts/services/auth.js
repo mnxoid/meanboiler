@@ -14,7 +14,7 @@ angular
 
         var error = function(res) {
             $flash.show(res.flash);
-        }
+        };
 
         return {
             login: function(data) {
