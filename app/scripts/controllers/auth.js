@@ -7,20 +7,12 @@ function AuthCtrl ($scope, $auth) {
     };
 
     $scope.login = function() {
-        $auth
-            .login($scope.credentials)
-            .success(function(data) {
-                console.log(data);
-               // TODO: redirect to dashboard
-            });
+        $auth.login($scope.credentials);
     };
 
     $scope.signup = function() {
-
-        //console.log($scope.credentials);
-
         $auth.signup($scope.credentials);
-    }
+    };
 }
 
 angular

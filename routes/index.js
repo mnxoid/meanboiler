@@ -1,6 +1,6 @@
-var Todo = require('../models/todo');
-var Hall = require('../models/halls');
-var User = require('../models/user');
+var Todo     = require('../models/todo');
+var Hall     = require('../models/halls');
+var User     = require('../models/user');
 var passport = require('passport');
 
 function getTodos(res){

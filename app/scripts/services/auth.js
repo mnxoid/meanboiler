@@ -16,6 +16,8 @@ angular
             $flash.show(res.flash);
         };
 
+        var user = null;
+
         return {
             signup: function(data) {
                 var signup = $http.post('auth/signup', data);
@@ -32,7 +34,8 @@ angular
                 var login = $http.post('/auth/login', data);
                 login
                     .success(function(data) {
-                        console.log(data);
+                        user = data;
+                        console.log(user);
                         cacheSession();
                     })
                     .error(function(e) {
@@ -47,7 +50,7 @@ angular
                 return logout;
             },
             user: function() {
-                // return curr user obj
+                return user;
             },
             check: function() {
                 // return 1 if is logged in
