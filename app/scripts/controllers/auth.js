@@ -1,17 +1,20 @@
 'use strict';
 
 function AuthCtrl ($scope, $auth) {
-    $scope.credentials = {};
+    $scope.credentials = {
+        email: '',
+        password: ''
+    };
+
     $scope.login = function() {
-        $auth
-            .login($scope.credentials)
-            .success(function() {
-                console.log("Auth successful");
-               // TODO: redirect to dashboard
-            });
-    }
+        $auth.login($scope.credentials);
+    };
+
+    $scope.signup = function() {
+        $auth.signup($scope.credentials);
+    };
 }
 
 angular
     .module('RHalls')
-    .controller('AuthCtrl', AuthCtrl);
+    .controller('AuthCtrl', ['$scope', '$auth', AuthCtrl]);

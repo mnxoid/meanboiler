@@ -6,8 +6,8 @@ var express       = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
     session        = require('express-session'),
-    passport       = require('passport');
-    flash          = require('connect-flash')
+    passport       = require('passport'),
+    flash          = require('connect-flash'),
     configDB       = require('./config/database.js');
 
 
@@ -17,7 +17,7 @@ app.directory = __dirname;
 
 require('./config/environments')(app);
 require('./config/passport')(passport);
-require('./routes')(app);
+
 
 module.exports = app;
 
@@ -33,6 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+require('./routes/index.js')(app, passport);
 
 
 app.listen(8080);

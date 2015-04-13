@@ -1,5 +1,7 @@
-var Todo = require('../models/todo');
-var Hall = require('../models/halls');
+var Todo     = require('../models/todo');
+var Hall     = require('../models/halls');
+var User     = require('../models/user');
+var passport = require('passport');
 
 function getTodos(res){
 	Todo.find(function(err, todos) {
@@ -28,30 +30,16 @@ module.exports = function (app) {
 
     // auth:
 
-    // isuue here: scripts/services/auth.js should interact with this 2 routes
-
     app.post('/auth/signup', function(req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
-            //
+            res.json(user); // returns json even without these lines (?)
         })(req, res, next);
     });
 
     app.post('/auth/login', function(req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-
-         /*
-          // example from the docs:
-
-          if (err) { return next(err); }
-          if (!user) { return res.redirect('/login'); }
-          req.logIn(user, function(err) {
-          if (err) { return next(err); }
-          return res.redirect('/users/' + user.username);
-          });
-
-          */
-
+            res.json(user); // returns json even without these lines (?)
         })(req, res, next);
     });
 
@@ -94,43 +82,42 @@ module.exports = function (app) {
 
             Hall.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
 		});
 	});
 
-		// app.get('/api/halls/:hall_id', function(req, res) {
-		//  return data about this hall
-		// });
-
-    app.get('/api/todos', function(req, res) {
-
-        // use mongoose to get all todos in the database
-        Todo.find(function(err, todos) {
-
-            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+	app.get('/api/halls/:hall_id', function(req, res) {
+        Hall.find({
+            _id: req.params.hall_id
+        }, function(err, hall){
             if (err)
                 res.send(err);
+            res.json(hall);
+        });
+    });
 
-            res.json(todos); // return all todos in JSON format
+    app.get('/api/todos', function(req, res) {
+        Todo.find(function(err, todos) {
+            if (err)
+                res.send(err);
+            res.json(todos);
         });
     });
 
 
 
     app.post('/api/todos', function(req, res) {
-
         Todo.create({
             text : req.body.text,
             done : false
         }, function(err, todo) {
             if (err)
                 res.send(err);
-
             Todo.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
         });
@@ -143,10 +130,9 @@ module.exports = function (app) {
         }, function(err, todo) {
             if (err)
                 res.send(err);
-
             Todo.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
         });
