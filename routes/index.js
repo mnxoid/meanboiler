@@ -30,22 +30,16 @@ module.exports = function (app) {
 
     // auth:
 
-    // isuue here: scripts/services/auth.js should interact with this 2 routes
-
     app.post('/auth/signup', function(req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
-            res.json(user);
+            res.json(user); // returns json even without these lines (?)
         })(req, res, next);
     });
 
     app.post('/auth/login', function(req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            User.find(function(err, user) {
-                if (err)
-                    res.send(err);
-                res.json(user);
-            });
+            res.json(user); // returns json even without these lines (?)
         })(req, res, next);
     });
 
@@ -88,14 +82,13 @@ module.exports = function (app) {
 
             Hall.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
 		});
 	});
 
 	app.get('/api/halls/:hall_id', function(req, res) {
-		//  return data about this hall
         Hall.find({
             _id: req.params.hall_id
         }, function(err, hall){
@@ -106,32 +99,25 @@ module.exports = function (app) {
     });
 
     app.get('/api/todos', function(req, res) {
-
-        // use mongoose to get all todos in the database
         Todo.find(function(err, todos) {
-
-            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
                 res.send(err);
-
-            res.json(todos); // return all todos in JSON format
+            res.json(todos);
         });
     });
 
 
 
     app.post('/api/todos', function(req, res) {
-
         Todo.create({
             text : req.body.text,
             done : false
         }, function(err, todo) {
             if (err)
                 res.send(err);
-
             Todo.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
         });
@@ -144,10 +130,9 @@ module.exports = function (app) {
         }, function(err, todo) {
             if (err)
                 res.send(err);
-
             Todo.find(function(err, todos) {
                 if (err)
-                    res.send(err)
+                    res.send(err);
                 res.json(todos);
             });
         });

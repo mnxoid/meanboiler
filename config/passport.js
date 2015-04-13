@@ -32,12 +32,16 @@ module.exports = function(passport) {
             if (err)
                 return done(err);
 
+            // TODO: fix this lines -> we don't use these req.flash. Have to handle by ourselves
+/*
             if (!user)
                 return done(null, false, req.flash('loginMessage', 'No user found.'));
+*/
 
+/*
             if (!user.validPassword(password))
                 return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
-
+*/
             return done(null, user);
         });
 

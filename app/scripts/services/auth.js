@@ -2,18 +2,19 @@
 
 angular
     .module('RHalls')
-    .factory('$auth', ['$http', '$session', '$flash', function($http, $session, $flash) {
+    .factory('$auth', ['$http', '$session', '$location', function($http, $session, $location) {
 
-        var cacheSession = function() {
+        // TODO: add tokens, not just 'authenticated' string! security risk - over 100 out of 100.
+
+        var cacheSession = function(data) {
             $session.set('authenticated', true);
+            $session.set('user', JSON.stringify(data)); // very vulnerable
+            // $session.set('token', token);
         };
 
         var uncacheSession = function() {
             $session.unset('authenticated');
-        };
-
-        var error = function(res) {
-            $flash.show(res.flash);
+            // $session.unset('token');
         };
 
         var user = null;
@@ -30,30 +31,34 @@ angular
                     });
                 return signup;
             },
+
             login: function(data) {
                 var login = $http.post('/auth/login', data);
                 login
                     .success(function(data) {
                         user = data;
                         console.log(user);
-                        cacheSession();
+                        $location.path('/');
+                        cacheSession(data);
                     })
                     .error(function(e) {
                         throw e;
                     });
                 return login;
             },
+
             logout: function() {
                 var logout = $http.get('/auth/logout');
                 logout
                     .success(uncacheSession);
                 return logout;
             },
+
             user: function() {
                 return user;
             },
+
             check: function() {
-                // return 1 if is logged in
                 return $session.get('authenticated');
             }
         }
