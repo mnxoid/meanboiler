@@ -2,7 +2,6 @@
 
 function SearchCtrl ($scope, $rootScope, $http) {
   $scope.pageClass = 'page-search';
-  $rootScope.active = 6;
   $scope.results = [
     'http://lorempixel.com/160/200/city/1',
     'http://lorempixel.com/160/200/city/2',

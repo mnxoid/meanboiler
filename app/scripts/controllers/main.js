@@ -2,7 +2,6 @@
 
 function MainCtrl ($scope, $rootScope, $location) {
   $scope.pageClass = 'page-home';
-  $rootScope.active = 1;
   $scope.myInterval = 3000;
   var a = Math.floor(( 3264/1280)*( window.innerHeight*0.5 ));
   $scope.slides = [

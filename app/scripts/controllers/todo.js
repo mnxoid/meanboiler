@@ -2,7 +2,6 @@
 
 function TodoCtrl($state, $scope,$rootScope,$http, $hall, halls) {
   $scope.pageClass = 'page-todo';
-  $rootScope.active = 4;
   $scope.formData = {};
   $scope.formDataHall = {};
   $scope.halls = halls.data;
