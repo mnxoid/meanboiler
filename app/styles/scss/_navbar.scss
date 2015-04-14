@@ -34,7 +34,7 @@ body .navbar-brand {
 /* Active nav link */
 body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a {
   /*background-color: $orange;/*/
-  background-color: inherit;
+  background-color: rgba(0,0,0,0);
   border-bottom: 5px solid $orange;
   //color: $font-color-primary;
   color: #fff;
@@ -46,7 +46,7 @@ body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>
   }
 
   &:hover {
-    background-color: inherit;
+    background-color: rgba(0,0,0,0);
   }
   // &:hover {
   //   background-color: lighten($orange, 10%);
@@ -76,4 +76,9 @@ body .navbar-right>li:last-child>a{
     color: $orange;
   }
 
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: rgba(0,0,0,0);
 }
