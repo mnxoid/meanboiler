@@ -27,24 +27,26 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
-
+        console.log("Calling findOne");//This never gets executed
         User.findOne({ 'local.email' :  email }, function(err, user) {
             if (err)
                 return done(err);
 
             // TODO: fix this lines -> we don't use these req.flash. Have to handle by ourselves
-/*
+            console.log("!user: "+ !user);
             if (!user)
-                return done(null, false, req.flash('loginMessage', 'No user found.'));
-*/
+            {
+                console.log("Bad user");
+                return done(null, false, console.log('loginMessage: No user found.'));
+            }
 
-/*
+
             if (!user.validPassword(password))
-                return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
-*/
+                return done(null, false, console.log('loginMessage: Oops! Wrong password.'));
+
             return done(null, user);
         });
-
+        return done(null,false);
     }));
 
     // -- Sign up

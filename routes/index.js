@@ -40,7 +40,7 @@ module.exports = function (app) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
             res.json(user);
-            console.log("User authenticated successfully!");
+            console.log("User authenticated successfully!>"+JSON.stringify(user)+"<");
         })(req, res, next);
     });
 
