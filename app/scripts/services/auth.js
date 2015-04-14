@@ -2,7 +2,8 @@
 
 angular
     .module('RHalls')
-    .factory('$auth', ['$http', '$session', '$location', function($http, $session, $location) {
+    .factory('$auth', ['$http', '$session', '$location', '$rootScope',
+                        function($http, $session, $location, $rootScope) {
 
         // TODO: add tokens, not just 'authenticated' string! security risk - over 100 out of 100.
 
@@ -17,7 +18,9 @@ angular
             // $session.unset('token');
         };
 
-        var user = null;
+        var user            = null;
+        $rootScope.user     = null;
+        $rootScope.loggedIn = false;
 
         return {
             signup: function(data) {
@@ -36,10 +39,16 @@ angular
                 var login = $http.post('/auth/login', data);
                 login
                     .success(function(data) {
-                        user = data;
+                        console.log(data);
+                        if (!data) { console.log("log in fail"); return; }
+
+                        user = $rootScope.user = data;
+                        $rootScope.loggedIn = true;
+
                         console.log(user);
                         $location.path('/');
                         cacheSession(data);
+
                     })
                     .error(function(e) {
                         throw e;
