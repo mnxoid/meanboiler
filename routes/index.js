@@ -39,7 +39,8 @@ module.exports = function (app) {
     app.post('/auth/login', function(req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            res.json(user); // returns json even without these lines (?)
+            res.json(user);
+            console.log("User authenticated successfully!");
         })(req, res, next);
     });
 
