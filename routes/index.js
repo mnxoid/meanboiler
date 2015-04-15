@@ -40,7 +40,7 @@ module.exports = function (app) {
         //console.log(JSON.stringify(req));
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            if (user)
+            if (user && user.errmsg===undefined)
             {
                 res.json({
                     userdata: user,
@@ -50,7 +50,7 @@ module.exports = function (app) {
             } else {
                 res.json({
                     userdata: undefined,
-                    user_stringified: "Sorry, no string",
+                    user_stringified: (user.errmsg ? user.errmsg : "Sorry, no string"),
                     success: false
                 });
             }

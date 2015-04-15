@@ -38,12 +38,12 @@ module.exports = function(passport) {
             if (!user)
             {
                 console.warn("Bad user");
-                return done(null, false, console.log('loginMessage: No user found.'));
+                return done(null, {errmsg: 'loginMessage: No user found.'}, console.log('loginMessage: No user found.'));
             }
 
 
             if (!user.validPassword(password))
-                return done(null, false, console.log('loginMessage: Oops! Wrong password.'));
+                return done(null, {errmsg: 'loginMessage: Oops! Wrong password.'}, console.log('loginMessage: Oops! Wrong password.'));
 
             return done(null, user);
         });
