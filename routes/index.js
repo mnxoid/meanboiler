@@ -37,9 +37,23 @@ module.exports = function (app) {
     });
 
     app.post('/auth/login', function(req, res, next) {
+        //console.log(JSON.stringify(req));
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            res.json(user);
+            if (user)
+            {
+                res.json({
+                    userdata: user,
+                    user_stringified: JSON.stringify(user),
+                    success: true
+                });
+            } else {
+                res.json({
+                    userdata: undefined,
+                    user_stringified: "Sorry, no string",
+                    success: false
+                });
+            }
             console.log("User authenticated successfully!>"+JSON.stringify(user)+"<");
         })(req, res, next);
     });

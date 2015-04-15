@@ -27,16 +27,17 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
-        console.log("Calling findOne");//This never gets executed
+        console.warn("Calling findOne");//This actually gets executed
+
         User.findOne({ 'local.email' :  email }, function(err, user) {
             if (err)
                 return done(err);
 
-            // TODO: fix this lines -> we don't use these req.flash. Have to handle by ourselves
-            console.log("!user: "+ !user);
+            console.warn("!user: "+ !user);
+            console.warn(JSON.stringify(user));
             if (!user)
             {
-                console.log("Bad user");
+                console.warn("Bad user");
                 return done(null, false, console.log('loginMessage: No user found.'));
             }
 
@@ -46,7 +47,6 @@ module.exports = function(passport) {
 
             return done(null, user);
         });
-        return done(null,false);
     }));
 
     // -- Sign up
