@@ -3,21 +3,44 @@ var Hall     = require('../models/halls');
 var User     = require('../models/user');
 var passport = require('passport');
 
+function getTodos(res){
+	Todo.find(function(err, todos) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(todos); // return all todos in JSON format
+		});
+};
+
+function getHalls(res){
+	Hall.find(function(err, halls) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(halls); // return all todos in JSON format
+		});
+};
+
+
 module.exports = function (app) {
 
     // auth:
 
     app.post('/auth/signup', function(req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
-            //res.json(user); // returns json even without these lines (?)
+            res.json(user); // returns json even without these lines (?)
         })(req, res, next);
     });
 
     app.post('/auth/login', function(req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            if (info) console.log(info); // TODO: pass this to service. How ?
-            return user ? res.json(user) : false;
+            res.json(user);
+            console.log("User authenticated successfully!>"+JSON.stringify(user)+"<");
         })(req, res, next);
     });
 
