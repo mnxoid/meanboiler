@@ -1,7 +1,6 @@
 'use strict';
 
 function NotFoundCtrl ($scope,$rootScope,$location) {
-  $rootScope.active = 6;
   $scope.pageClass = 'page-404';
   $scope.home = function() {
     $location.path('/');

@@ -60,12 +60,6 @@
                 })
         })
         .run(function ($rootScope) {
-
-            $rootScope.sel = function (a) {
-                if ($rootScope.active === a) {
-                    return "active";
-                }
-            };
             $rootScope.$on('$routeChangeStart', function (event, next, current) {
                 //TODO: add logic to handle protected routes
             });

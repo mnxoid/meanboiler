@@ -1,5 +1,5 @@
 var LocalStrategy      = require('passport-local').Strategy;
-//var FacebookStrategy   = require('passport-facebook').Strategy;
+var FacebookStrategy   = require('passport-facebook').Strategy;
 //var VKontakteStrategy  = require('passport-vkontakte').Strategy;
 var User               = require('../models/user');
 var configAuth         = require('./auth');
@@ -21,9 +21,10 @@ module.exports = function(passport) {
     // -- Log in
 
     passport.use('local-login', new LocalStrategy({
+        // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
         passwordField : 'password',
-        passReqToCallback : true
+        passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
 
@@ -31,12 +32,16 @@ module.exports = function(passport) {
             if (err)
                 return done(err);
 
+            // TODO: fix this lines -> we don't use these req.flash. Have to handle by ourselves
+/*
             if (!user)
-                return done(null, false,  'No user found.');
+                return done(null, false, req.flash('loginMessage', 'No user found.'));
+*/
 
+/*
             if (!user.validPassword(password))
-                return done(null, false, 'Oops! Wrong password.');
-
+                return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
+*/
             return done(null, user);
         });
 
@@ -58,8 +63,7 @@ module.exports = function(passport) {
                         return done(err);
 
                     if (user) {
-                        return done(null, false, true);
-
+                        return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
                     } else {
 
                         var newUser = new User();
