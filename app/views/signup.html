@@ -1,17 +1,22 @@
 <div class="mx-auto" style="width:60%;">
-    <form ng-submit="signup()">
+    <form name="signUpForm" ng-submit="signup(signUpForm.$valid)" novalidate>
 
-        <div class="form-group">
-            <label for=""> Email</label>
-            <input type="text" type="email" class="form-control" ng-model="credentials.email"/>
+        <div class="form-group" ng-class="{ 'has-error' : signUpForm.email.$invalid && !signUpForm.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="credentials.email" ng-minlength="5" required />
+            <!-- validation info messages -->
+            <p ng-show="(signUpForm.email.$invalid && !signUpForm.email.$pristine)" class="help-block">You email is required.</p>
+            <p ng-show="signUpForm.username.$error.minlength" class="help-block">Username is too short.</p>
+            <!-- validation messages end -->
         </div>
 
-        <div class="form-group">
-            <label for="">Password</label>
-            <input type="text" type="password" class="form-control" ng-model="credentials.password"/>
+        <div class="form-group" ng-class="{ 'has-error' : signUpForm.name.$invalid && !signUpForm.name.$pristine }">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="credentials.password"/>
+
         </div>
 
-        <button class="btn btn-default">Sign up</button>
+        <button class="btn btn-default" ng-disabled="signUpForm.$invalid">Sign up</button>
     </form>
 
 </div>

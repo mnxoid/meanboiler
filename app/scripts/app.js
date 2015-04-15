@@ -30,7 +30,11 @@
                     controller: 'TodoCtrl',
                     resolve: {
                         halls: function ($hall) {
-                            return $hall.get();
+                            return $hall
+                                      .get()
+                                      .error(function(e) {
+                                        throw e;
+                                      });
                         }
                     }
 
