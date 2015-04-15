@@ -50,11 +50,10 @@
 
               <li ng-if="!loggedIn"><a ng-href="/#/login"><i class="fa fa-unlock-alt"></i> Log in</a></li>
               <li ng-if="!loggedIn"><a ng-href="/#/signup"><i class="fa fa-pencil"></i> Sign up</a></li>
-              <!--
 
-              <li ng-if="loggedIn">Hello, <a href="#" tooltip-html-unsafe="{{}}">John Doe</a></li>
-              <li ng-if="loggedIn">Log out</li>
-            -->
+
+              <li ng-if="loggedIn">Hello, {{user.local.email}} <a href="#" tooltip-html-unsafe="{{}}">John Doe</a></li>
+              <li ng-if="loggedIn"><a href="/auth/logout/">Log out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
 
