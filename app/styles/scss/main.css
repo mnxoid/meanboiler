@@ -394,5 +394,34 @@ svg path {
 }
 /* ng specific classes */
 /* really specific css rules applied by angular */
+.show-notification {
+  border-radius: 0.33em;
+  padding: 1em;
+  background-color: #c12e2a;
+  color: #fff;
+  -webkit-animation-name: thumb;
+  -webkit-animation-duration: 200ms;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes thumb {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+.backbutton img:hover {
+  -webkit-animation-name: thumb;
+  -webkit-animation-duration: 200ms;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-timing-function: linear;
+}
 
 /*# sourceMappingURL=main.css.map */

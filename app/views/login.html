@@ -1,18 +1,18 @@
 <div class="mx-auto" style="width:60%;">
     <form ng-submit="login()" novalidate>
 
-        <p ng-class="" ng-show="login_info">
+        <p ng-class="{'show-notification': login_info}" ng-show="login_info">
             {{login_info}}
         </p>
 
         <div class="form-group">
             <label for=""> Email</label>
-            <input type="text" type="email" class="form-control" ng-model="credentials.email" />
+            <input type="text" type="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" />
         </div>
 
         <div class="form-group">
             <label for="">Password</label>
-            <input type="password" type="password" class="form-control" ng-model="credentials.password" />
+            <input type="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
         </div>
 
         <button class="btn btn-default">Log in</button>

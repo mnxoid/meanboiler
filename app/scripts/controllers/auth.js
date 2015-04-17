@@ -8,6 +8,10 @@ function AuthCtrl ($scope, $auth) {
 
     $scope.login_info = null;
 
+    $scope.clear_info = function() {
+        $scope.login_info = null;
+    };
+
     $scope.login = function() {
         $auth
             .login($scope.credentials)
