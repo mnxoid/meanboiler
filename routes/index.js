@@ -2,6 +2,8 @@ var Todo     = require('../models/todo');
 var Hall     = require('../models/halls');
 var User     = require('../models/user');
 var passport = require('passport');
+var jwt      = require('jsonwebtoken');
+var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 
 
 function getTodos(res){
@@ -43,11 +45,13 @@ module.exports = function (app) {
             if (err) { return next(err); }
 
             if (user) {
+            	//console.log(JSON.stringify(jwt));
+				var tok = jwt.sign({ username: user.local.email}, tokenSecret, false);
                 res.json({
                     userdata: user,
                     user_stringified: JSON.stringify(user),
                     success: true,
-                    token: undefined
+                    token: tok
                 });
             } else {
                 res.json(401, {

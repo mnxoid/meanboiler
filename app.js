@@ -8,7 +8,8 @@ var express       = require('express'),
     session        = require('express-session'),
     passport       = require('passport'),
     flash          = require('connect-flash'),
-    configDB       = require('./config/database.js');
+    configDB       = require('./config/database.js'),
+    jwt            = require('jsonwebtoken');
 
 
 mongoose.connect(configDB.url);

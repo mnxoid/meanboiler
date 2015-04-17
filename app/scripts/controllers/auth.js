@@ -12,10 +12,10 @@ function AuthCtrl ($scope, $auth) {
         $auth
             .login($scope.credentials)
             .success(function(res) {
-                //alert(1);
+                alert(1);
             })
             .error(function(e) {
-                //alert(2);
+                alert(2);
                 $scope.login_info = e.error;
             })
     };
