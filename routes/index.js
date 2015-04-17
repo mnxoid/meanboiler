@@ -46,18 +46,18 @@ module.exports = function (app) {
 
             if (user) {
             	//console.log(JSON.stringify(jwt));
-				var tok = jwt.sign({ username: user.local.email}, tokenSecret, false);
+				var token = jwt.sign({ username: user.local.email}, tokenSecret, false);
                 res.json({
-                    userdata: user,
+                    user: user,
                     user_stringified: JSON.stringify(user),
                     success: true,
-                    token: tok
+                    token: token
                 });
             } else {
                 res.json(401, {
                     error: info.errmsg,
                     success: false,
-                    userdata: undefined
+                    user: undefined
                 });
 
             }
