@@ -49,7 +49,6 @@ module.exports = function (app) {
 				var token = jwt.sign({ username: user.local.email}, tokenSecret, false);
                 res.json({
                     user: user,
-                    user_stringified: JSON.stringify(user),
                     success: true,
                     token: token
                 });
