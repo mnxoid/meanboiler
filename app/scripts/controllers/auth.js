@@ -6,8 +6,18 @@ function AuthCtrl ($scope, $auth) {
         password: ''
     };
 
+    $scope.login_info = null;
+
     $scope.login = function() {
-        $auth.login($scope.credentials);
+        $auth
+            .login($scope.credentials)
+            .success(function(res) {
+                //alert(1);
+            })
+            .error(function(e) {
+                //alert(2);
+                $scope.login_info = e.error;
+            })
     };
 
     $scope.signup = function() {

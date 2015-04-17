@@ -41,6 +41,7 @@ module.exports = function (app) {
         //console.log(JSON.stringify(req));
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
+
             if (user) {
                 res.json({
                     userdata: user,
@@ -49,11 +50,12 @@ module.exports = function (app) {
                     token: undefined
                 });
             } else {
-                res.json({
-                    userdata: undefined,
-                    user_stringified: (info.errmsg ? info.errmsg : "Sorry, no string"),
-                    success: false
+                res.json(401, {
+                    error: info.errmsg,
+                    success: false,
+                    userdata: undefined
                 });
+
             }
             console.log("User authenticated successfully!>"+JSON.stringify(user)+"<");
             //console.log(info);

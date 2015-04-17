@@ -45,13 +45,12 @@ angular
                         user = $rootScope.user = data;
                         $rootScope.loggedIn = true;
 
-                        console.log(user);
                         $location.path('/');
                         cacheSession(data);
 
                     })
                     .error(function(e) {
-                        throw e;
+                       console.log(e.error);
                     });
                 return login;
             },
