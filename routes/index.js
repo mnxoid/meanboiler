@@ -15,18 +15,18 @@ function getTodos(res){
 
 			res.json(todos); // return all todos in JSON format
 		});
-};
+}
 
 function getHalls(res){
 	Hall.find(function(err, halls) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
-				res.send(err)
+				res.send(err);
 
 			res.json(halls); // return all todos in JSON format
 		});
-};
+}
 
 
 module.exports = function (app) {
