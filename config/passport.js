@@ -27,14 +27,14 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
-        console.warn("Calling findOne");//This actually gets executed
+        //console.warn("Calling findOne");//This actually gets executed
 
         User.findOne({ 'local.email' :  email }, function(err, user) {
             if (err)
                 return done(err);
 
-            console.warn("!user: "+ !user);
-            console.warn(JSON.stringify(user));
+            //console.warn("!user: "+ !user);
+            //console.warn(JSON.stringify(user));
             if (!user)
             {
                 console.warn("Bad user");

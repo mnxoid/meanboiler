@@ -3,6 +3,7 @@ var Hall     = require('../models/halls');
 var User     = require('../models/user');
 var passport = require('passport');
 
+
 function getTodos(res){
 	Todo.find(function(err, todos) {
 
@@ -40,12 +41,12 @@ module.exports = function (app) {
         //console.log(JSON.stringify(req));
         passport.authenticate('local-login', function (err, user, info) {
             if (err) { return next(err); }
-            if (user)
-            {
+            if (user) {
                 res.json({
                     userdata: user,
                     user_stringified: JSON.stringify(user),
-                    success: true
+                    success: true,
+                    token: undefined
                 });
             } else {
                 res.json({

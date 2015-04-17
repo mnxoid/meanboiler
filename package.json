@@ -12,16 +12,16 @@
     "express": "3.4.0",
     "ejs": "*",
     "mongoose": "~4.0.0",
-    "morgan"     : "~1.2.2",
+    "morgan": "~1.2.2",
     "body-parser": "~1.5.2",
     "method-override": "~2.1.2",
-    "passport" : "~0.1.17",
-    "passport-local" : "~0.1.6",
-    "passport-facebook" : "~1.0.2",
-    "passport-google-oauth" : "~0.1.5",
-    "bcrypt-nodejs" : "latest",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "bcrypt-nodejs": "latest",
     "express-session": "~1.0.0",
-    "connect-flash" : "~0.1.1"
+    "connect-flash": "~0.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -48,7 +48,7 @@
     "grunt-ngmin": "~0.0.2",
     "grunt-express": "~1.2.1",
     "time-grunt": "~0.1.1",
-    "grunt-contrib-sass": "~0.9.2"
-
+    "grunt-contrib-sass": "~0.9.2",
+    "jsonwebtoken": "~5.0.0"
   }
 }
