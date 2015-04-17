@@ -1,21 +1,25 @@
 <div class="mx-auto" style="width:60%;">
-    <form ng-submit="login()" novalidate>
+    <form name="logInForm" ng-submit="login(logInForm.$valid)" novalidate>
 
         <p ng-class="{'show-notification': login_info}" ng-show="login_info">
             {{login_info}}
         </p>
 
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : logInForm.email.$invalid && !logInForm.email.$pristine }">
             <label for=""> Email</label>
-            <input type="text" type="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" />
+            <input type="text" type="email" name="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" ng-minlength="3" required />
+            <!-- validation info messages -->
+            <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" class="help-block">You email is required.</p>
+            <p ng-show="logInForm.username.$error.minlength" class="help-block">Email is too short.</p>
+            <!-- validation messages end -->
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : logInForm.password.$invalid && !logInForm.password.$pristine }">
             <label for="">Password</label>
-            <input type="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
+            <input type="password" name="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
         </div>
 
-        <button class="btn btn-default">Log in</button>
+        <button class="btn btn-default" ng-disabled="logInForm.$invalid">Log in</button>
     </form>
 
 </div>
