@@ -7,7 +7,6 @@ angular
 
         var cacheSession = function(data) {
             $session.set('authenticated', data.success);
-            //$session.set('user', JSON.stringify(data)); // very vulnerable
             $session.set('token', data.token);
             $session.set('username', data.user.local.email);
         };
@@ -20,6 +19,7 @@ angular
 
         var user            = null;
         $rootScope.user     = null;
+        var loggedIn        = false;
         $rootScope.loggedIn = false;
 
         return {
@@ -43,8 +43,6 @@ angular
                         if (!data) { console.log("log in fail"); return; }
 
                         user = $rootScope.user = data;
-                        $rootScope.loggedIn = true;
-
                         $location.path('/');
                         cacheSession(data);
 
@@ -58,7 +56,10 @@ angular
             logout: function() {
                 var logout = $http.get('/auth/logout');
                 logout
-                    .success(uncacheSession);
+                    .success(function(res) {
+                        uncacheSession();
+                        $rootScope.loggedIn = false;
+                    });
                 return logout;
             },
 
@@ -67,7 +68,7 @@ angular
             },
 
             check: function() {
-                return $session.get('authenticated');
+                return loggedIn;
             }
         }
     }]);

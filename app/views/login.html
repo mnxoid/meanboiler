@@ -1,47 +1,27 @@
-<div class="mx-auto" style="width:60%;">
-    <form name="logInForm" ng-submit="login(logInForm.$valid)" novalidate>
+<div class="mx-auto" style="width:30%;">
+    <form name="logInForm" ng-submit="login()" novalidate>
 
+        <!-- flash message from the server -->
         <p ng-class="{'show-notification': login_info}" ng-show="login_info">
             {{login_info}}
         </p>
+        <!-- /end -->
 
-        <div class="form-group" ng-class="{ 'has-error' : logInForm.email.$invalid && !logInForm.email.$pristine }">
+        <div class="form-group" ng-class="">
             <label> Email</label>
-            <input type="text" type="email" name="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" ng-minlength="3" required />
+            <input type="text" style="outline:none;border:1px solid #67c3af;border-radius: 3px; background-color: transparent;" type="email" name="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" ng-minlength="3" required />
             <!-- validation info messages -->
-            <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" class="help-block">You email is required.</p>
-            <p ng-show="logInForm.username.$error.minlength" class="help-block">Email is too short.</p>
+            <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="margin-top: 1em;padding:0.2em;" class="alert alert-danger">You valid email is required.</p>
+            <!--<p ng-show="logInForm.email.$error.minlength" class="alert alert-danger">Email is too short.</p>-->
             <!-- validation messages end -->
         </div>
 
-        <div class="form-group" ng-class="{ 'has-error' : logInForm.password.$invalid && !logInForm.password.$pristine }">
+        <div class="form-group" ng-class="">
             <label>Password</label>
-            <input type="password" name="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
+            <input type="password" style="outline:none;border:1px solid #67c3af;border-radius: 3px; background-color: transparent;" name="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
         </div>
 
         <button class="btn btn-default" ng-disabled="logInForm.$invalid">Log in</button>
     </form>
-
-    <section class="" style="margin: 2em;">
-        <h2>Ruri</h2>
-				<span class="input input--ruri">
-					<input class="input__field input__field--ruri" type="text" id="input-26" />
-					<label class="input__label input__label--ruri" for="input-26">
-                        <span class="input__label-content input__label-content--ruri">Username</span>
-                    </label>
-				</span>
-				<span class="input input--ruri">
-					<input class="input__field input__field--ruri" type="text" id="input-27" />
-					<label class="input__label input__label--ruri" for="input-27">
-                        <span class="input__label-content input__label-content--ruri">Website</span>
-                    </label>
-				</span>
-				<span class="input input--ruri">
-					<input class="input__field input__field--ruri" type="text" id="input-28" />
-					<label class="input__label input__label--ruri" for="input-28">
-                        <span class="input__label-content input__label-content--ruri">Invitation Code</span>
-                    </label>
-				</span>
-    </section>
 
 </div>

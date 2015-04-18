@@ -13,6 +13,14 @@ function AuthCtrl ($scope, $auth) {
     };
 
     $scope.login = function() {
+
+        //console.log($scope.credentials);
+
+        if (!$scope.credentials.email || !$scope.credentials.password) {
+            console.log('You think you\'re smart?');
+            return;
+        }
+
         $auth
             .login($scope.credentials)
             .success(function(res) {
