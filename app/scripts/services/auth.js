@@ -11,11 +11,13 @@ angular
             $session.set('authenticated', data.success);
             //$session.set('user', JSON.stringify(data)); // very vulnerable
             $session.set('token', data.token);
+            $session.set('username', data.user.local.email);
         };
 
         var uncacheSession = function() {
             $session.unset('authenticated');
             $session.unset('token');
+            $session.unset('username');
         };
 
         var user            = null;

@@ -1,12 +1,11 @@
 'use strict';
 
-function NavCtrl ($scope, $auth) {
+function NavCtrl ($scope, $session) {
     $scope.getUserName = function() {
-        //console.log($auth.user())
-        return $auth.user().user.local.email;
+        return $session.get('username');
     };
 }
 
 angular
     .module('RHalls')
-    .controller('NavCtrl', ['$scope', '$auth', NavCtrl]);
+    .controller('NavCtrl', ['$scope', '$session', NavCtrl]);
