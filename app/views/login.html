@@ -6,7 +6,7 @@
         </p>
 
         <div class="form-group" ng-class="{ 'has-error' : logInForm.email.$invalid && !logInForm.email.$pristine }">
-            <label for=""> Email</label>
+            <label> Email</label>
             <input type="text" type="email" name="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" ng-minlength="3" required />
             <!-- validation info messages -->
             <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" class="help-block">You email is required.</p>
@@ -15,11 +15,33 @@
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : logInForm.password.$invalid && !logInForm.password.$pristine }">
-            <label for="">Password</label>
+            <label>Password</label>
             <input type="password" name="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
         </div>
 
         <button class="btn btn-default" ng-disabled="logInForm.$invalid">Log in</button>
     </form>
+
+    <section class="" style="margin: 2em;">
+        <h2>Ruri</h2>
+				<span class="input input--ruri">
+					<input class="input__field input__field--ruri" type="text" id="input-26" />
+					<label class="input__label input__label--ruri" for="input-26">
+                        <span class="input__label-content input__label-content--ruri">Username</span>
+                    </label>
+				</span>
+				<span class="input input--ruri">
+					<input class="input__field input__field--ruri" type="text" id="input-27" />
+					<label class="input__label input__label--ruri" for="input-27">
+                        <span class="input__label-content input__label-content--ruri">Website</span>
+                    </label>
+				</span>
+				<span class="input input--ruri">
+					<input class="input__field input__field--ruri" type="text" id="input-28" />
+					<label class="input__label input__label--ruri" for="input-28">
+                        <span class="input__label-content input__label-content--ruri">Invitation Code</span>
+                    </label>
+				</span>
+    </section>
 
 </div>

@@ -5,8 +5,6 @@ angular
     .factory('$auth', ['$http', '$session', '$location', '$rootScope',
                         function($http, $session, $location, $rootScope) {
 
-        // TODO: add tokens, not just 'authenticated' string! security risk - over 100 out of 100.
-
         var cacheSession = function(data) {
             $session.set('authenticated', data.success);
             $session.set('user', JSON.stringify(data)); // very vulnerable
