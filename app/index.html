@@ -18,7 +18,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="RHalls">
-    <header>
+    <header ng-controller="NavCtrl">
       <nav class="navbar navbar-default mx-auto">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -52,7 +52,7 @@
               <li ng-if="!loggedIn"><a ng-href="/#/signup"><i class="fa fa-pencil"></i> Sign up</a></li>
 
 
-              <li ng-if="loggedIn">Hello, {{user.local.email}} <a href="#" tooltip-html-unsafe="{{}}">John Doe</a></li>
+              <li ng-if="loggedIn">Hello, <a href="#" tooltip-html-unsafe="{{}}">{{getUserName()}}</a></li>
               <li ng-if="loggedIn"><a href="/auth/logout/">Log out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -93,6 +93,7 @@
     <script src="scripts/controllers/test.js"></script>
     <script src="scripts/controllers/notFound.js"></script>
     <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
     <!-- endbuild -->
   </body>
 </html>

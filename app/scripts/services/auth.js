@@ -7,7 +7,7 @@ angular
 
         var cacheSession = function(data) {
             $session.set('authenticated', data.success);
-            $session.set('user', JSON.stringify(data)); // very vulnerable
+            //$session.set('user', JSON.stringify(data)); // very vulnerable
             $session.set('token', data.token);
         };
 
