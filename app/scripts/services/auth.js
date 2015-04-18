@@ -8,14 +8,14 @@ angular
         // TODO: add tokens, not just 'authenticated' string! security risk - over 100 out of 100.
 
         var cacheSession = function(data) {
-            $session.set('authenticated', true);
+            $session.set('authenticated', data.success);
             $session.set('user', JSON.stringify(data)); // very vulnerable
-            // $session.set('token', token);
+            $session.set('token', data.token);
         };
 
         var uncacheSession = function() {
             $session.unset('authenticated');
-            // $session.unset('token');
+            $session.unset('token');
         };
 
         var user            = null;
