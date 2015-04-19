@@ -17,7 +17,8 @@
                 .state('login', {
                     url: '/login',
                     templateUrl: 'views/login.html',
-                    controller: 'AuthCtrl'
+                    controller: 'AuthCtrl',
+                    //resolve
                 })
                 .state('signup', {
                     url: '/signup',

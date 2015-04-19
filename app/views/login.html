@@ -10,7 +10,7 @@
 
             <label for="input-email" style="font-size: 1.67em;">Email</label>
             <input id="input-email"
-                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid #b0b0b0;/*border:1px solid #67c3af;*/border-radius:0; background-color: transparent;"
+                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid rgb(210, 215, 211);/*border:1px solid #67c3af;*/border-radius:0; background-color: transparent;"
                    type="email"
                    name="email"
                    class="form-control"
@@ -21,10 +21,9 @@
                    required />
 
             <!-- Show 'OK' icon if email is valid -->
-            <span ng-show="logInForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-            <!--<span ng-show="logInForm.email.$valid" id="inputSuccess2Status" class="sr-only">(success)</span>-->
+            <span ng-show="logInForm.email.$valid" style="color:rgb(38, 194, 129);" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
             <!-- Show 'X' icon if email isn't valid -->
-            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="color:rgb(242, 120, 75);" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 
             <!-- validation info messages TODO: decide if there is real need in these alert, now that we have inline validation icons-->
             <!--
@@ -38,7 +37,7 @@
             <label for="input-pass" style="font-size: 1.67em;">Password</label>
             <input id="input-pass"
                    type="password"
-                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid #b0b0b0;/*border:1px solid #67c3af;*/border-radius: 0; background-color: transparent;"
+                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid rgb(210, 215, 211);/*border:1px solid #67c3af;*/border-radius: 0; background-color: transparent;"
                    name="password"
                    class="form-control"
                    ng-change="clear_err_msg()"
@@ -46,7 +45,7 @@
         </div>
 
 
-        <button class="btn btn-default" ng-disabled="logInForm.$invalid">Log in</button>
+        <button class="btn btn-primary" ng-disabled="logInForm.$invalid" style="width:100%;margin-top:1.5em;font-size:1.5em;">Log in</button>
     </form>
 
 </div>
