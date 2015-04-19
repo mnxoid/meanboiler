@@ -1,4 +1,4 @@
-<div class="mx-auto" style="position:absolute;width:100%;margin:0;left:0;top:0">
+<div class="mx-auto" style="position:absolute;width:100%;margin:0px;left:0px;top:0px">
   <carousel interval="myInterval">
     <slide ng-repeat="slide in slides" active="slide.active">
       <img ng-src="{{slide.image}}" class="img-responsive" >
@@ -9,29 +9,34 @@
     </carousel>
   </div>
 
-  <div class="row mx-auto" style="margin-top: 30%;width:80%">
-    <div class="col-md-4">
-      <div class="mx-auto" csvg src="fonts/svg/buildings-2.svg" style="height:100px;width:100px;"></div>
-      <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/HOME.svg" /> -->
-      <p class="txtblock">We <strong>help rent</strong> a place for an event.</p>
+  <div class="row mx-auto row-main" style="margin-top: 21%;margin-bottom: 1em;">
+      <div class="mx-auto" style="width:80%;">
+          <div class="col-md-4">
+              <csvg src="icons/buildings-2.svg" class="mx-auto"  style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
+              <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/HOME.svg" /> -->
+              <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Assistance</p>
+              <p class="txtblock">We <strong>help <em>you</em> rent </strong> a place for an event.</p>
+          </div>
+          <div class="col-md-4">
+              <csvg src="icons/checklist.svg" class="mx-auto" style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
+              <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/MAGNET.svg" /> -->
+              <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Convenience</p>
+              <p class="txtblock">You can get the needed info as fast as possible, without googling, because all the relevant <strong>data is already gathered.</strong></p>
+          </div>
+          <div class="col-md-4">
+              <csvg src="icons/check.svg" class="mx-auto" style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
+              <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/MAGNIFYING GLASS.svg" /> -->
+              <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Perfection</p>
+              <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
+      </div>
+
     </div>
-    <div class="col-md-4">
-      <div class="mx-auto" csvg src="fonts/svg/checklist.svg" style="height:100px;width:100px;"></div>
-      <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/MAGNET.svg" /> -->
-      <p class="txtblock">You can get the needed info as fast as possible, without googling, because this is the place where all the relevant <strong>data is gathered.</strong></p>
-    </div>
-    <div class="col-md-4">
-      <div class="mx-auto" csvg src="fonts/svg/check.svg" style="height:100px;width:100px;"></div>
-      <!-- <img class="mx-auto" style="height:100px;width:100px;" src="fonts/svg/MAGNIFYING GLASS.svg" /> -->
-      <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
-    </div>
+
 
   </div>
-
-  <div class="mx-auto" style="text-align:center">
-    <a ng-href="/#/search" class="btn-custom btn-lg" style="">Get Started</a>
-  </div>
-
+<div class="mx-auto" style="text-align:center">
+    <a ng-href="/#/search" class="btn-primary btn-lg" style="">Get Started</a>
+</div>
 
 
 </div>
