@@ -57,12 +57,12 @@ header {
   width: 100%;//$main_width;
   text-align: justify;
   &:first-child {
-    margin-left: 0px;
-    padding-left: 0px;
+    margin-left: 0;
+    padding-left: 0;
   }
   &:last-child {
-    margin-right: 0px;
-    padding-right: 0px;
+    margin-right: 0;
+    padding-right: 0;
   }
 }
 
@@ -142,7 +142,7 @@ p > button {
 .txtblock {
   font-size: 1.2em;
   font-weight: 300;
-  font-family: RalewayR;
+  font-family: RalewayR, sans-serif;
   text-align: center;
   margin-top: 1em;
 }
@@ -254,3 +254,10 @@ svg {
     100% { -webkit-transform: scale(1); }
 }
 
+input.form-control {
+    box-shadow: none;
+}
+.form-control:focus{
+    border-color: none;
+    box-shadow: none;
+}
