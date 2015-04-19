@@ -1,13 +1,15 @@
 'use strict';
 
 function NavCtrl ($scope, $auth, $session) {
-    $scope.loggedIn = $session.get('authenticated');
+    $scope.loggedIn = function() {
+        return $session.get('authenticated');
+    };
     $scope.getUserName = function() {
         return $session.get('username');
     };
     $scope.logout = function() {
         $auth.logout();
-    }
+    };
 }
 
 angular

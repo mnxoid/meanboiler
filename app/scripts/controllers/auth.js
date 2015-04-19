@@ -1,6 +1,6 @@
 'use strict';
 
-function AuthCtrl ($scope, $auth) {
+function AuthCtrl ($scope, $session, $auth) {
     $scope.credentials = {
         email: '',
         password: ''
@@ -27,7 +27,9 @@ function AuthCtrl ($scope, $auth) {
             })
             .error(function(e) {
                 $scope.login_info = e.error;
-            })
+            });
+        $scope.loggedIn = $session.get('authenticated');
+
     };
 
     $scope.signup = function() {
@@ -37,4 +39,4 @@ function AuthCtrl ($scope, $auth) {
 
 angular
     .module('RHalls')
-    .controller('AuthCtrl', ['$scope', '$auth', AuthCtrl]);
+    .controller('AuthCtrl', ['$scope', '$session', '$auth', AuthCtrl]);
