@@ -1,25 +1,50 @@
 <div class="mx-auto" style="width:30%;">
-    <form name="logInForm" ng-submit="login()" novalidate>
+    <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:25%" novalidate>
 
         <!-- flash message from the server -->
-        <p ng-class="{'show-notification': login_info}" ng-show="login_info">
-            {{login_info}}
+        <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport">
+            <span ng-bind="err_msg_passport"></span>
         </p>
-        <!-- /end -->
 
-        <div class="form-group" ng-class="">
-            <label> Email</label>
-            <input type="text" style="outline:none;border:1px solid #67c3af;border-radius: 3px; background-color: transparent;" type="email" name="email" class="form-control" ng-change="clear_info()" ng-model="credentials.email" ng-minlength="3" required />
-            <!-- validation info messages -->
+        <div class="form-group" ng-class="{'has-feedback': logInForm.email.$valid, ' has-feedback': logInForm.email.$invalid}">
+
+            <label for="input-email" style="font-size: 1.67em;">Email</label>
+            <input id="input-email"
+                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid #b0b0b0;/*border:1px solid #67c3af;*/border-radius:0; background-color: transparent;"
+                   type="email"
+                   name="email"
+                   class="form-control"
+                   ng-change="clear_err_msg()"
+                   ng-model="credentials.email"
+                   ng-minlength="5"
+                   ng-pattern="/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/"
+                   required />
+
+            <!-- Show 'OK' icon if email is valid -->
+            <span ng-show="logInForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <!--<span ng-show="logInForm.email.$valid" id="inputSuccess2Status" class="sr-only">(success)</span>-->
+            <!-- Show 'X' icon if email isn't valid -->
+            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+            <!-- validation info messages TODO: decide if there is real need in these alert, now that we have inline validation icons-->
+            <!--
             <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="margin-top: 1em;padding:0.2em;" class="alert alert-danger">You valid email is required.</p>
+            -->
             <!--<p ng-show="logInForm.email.$error.minlength" class="alert alert-danger">Email is too short.</p>-->
             <!-- validation messages end -->
         </div>
 
         <div class="form-group" ng-class="">
-            <label>Password</label>
-            <input type="password" style="outline:none;border:1px solid #67c3af;border-radius: 3px; background-color: transparent;" name="password" type="password" class="form-control" ng-change="clear_info()" ng-model="credentials.password" />
+            <label for="input-pass" style="font-size: 1.67em;">Password</label>
+            <input id="input-pass"
+                   type="password"
+                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid #b0b0b0;/*border:1px solid #67c3af;*/border-radius: 0; background-color: transparent;"
+                   name="password"
+                   class="form-control"
+                   ng-change="clear_err_msg()"
+                   ng-model="credentials.password" />
         </div>
+
 
         <button class="btn btn-default" ng-disabled="logInForm.$invalid">Log in</button>
     </form>

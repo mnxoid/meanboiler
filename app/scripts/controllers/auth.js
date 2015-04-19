@@ -1,23 +1,22 @@
 'use strict';
 
 function AuthCtrl ($scope, $session, $auth) {
+
     $scope.credentials = {
         email: '',
         password: ''
     };
 
-    $scope.login_info = null;
+    $scope.err_msg_passport = null;
 
-    $scope.clear_info = function() {
-        $scope.login_info = null;
+    $scope.clear_err_msg = function() {
+        $scope.err_msg_passport = null;
     };
 
-    $scope.login = function() {
+    $scope.login = function(form) {
 
-        //console.log($scope.credentials);
-
-        if (!$scope.credentials.email || !$scope.credentials.password) {
-            console.log('You think you\'re smart?');
+        if (!form.$valid) {
+            console.log('You\'ve bypassed disabled button, huh?\n You shall not pass!');
             return;
         }
 
@@ -26,8 +25,9 @@ function AuthCtrl ($scope, $session, $auth) {
             .success(function(res) {
             })
             .error(function(e) {
-                $scope.login_info = e.error;
+                $scope.err_msg_passport = e.error;
             });
+
         $scope.loggedIn = $session.get('authenticated');
 
     };
