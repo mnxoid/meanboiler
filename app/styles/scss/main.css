@@ -1,7 +1,4 @@
 /* Fonts */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-@import "http://webfonts.ru/import/intro.css";
 @font-face {
   font-family: ProximaNova;
   src: url("../../fonts/Proxima Nova R.otf");
@@ -13,14 +10,6 @@
 @font-face {
   font-family: RalewayR;
   src: url("../../fonts/Raleway-Regular.ttf");
-}
-@font-face {
-  font-family: 'ProximaNova Bold';
-  src: url("../../fonts/Proxima Nova Bold.otf");
-}
-@font-face {
-  font-family: 'ProximaNova Black';
-  src: url("../../fonts/Proxima Nova Black.otf");
 }
 /* Font Colors */
 /* Font sizes */
@@ -105,10 +94,6 @@ body {
   font: 1.5em ProximaNova, RalewayR, sans-serif;
   color: #777;
   height: 100%;
-}
-
-b, strong {
-  font-weight: 400;
 }
 
 /*
