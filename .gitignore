@@ -5,4 +5,4 @@ dist/
 node_modules/
 *.log
 app/fonts/icons/
-*.map.css
+*.css.map
