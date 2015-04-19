@@ -35,10 +35,15 @@ $font-size-nav: 1.2em;
 $font-size-big: 2em;
 
 /* Colors */
-$grey-primary: #f8f8f8;;
+$grey-primary: #f8f8f8;
 $grey-secondary: #fff;
-$orange: #f9a251;
-
+$orange: rgb(242, 120, 75); // Crusta
+$orange-bright: rgb(248, 148, 6); // California
+$orange-secondary: rgb(235, 151, 78); // Jaffa
+$green: rgb(38, 194, 129); // jungle green
+$green-secondary: rgb(0, 177, 106); // Jade
+$green-alt: rgb(3, 166, 120); // Free speech aquamarine
+$grey: rgb(210, 215, 211);
 
 /* Sizing */
 $navbar_width: 80%;

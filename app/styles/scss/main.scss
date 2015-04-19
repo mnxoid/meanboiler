@@ -73,7 +73,7 @@ header {
   }
 }
 
-.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary, .open>.dropdown-toggle.btn-primary {
+.btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open>.dropdown-toggle.btn-custom {
   margin-top: 2em;
   border: 2px solid $orange;
   background-color: #fff;
@@ -85,6 +85,22 @@ header {
     color: #fff;
     text-decoration: none;
   }
+}
+
+.btn-primary {
+    background-color: $green;
+    color: #fff;
+    border: none;
+    padding:0.33em 1em;
+}
+
+.btn-primary:disabled {
+    background-color: lighten($green, 20%);
+    color: #fafafa;
+}
+
+.btn-primary:hover {
+    background-color: darken($green, 10%);
 }
 
 input[type='text'].form-control {
