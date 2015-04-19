@@ -1,5 +1,5 @@
 <div class="mx-auto" style="width:30%;">
-    <form name="logInForm" ng-submit="login()" style="margin-top:25%" novalidate>
+    <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:25%" novalidate>
 
         <!-- flash message from the server -->
         <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport">

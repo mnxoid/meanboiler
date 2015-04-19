@@ -13,10 +13,10 @@ function AuthCtrl ($scope, $session, $auth) {
         $scope.err_msg_passport = null;
     };
 
-    $scope.login = function() {
+    $scope.login = function(form) {
 
-        if (!$scope.credentials.email || !$scope.credentials.password) {
-            console.log('You think you\'re smart?');
+        if (!form.$valid) {
+            console.log('You\'ve bypassed disabled button, huh?\n You shall not pass!');
             return;
         }
 
