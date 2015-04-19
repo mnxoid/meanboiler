@@ -119,6 +119,10 @@ header {
 }
 
 */
+.carousel-indicators li {
+  visibility: hidden;
+}
+
 .grid {
   border: 1px dashed #fafafa;
   padding: 20px 20px 100px 20px;

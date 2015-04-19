@@ -45,7 +45,7 @@ header {
 //   margin-bottom: 2em;
 // }
 
-
+.carousel-indicators li { visibility: hidden; }
 
 
 @include previews(200px,75%);

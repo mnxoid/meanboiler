@@ -3,7 +3,7 @@
 function MainCtrl ($scope, $rootScope, $location) {
   $scope.pageClass = 'page-home';
   $scope.myInterval = 3000;
-  var a = Math.floor(( 3264/1280)*( window.innerHeight*0.5 ));
+  var a = Math.floor(( 3264/1280)*( window.innerHeight*0.6 ));
   $scope.slides = [
     {
       //image: 'http://lorempixel.com/1280/'+a+'/business/1'
