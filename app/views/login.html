@@ -10,10 +10,9 @@
 
             <label for="input-email" style="font-size: 1.67em;">Email</label>
             <input id="input-email"
-                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid rgb(210, 215, 211);/*border:1px solid #67c3af;*/border-radius:0; background-color: transparent;"
                    type="email"
                    name="email"
-                   class="form-control"
+                   class="form-control form-auth-custom"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.email"
                    ng-minlength="5"
@@ -37,9 +36,8 @@
             <label for="input-pass" style="font-size: 1.67em;">Password</label>
             <input id="input-pass"
                    type="password"
-                   style="outline:none;border:none;margin-top: 0.5em;font-size: 1.33em;border-bottom: 2px solid rgb(210, 215, 211);/*border:1px solid #67c3af;*/border-radius: 0; background-color: transparent;"
                    name="password"
-                   class="form-control"
+                   class="form-control form-auth-custom"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.password" />
         </div>
