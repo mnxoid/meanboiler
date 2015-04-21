@@ -261,20 +261,18 @@ header {
   padding-left: 0;
 }
 .row:last-child {
-  margin-right: 0;
   padding-right: 0;
 }
 
 .btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
-  margin-top: 2em;
-  border: 2px solid #f2784b;
+  border: none;
   background-color: #fff;
   color: #f2784b;
   text-decoration: none;
 }
 .btn-custom.active:hover, .btn-custom.focus:hover, .btn-custom:active:hover, .btn-custom:focus:hover, .btn-custom:hover, .open > .dropdown-toggle.btn-custom:hover {
   background-color: #f2784b;
-  border: 2px solid #fff;
+  border: none;
   color: #fff;
   text-decoration: none;
 }
@@ -498,5 +496,80 @@ input.form-control {
   border: none;
   box-shadow: none;
 }
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+/*
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}*/
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+
+section.module h2 {
+  margin-bottom: 40px;
+}
+
+section.module p {
+  margin-bottom: 40px;
+}
+
+section.module p:last-child {
+  margin-bottom: 0;
+}
+
+section.module.content {
+  padding: 40px 0;
+}
+
+section.module.parallax {
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+section.module.parallax-1 {
+  background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg");
+}
+
+/*
+section.module.parallax-2 {
+    background-image: url("../img/demo/_small/2.jpg");
+}
+section.module.parallax-3 {
+    background-image: url("../img/demo/_small/3.jpg");
+}
+
+@media all and (min-width: 600px) {
+    section.module h2 {
+        font-size: 42px;
+    }
+    section.module p {
+        font-size: 20px;
+    }
+    section.module.parallax h1 {
+        font-size: 96px;
+    }
+}
+@media all and (min-width: 960px) {
+    section.module.parallax h1 {
+        font-size: 160px;
+    }
+}
+*/
 
 /*# sourceMappingURL=main.css.map */
