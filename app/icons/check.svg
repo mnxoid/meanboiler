@@ -68,9 +68,9 @@
 </g>
 <g id="Free_Icons">
 	<g>
-		<polygon style="fill:none;stroke:#f9a251;stroke-linejoin:round;stroke-miterlimit:10;" points="22.5,18 12,23.5 1.5,18 1.5,6
+		<polygon style="fill:none;stroke:rgb(242, 120, 75);stroke-linejoin:round;stroke-miterlimit:10;" points="22.5,18 12,23.5 1.5,18 1.5,6
 			12,0.5 22.5,6 		"/>
-		<polyline style="fill:none;stroke:#f9a251;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="6.5,12
+		<polyline style="fill:none;stroke:rgb(242, 120, 75);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="6.5,12
 			10.5,16 18.5,8 		"/>
 	</g>
 </g>
