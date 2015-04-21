@@ -9,10 +9,8 @@
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-//html         { overflow:hidden; }
-
 body {
-  font: $font-size-reg $font-stack;
+  font: $font-size-reg 'Lato'; //$font-stack
   color: $font-color-primary;
   //overflow-y: hidden;
   height:100%;
@@ -64,7 +62,7 @@ header {
   width: 100%;//$main_width;
   text-align: justify;
   &:first-child {
-    margin-left: 0;
+   // margin-left: 0;
     padding-left: 0;
   }
   &:last-child {
@@ -111,6 +109,12 @@ header {
     border-bottom: 2px solid rgb(210, 215, 211);
     border-radius:0;
     background-color: transparent;
+}
+
+form {
+    label {
+        font-family: ProximaNova;
+    }
 }
 
 input[type='text'].form-control {
@@ -175,7 +179,7 @@ p > button {
 .txtblock {
   font-size: 1.2em;
   font-weight: 300;
-  font-family: RalewayR, sans-serif;
+//  font-family: 'Lato', sans-serif;
   text-align: center;
   margin-top: 1em;
 }
@@ -283,14 +287,45 @@ svg {
 
 @-webkit-keyframes thumb {
     0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(0.9); }
+    50% { -webkit-transform: scale(0.95); }
     100% { -webkit-transform: scale(1); }
+}
+
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+@keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
 }
 
 input.form-control {
     box-shadow: none;
 }
 .form-control:focus{
-    border-color: none;
+    border: none;
     box-shadow: none;
 }

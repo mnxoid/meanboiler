@@ -50,6 +50,7 @@ body .navbar-brand:hover {
 }
 
 .navbar-default .navbar-brand {
+  font-family: 'ProximaNova';
   font-size: 2em;
   font-weight: 700;
   color: #fff;
@@ -101,7 +102,7 @@ body .navbar-right > li:last-child > a:hover {
 }
 
 body {
-  font: 1.5em ProximaNova, RalewayR, sans-serif;
+  font: 1.5em "Lato";
   color: #777;
   height: 100%;
 }
@@ -257,7 +258,6 @@ header {
   text-align: justify;
 }
 .row:first-child {
-  margin-left: 0;
   padding-left: 0;
 }
 .row:last-child {
@@ -303,6 +303,10 @@ header {
   border-bottom: 2px solid #d2d7d3;
   border-radius: 0;
   background-color: transparent;
+}
+
+form label {
+  font-family: ProximaNova;
 }
 
 input[type='text'].form-control {
@@ -366,7 +370,6 @@ p > button {
 .txtblock {
   font-size: 1.2em;
   font-weight: 300;
-  font-family: RalewayR, sans-serif;
   text-align: center;
   margin-top: 1em;
 }
@@ -455,18 +458,44 @@ svg path {
     -webkit-transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(0.9);
+    -webkit-transform: scale(0.95);
   }
   100% {
     -webkit-transform: scale(1);
   }
 }
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
 input.form-control {
   box-shadow: none;
 }
 
 .form-control:focus {
-  border-color: none;
+  border: none;
   box-shadow: none;
 }
 

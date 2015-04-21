@@ -2,7 +2,7 @@
     <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:25%" novalidate>
 
         <!-- flash message from the server -->
-        <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport">
+        <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport" style="margin:1em;">
             <span ng-bind="err_msg_passport"></span>
         </p>
 

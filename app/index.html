@@ -49,15 +49,15 @@
               </li>
             </ul>
               -->
-              <ul class="nav navbar-nav navbar-right" ng-if="!loggedIn()">
+              <ul class="nav navbar-nav navbar-right" ng-if="!logged_in()">
                   <li><a ng-href="/#/login"><i class="fa fa-unlock-alt"></i> Log in</a></li>
                   <li><a ng-href="/#/signup"><i class="fa fa-pencil"></i> Sign up</a></li>
               </ul>
 
-             <ul class="nav navbar-nav navbar-right" ng-if="loggedIn()">
+             <ul class="nav navbar-nav navbar-right" ng-if="logged_in()">
                  <li>
                      <a>
-                         Hello, <span ng-bind="getUserName()"></span>
+                         Hello, <span ng-bind="get_username()"></span>
                     </a>
                  </li>
                  <li><a href="#" ng-click="logout()">Log out</a></li>
