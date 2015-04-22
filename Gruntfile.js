@@ -28,6 +28,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-ngdoc');
 
   grunt.initConfig({
     sass: {
@@ -281,6 +282,20 @@ module.exports = function (grunt) {
         }]
       }
     },
+
+      ngdoc: {
+          options: {
+              dest: 'docs',
+              scripts: ['app/bower_components/angular/angular.min.js'],
+              html5Mode: false,
+              startPage: '/docs',
+              title: 'Documentation'
+          },
+          api: {
+              src:  '<%= yeoman.dist %>/scripts/**/*.js',
+              title: 'API Documentation'
+          }
+      },
     uglify: {
       dist: {
         files: {
@@ -291,6 +306,10 @@ module.exports = function (grunt) {
       }
     }
   });
+
+    grunt.registerTask('docs', function(target) {
+       return grunt.task.run(['ngdoc']);
+    });
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
