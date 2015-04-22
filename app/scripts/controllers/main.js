@@ -29,7 +29,8 @@ function MainCtrl ($scope, $rootScope, $location) {
 
   $scope.getStarted = function() {
     $location.path('/search');
-  }
+  };
+  $scope.svgs='<csvg src="icons/buildings-2.svg" class="mx-auto"  style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>';
 }
 
 angular
