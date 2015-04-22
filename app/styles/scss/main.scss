@@ -136,13 +136,18 @@ p > button {
 .txtblock {
   font-size: 1.2em;
   font-weight: 300;
-//  font-family: 'Lato', sans-serif;
   text-align: center;
   margin-top: 1em;
 }
 
-.footer {
-  background-color: darken(#fff,60%);
+.col-md-4 {
+    -webkit-user-select: none;
+    cursor: default;
+    transition: 0.33s ease-in-out;
+}
+
+.col-md-4:hover {
+   transform: scale(1.1,1.1);
 }
 
 svg {
@@ -190,17 +195,6 @@ input.form-control {
     box-shadow: none;
 }
 
-/* ============================================================
-  PRIMARY STRUCTURE
-============================================================ */
-/*
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-}*/
-/* ============================================================
-  SECTIONS
-============================================================ */
 section.module:last-child {
     margin-bottom: 0;
 }
@@ -232,14 +226,15 @@ section.module.parallax h1 {
 section.module.parallax-1 {
     background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg");
 }
-/*
+
 section.module.parallax-2 {
-    background-image: url("../img/demo/_small/2.jpg");
+    //height: 300px;
+    background-image: url("http://media.tumblr.com/tumblr_mddrbbNjkm1rza399.jpg");
 }
+/*
 section.module.parallax-3 {
     background-image: url("../img/demo/_small/3.jpg");
 }
-
 @media all and (min-width: 600px) {
     section.module h2 {
         font-size: 42px;
