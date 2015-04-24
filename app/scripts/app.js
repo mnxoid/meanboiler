@@ -3,7 +3,7 @@
 
     var app;
     app = angular
-        .module('RHalls', ['ui.bootstrap', 'ui.router'])
+        .module('RHalls', ['ui.bootstrap', 'ui.router', 'angucomplete'])
         .config(function ($stateProvider, $urlRouterProvider) {
 
             $urlRouterProvider.otherwise('/404');

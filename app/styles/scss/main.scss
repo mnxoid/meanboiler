@@ -100,8 +100,11 @@ input[type='text'].form-control {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-}
 
+}
+input[type='text'].input-lg {
+    width: 100%;
+}
 
 p > button {
   display: inline-block;
@@ -175,6 +178,7 @@ svg {
 input.form-control {
     box-shadow: none;
 }
+
 .form-control:focus{
     border: none;
     box-shadow: none;

@@ -304,6 +304,10 @@ input[type='text'].form-control {
   box-shadow: none !important;
 }
 
+input[type='text'].input-lg {
+  width: 100%;
+}
+
 p > button {
   display: inline-block;
   margin-left: 1em;
