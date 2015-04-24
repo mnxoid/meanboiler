@@ -4,8 +4,8 @@
     var app;
     app = angular
         .module('RHalls', ['ui.bootstrap', 'ui.router', 'angucomplete'])
-        .config(function ($stateProvider, $urlRouterProvider) {
-
+        .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+            $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('/404');
 
             $stateProvider
