@@ -127,7 +127,6 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
             results = [];
-            console.log(JSON.stringify(hall));
             for (h in hall) results.push({name: hall[h]["name"]});
             res.json(results);
         });
