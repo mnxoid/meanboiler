@@ -20,7 +20,9 @@ body {
 b, strong {
     font-weight: 400;
 }
-
+.angucomplete-dropdown {
+  width: 100%;
+}
 
 @include previews(200px,75%);
 

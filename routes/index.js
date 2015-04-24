@@ -120,6 +120,19 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/api/halls/search/:q', function(req, res) {
+        Hall.find({
+            name: new RegExp(req.params.q, "i")
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            results = [];
+            console.log(JSON.stringify(hall));
+            for (h in hall) results.push({name: hall[h]["name"]});
+            res.json(results);
+        });
+    });
+
     app.get('/api/todos', function(req, res) {
         Todo.find(function(err, todos) {
             if (err)
