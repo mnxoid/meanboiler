@@ -102,20 +102,6 @@ input[type='text'].form-control {
   box-shadow: none !important;
 }
 
-/* slider */
-#slides_control > div{
-  height: 300px;
-}
-img{
-  margin:auto;
-}
-#slides_control {
-  position:absolute;
-  width: 400px;
-  left:50%;
-  top:20px;
-  margin-left:-200px;
-}
 
 p > button {
   display: inline-block;
@@ -223,7 +209,7 @@ section.module.parallax h1 {
     //text-transform: uppercase;
 }
 section.module.parallax-1 {
-    background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg");
+    background-image: url("http://www.abouttoblow.com/wp-content/uploads/blog-1.jpg"); //http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg
 }
 
 section.module.parallax-2 {

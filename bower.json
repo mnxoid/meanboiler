@@ -11,7 +11,8 @@
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
     "angular-ui-router": "~0.2.13",
-    "lodash": "~3.7.0"
+    "lodash": "~3.7.0",
+    "angucomplete": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0",
