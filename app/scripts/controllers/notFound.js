@@ -1,14 +1,6 @@
 'use strict';
 
-function NotFoundCtrl ($scope,$rootScope,$location) {
-  $scope.pageClass = 'page-404';
-  $scope.home = function() {
-    $location.path('/');
-  };
-  $scope.contact = function() {
-    $location.path('/contact');
-  };
-}
+function NotFoundCtrl ($scope,$rootScope,$location) {}
 
 angular
   .module('RHalls')

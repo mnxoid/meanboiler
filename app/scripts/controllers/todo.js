@@ -1,7 +1,6 @@
 'use strict';
 
 function TodoCtrl($state, $scope,$rootScope,$http, $hall, halls) {
-  $scope.pageClass = 'page-todo';
   $scope.formData = {};
   $scope.formDataHall = {};
   $scope.halls = halls.data;
