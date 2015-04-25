@@ -6,4 +6,4 @@ function TestCtrl ($scope, $rootScope) {
 
 angular
   .module('RHalls')
-  .controller('TestCtrl', TestCtrl);
+  .controller('TestCtrl', ["$scope","$rootScope", TestCtrl]);

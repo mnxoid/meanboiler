@@ -50,6 +50,7 @@
     "grunt-rev": "~0.1.0",
     "grunt-usemin": "~0.1.11",
     "matchdep": "~0.1.2",
-    "time-grunt": "~0.1.1"
+    "time-grunt": "~0.1.1",
+    "grunt-ng-annotate": "~0.10.0"
   }
 }

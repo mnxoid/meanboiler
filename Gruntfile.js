@@ -344,11 +344,11 @@ module.exports = function (grunt) {
     'concat',
     'copy',
     'cdnify',
-    'ngmin',
+    //'ngmin',
     'sass',
     'cssmin',
-    'uglify',
-    'rev',
+    //'uglify',
+    //'rev',
     'usemin'
   ]);
 
