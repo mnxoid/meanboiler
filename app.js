@@ -37,5 +37,5 @@ app.use(flash());
 require('./routes/index.js')(app, passport);
 
 
-app.listen(8080);
+app.listen(80);
 console.log("App listening on port 8080");
