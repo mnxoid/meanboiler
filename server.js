@@ -1,4 +1,4 @@
-var app = require('./app');
+var app = require('./dist');
 
 require('http')
 .createServer(app)
