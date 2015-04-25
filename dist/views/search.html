@@ -1,0 +1,88 @@
+<style type="text/css">
+.container {
+  /*background-color: #fff;*/
+  width: 80%; /* $navbar_width */
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: 2em;
+}
+</style>
+<div class="row" style="margin-left:0">
+  <div class="col-md-3 col-sm-2 sidebar" style="height:100%;padding:2em">
+      <h1>Search</h1>
+      <form>
+        <div class="form-group">
+          <label for="">Location</label>
+          <input type="text" class="form-control" id="" placeholder="">
+        </div>
+
+        <div class="form-group">
+          <label for="">Specify location</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Type</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Capacity</label>
+          <input type="text" class="form-control" id="" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="">Price</label>
+          <input type="text" class="form-control" id="" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-default" style="display:inline-block">Search</button>
+        <button type="submit" ng-click="" class="btn btn-default" style="display:inline-block">Clear</button>
+      </form>
+    </div>
+
+<div class="col-md-9 col-sm-10" style="height:100%;padding:1em">
+  <h2 style="font-weight:700">Featured</h2>
+  <!--
+  <ul style="list-style-type:none;padding:0;">
+    <li ng-repeat="feat in featured" style="display:inline-block;margin:0.75em;">
+      <div class="">
+        <img ng-src="{{feat}}" alt="" />
+      </div>
+    </li>
+  </ul>
+-->
+
+  <h2 style="font-weight:700">Results</h2>
+    <ul style="list-style-type:none;padding:0" class="grid cs-style-3">
+      <!--
+      <li ng-repeat="res in results" style="display:inline-block;margin:0.75em;">
+        <div class="">
+          <img ng-src="{{res}}" alt="" />
+        </div>
+      </li>
+    -->
+      <li ng-repeat="res in data">
+        <figure>
+          <img ng-src="{{res.pic}}" alt="img01">
+          <figcaption>
+            <h3>{{res.name}}</h3>
+            <span>{{res.location}}</span>
+            <a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+          </figcaption>
+        </figure>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
