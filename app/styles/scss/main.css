@@ -27,72 +27,51 @@
 /* Sizing */
 /* card */
 .navbar {
-  width: 80%;
   border-radius: 0;
   border: 0px;
   background: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
 
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > span {
+.navbar > div > div > ul > li > a {
   font-family: 'ProximaNova Light';
   font-size: 1.2em;
-  color: #fff;
+}
+.navbar > div > div > ul > li > a:hover {
+  text-decoration: none;
 }
 
-body .navbar-brand {
-  font-size: 2em;
-  font-weight: 700;
-  color: #fff;
-}
-body .navbar-brand:hover {
-  color: #fff;
-}
-
-.navbar-default .navbar-brand {
+.navbar-brand {
   font-family: 'ProximaNova';
-  font-size: 2em;
+  font-size: 1.65em;
   font-weight: 700;
+}
+.navbar-brand a {
   color: #fff;
 }
-.navbar-default .navbar-brand:focus {
+.navbar-brand a:hover {
+  text-decoration: none;
+}
+.navbar-brand:focus {
   color: #fff;
 }
 
 /* Active nav link */
-body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
-  /*background-color: $orange;/*/
-  background-color: transparent;
-  border-bottom: 5px solid #f2784b;
-  color: #fff;
+.navbar > div > div > ul > li.active > a {
+  border-bottom: 3px solid #f2784b;
 }
-body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
-  color: #f2784b;
-}
-body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: transparent;
+.navbar > div > div > ul > li.active > a:hover {
+  border-bottom: 3px solid #f7ae92;
 }
 
 /* Nav link */
-body .navbar-default .navbar-nav > li > a {
+.navbar > div > div > ul > li > a {
   border: none;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
 }
-body .navbar-default .navbar-nav > li > a:hover {
+.navbar > div > div > ul > li > a:hover {
   color: #fff;
-  border-bottom: 5px solid #f7ae92;
-}
-
-body .navbar-right > li:last-child > a {
-  color: #f2784b;
-}
-body .navbar-right > li:last-child > a:hover {
-  color: #f2784b;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  color: #fff;
-  background-color: transparent;
+  border-bottom: 3px solid #f7ae92;
 }
 
 *, *:after, *:before {
@@ -109,8 +88,8 @@ body {
   font-variant-ligatures: common-ligatures;
 }
 
-b, strong {
-  font-weight: 400;
+::selection {
+  background: #f5cdaa;
 }
 
 .angucomplete-dropdown {
@@ -236,29 +215,8 @@ b, strong {
     min-width: 300px;
   }
 }
-.mx-auto {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mx-auto-noblock {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.row {
-  width: 100%;
-  text-align: justify;
-}
-.row:first-child {
-  padding-left: 0;
-}
-.row:last-child {
-  padding-right: 0;
-}
-
 .btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
+  font-family: 'ProximaNova Bold';
   border: none;
   background-color: #fff;
   color: #f2784b;

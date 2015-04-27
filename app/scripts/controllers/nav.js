@@ -1,6 +1,13 @@
 'use strict';
 
 function NavCtrl ($scope, $auth, $session) {
+
+
+    $scope.popover = {
+        "avatar": 'Profile',
+        "content": "Hello Popover<br /><img src='http://netgon.ru/upload/avatars/default-avatar-male.png'> <br> <a href='#' ng-click='logout()'>Log out</a>"
+    };
+
     $scope.logged_in = function() {
         return $session.get('authenticated');
     };
