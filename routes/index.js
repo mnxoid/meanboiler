@@ -5,6 +5,23 @@ var passport = require('passport');
 var jwt      = require('jsonwebtoken');
 var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 
+//--------------------------------------------------
+Array.prototype.unique =
+  function() {
+    var a = [];
+    var l = this.length;
+    for(var i=0; i<l; i++) {
+      for(var j=i+1; j<l; j++) {
+        // If this[i] is found later in the array
+        if (this[i]["name"] == this[j]["name"])
+          j = ++i;
+      }
+      a.push(this[i]);
+    }
+    return a;
+  };
+//--------------------------------------------------
+
 
 function getTodos(res){
 	Todo.find(function(err, todos) {
@@ -98,18 +115,18 @@ module.exports = function (app) {
 	});
 
 	app.delete('/api/halls/:hall_id', function(req, res) {
-		Hall.remove({
-            _id : req.params.hall_id
-		}, function(err, todo) {
-            if (err)
-                res.send(err);
+		// Hall.remove({
+  //           _id : req.params.hall_id
+		// }, function(err, todo) {
+  //           if (err)
+  //               res.send(err);
 
-            Hall.find(function(err, todos) {
-                if (err)
-                    res.send(err);
-                res.json(todos);
-            });
-		});
+  //           Hall.find(function(err, todos) {
+  //               if (err)
+  //                   res.send(err);
+  //               res.json(todos);
+  //           });
+		// });
 	});
 
 	app.get('/api/halls/:hall_id', function(req, res) {
@@ -131,6 +148,51 @@ module.exports = function (app) {
             results = [];
             for (h in hall) results.push({name: hall[h]["name"]});
             res.json(results);
+        });
+    });
+
+    app.get('/api/halls/searchall/:q', function(req, res) {
+        Hall.find({
+            $or:[
+            {
+                name: new RegExp(req.params.q, "i")
+            },
+            {
+                city: new RegExp(req.params.q, "i")
+            },
+            {
+                country: new RegExp(req.params.q, "i")
+            }
+            ]
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            results = [];
+            results.unique = function() {
+                var a = [];
+                var l = this.length;
+                for(var i=0; i<l; i++) {
+                  for(var j=i+1; j<l; j++) {
+                    // If this[i] is found later in the array
+                    if (this[i]["name"] == this[j]["name"])
+                      j = ++i;
+                  }
+                  a.push(this[i]);
+                }
+                return a;
+            };
+            keys = ["name","city","country"];
+            for (h in hall) {
+                for (property in hall[h]) {
+                    if ((keys.indexOf(property)>=0) && (new RegExp(req.params.q, "i")).test(hall[h][property]))
+                        results.push({
+                            name: hall[h][property]
+                        });
+                }
+            }
+            res.json(
+                results.unique()
+            );
         });
     });
 
