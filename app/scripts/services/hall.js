@@ -12,6 +12,9 @@ angular
         },
         delete: function(id) {
           return $http.delete('/api/halls/' + id);
-        }
+        },
+        getCities: function(country) {
+          return $http.get('/api/halls/cities/' + country);
+        },
       }
   }]);

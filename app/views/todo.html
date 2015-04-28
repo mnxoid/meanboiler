@@ -1,6 +1,5 @@
-<section style="margin-top: 70px">
-    <div class="jumbotron">
-        <!-- <div class="jumbotron text-center"> -->
+<section style="margin-top: 70px;margin-bottom:100px">
+    <div class="jumbotron text-center">
         <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
     </div>
 
@@ -50,19 +49,21 @@
 
     <div class="checkbox" ng-repeat="hall in halls">
         <label>
-            <input type="checkbox" ng-click="deleteHall(hall._id)"> {{ hall.name +  hall.location + hall.capacity + hall.price }}
+            <input type="checkbox" ng-click="deleteHall(hall._id)"> {{ hall.name +" in "+  hall.city+", "+hall.country +" which can contain "+ hall.capacity +" people for "+ hall.price+"$ ; image url: "+hall.pic }}
         </label>
     </div>
 
     <form>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Name" ng-model="formDataHall.name">
-            <input type="text" class="form-control" placeholder="Location" ng-model="formDataHall.location">
+            <input type="text" class="form-control" placeholder="Country" ng-model="formDataHall.country">
+            <input type="text" class="form-control" placeholder="Country" ng-model="formDataHall.city">
             <input type="text" class="form-control" placeholder="Capacity" ng-model="formDataHall.capacity">
             <input type="text" class="form-control" placeholder="Price" ng-model="formDataHall.price">
+            <input type="text" class="form-control" placeholder="Image url" ng-model="formDataHall.pic">
         </div>
 
-        <!-- createToDo() WILL CREATE NEW TODOS -->
+        <!-- createToDo() WILL CREATE NEW HALLS -->
         <button type="submit" class="btn btn-primary btn-lg" ng-click="createHall()">Add</button>
     </form>
 
@@ -70,4 +71,5 @@
     <!-- </div> -->
 
 </section>
+
 

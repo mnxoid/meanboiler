@@ -79,9 +79,11 @@ module.exports = function (app) {
 
 		Hall.create({
 			name     : req.body.name,
-			location : req.body.location,
+			country  : req.body.country,
+            city     : req.body.city,
 			capacity : req.body.capacity,
-			price    : req.body.price
+			price    : req.body.price,
+            pic      : req.body.pic
 		}, function(err, hall) {
 			if (err)
 				res.send(err);
@@ -128,6 +130,22 @@ module.exports = function (app) {
                 res.send(err);
             results = [];
             for (h in hall) results.push({name: hall[h]["name"]});
+            res.json(results);
+        });
+    });
+
+    app.get('/api/halls/cities/:q', function(req, res) {
+        Hall.find({
+            country: new RegExp(req.params.q, "i")
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            results = [];
+            for (h in hall){ 
+                if (results.indexOf(hall[h]["city"])==-1) {
+                    results.push(hall[h]["city"]);
+                }
+            }
             res.json(results);
         });
     });

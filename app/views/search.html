@@ -12,18 +12,14 @@
       <h1>Search</h1>
       <form>
         <div class="form-group">
-          <label for="">Location</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <label for="">Country</label>
+          <input type="text" class="form-control" id="" placeholder="" ng-model="fil.country" ng-change="getCities(fil.country)">
         </div>
 
         <div class="form-group">
-          <label for="">Specify location</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <label for="">City</label>
+          <select class="form-control" ng-model="fil.city" >
+            <option ng-repeat="city in cities">{{city}}</option>
           </select>
         </div>
 
@@ -39,14 +35,14 @@
         </div>
         <div class="form-group">
           <label for="">Capacity</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <input type="text" class="form-control" id="" placeholder="" ng-model="fil.capacity">
         </div>
         <div class="form-group">
           <label for="">Price</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <input type="text" class="form-control" id="" placeholder="" ng-model="fil.price">
         </div>
         <button type="submit" class="btn btn-default" style="display:inline-block">Search</button>
-        <button type="submit" ng-click="" class="btn btn-default" style="display:inline-block">Clear</button>
+        <button type="reset" ng-click="" class="btn btn-default" style="display:inline-block">Clear</button>
       </form>
     </div>
 
@@ -71,12 +67,12 @@
         </div>
       </li>
     -->
-      <li ng-repeat="res in data">
+      <li ng-repeat="res in data | filter:{country : fil.country} | filter: fil.fc ">
         <figure>
           <img ng-src="{{res.pic}}" alt="img01">
           <figcaption>
-            <h3>{{res.name}}</h3>
-            <span>{{res.location}}</span>
+            <h3>{{(res.name.length<21) ? res.name : res.name.substring(0,19)+"..."}}</h3>
+            <span>{{res.city+", "+res.country}}</span>
             <a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
           </figcaption>
         </figure>
