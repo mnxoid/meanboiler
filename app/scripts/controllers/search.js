@@ -14,6 +14,12 @@ function SearchCtrl ($scope, $rootScope, $http, $hall) {
   	else
   		return true;
   };
+  $scope.fil.fp=function(x){
+  	if($scope.fil.price != undefined && $scope.fil.price.length>0)
+  		return parseInt(x.price) <= parseInt($scope.fil.price);
+  	else
+  		return true;
+  };
   $scope.getCities = function(country) {
   	$hall.getCities(country)
   		.success(function(data) {
