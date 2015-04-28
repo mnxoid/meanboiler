@@ -26,74 +26,48 @@
     <link rel="icon" type="image/png" href="favicon-128x128.png" sizes="128x128" />
 
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />-->
+    <link rel="stylesheet" href="bower_components/basscss/css/basscss.css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="bower_components/angucomplete/angucomplete.css" />
-    <link rel="stylesheet" href="styles/basscss.min.css">
     <link rel="stylesheet" href="styles/scss/main.css"/>
     <!-- endbuild -->
   </head>
   <body ng-app="RHalls" ng-cloak>
-    <header ng-controller="NavCtrl" class="full-width z1 top-0">
-      <nav class="full-width mx-auto fixed navbar">
+    <header ng-controller="NavCtrl">
+      <nav class="full-width mx-auto fixed top-0 left-0 z1 navbar">
 
-        <div class="mx-auto" style="width:80%;">
+        <div class="mx-auto clearfix" style="width:80%;">
 
-            <div class="inline-block mr3 navbar-brand left" style="">
-                <a class="" href="/">RHalls β</a>
+            <div class="left">
+                <span class="navbar-brand white mr3" href="/">RHalls β</span>
+                <a href="#" ui-sref-active="active" ng-href="/" ui-sref="home" class="h3 white mr2">Home</a>
+                <a href="#" ui-sref-active="active" ng-href="/about" ui-sref="about" class="h3 white mr2">About</a>
+                <a href="#" ui-sref-active="active" ng-href="/contact" ui-sref="contact" class="h3 white mr2">Contact</a>
+                <a href="#" ui-sref-active="active" ng-href="/todo" ui-sref="todo" class="h3 white mr2">Todo</a>
+                <a href="#" ui-sref-active="active" ng-href="/test" ui-sref="test" class="h3 white mr2">Test</a>
             </div>
 
-            <div class="inline-block" style=""> <!-- collapse -->
-                <ul class="list-reset inline py1 left">
-                    <li ui-sref-active="active" class="inline">
-                        <a href="#" ng-href="/#/" ui-sref="home" class="h3 white mr2">Home</a>
-                    </li>
-                    <li ui-sref-active="active" class="inline">
-                        <a href="#" ng-href="/#/about" ui-sref="about" class="h3 white mr2">About</a>
-                    </li>
-                    <li ui-sref-active="active" class="inline">
-                        <a href="#" ng-href="/#/contact" ui-sref="contact" class="h3 white mr2">Contact</a>
-                    </li>
-                    <li ui-sref-active="active" class="inline">
-                        <a href="#" ng-href="/#/todo" ui-sref="todo" class="h3 white mr2">Todo</a>
-                    </li>
-                    <li ui-sref-active="active" class="inline">
-                        <a href="#" ng-href="/#/test" ui-sref="test" class="h3 white mr2">Test</a>
-                    </li>
-                </ul>
+            <div class="right" ng-if="!logged_in()">
+                <a ng-href="/login" class="white"><i class="fa fa-unlock-alt"></i> Log in</a>
+                <a ng-href="/signup" class="white"><i class="fa fa-pencil"></i> Sign up</a>
+            </div>
 
-                <ul class="list-reset inline py1 left" style="" ng-if="!logged_in()">
-                    <li class="inline">
-                        <a ng-href="/#/login" class="white"><i class="fa fa-unlock-alt"></i> Log in</a>
-                    </li>
-                    <li class="inline">
-                        <a ng-href="/#/signup" class="white"><i class="fa fa-pencil"></i> Sign up</a>
-                    </li>
-                </ul>
+            <div class="right" ng-if="logged_in()">
+                <span>Hello,</span>
+                <span style="border: 1px solid rgb(242, 120, 75);
+                      border-radius:5px;
+                      padding: 0.25em;"
+                      ng-bind="get_username()"
+                      data-placement="bottom"
+                      html="true"
+                      bs-popover="popover">
+                </span>
+                <a href="#" ng-click="logout()">Log out</a>
+            </div>
+            <div class="clearfix sm-hide"></div>
 
-                <ul class="list-reset inline " style="" ng-if="logged_in()">
-                    <li class="inline">
-                        <a class="no-border">
-                            <span>Hello,</span>
-                         <span style="border: 1px solid rgb(242, 120, 75); border-radius:5px; padding: 0.25em;"
-                               ng-bind="get_username()"
-                               data-placement="bottom"
-                               html="true"
-                               bs-popover="popover"></span>
-                        </a>
-                    </li>
-                    <li class="inline"><a href="#" ng-click="logout()">Log out</a></li>
-                </ul>
         </div>
-
-
-
-
-
-          </div><!-- /.navbar-collapse -->
-
       </nav>
-
     </header>
 
     <div class="container" ui-view style="width:80%;"></div>

@@ -27,23 +27,23 @@
 /* Sizing */
 /* card */
 .navbar {
+  top: 0;
   border-radius: 0;
   border: 0px;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 2;
 }
 
-.navbar > div > div > ul > li > a {
+.navbar > div > div > a {
   font-family: 'ProximaNova Light';
-  font-size: 1.2em;
+  font-size: 0.88em;
 }
-.navbar > div > div > ul > li > a:hover {
+.navbar > div > div > a:hover {
   text-decoration: none;
 }
 
 .navbar-brand {
   font-family: 'ProximaNova';
-  font-size: 1.65em;
+  font-size: 1.3em;
   font-weight: 700;
 }
 .navbar-brand a {
@@ -58,20 +58,22 @@
 
 /* Active nav link */
 .navbar > div > div > ul > li.active > a {
-  border-bottom: 3px solid #f2784b;
+  color: #f2784b;
+  border-bottom: 2px solid #f2784b;
 }
 .navbar > div > div > ul > li.active > a:hover {
-  border-bottom: 3px solid #f7ae92;
+  color: #f2784b;
+  border-bottom: 2px solid #f7ae92;
 }
 
 /* Nav link */
 .navbar > div > div > ul > li > a {
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 .navbar > div > div > ul > li > a:hover {
   color: #fff;
-  border-bottom: 3px solid #f7ae92;
+  border-bottom: 2px solid #f7ae92;
 }
 
 *, *:after, *:before {
@@ -215,16 +217,17 @@ body {
     min-width: 300px;
   }
 }
-.btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
-  font-family: 'ProximaNova Bold';
+.btn-custom.active, .btn-custom.focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
   border: none;
   background-color: #fff;
   color: #f2784b;
   text-decoration: none;
 }
-.btn-custom.active:hover, .btn-custom.focus:hover, .btn-custom:active:hover, .btn-custom:focus:hover, .btn-custom:hover, .open > .dropdown-toggle.btn-custom:hover {
+.btn-custom.active:hover, .btn-custom.active:focus, .btn-custom.active:active, .btn-custom.focus:hover, .btn-custom.focus:focus, .btn-custom.focus:active, .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .open > .dropdown-toggle.btn-custom:hover, .open > .dropdown-toggle.btn-custom:focus, .open > .dropdown-toggle.btn-custom:active {
   background-color: #f2784b;
   border: none;
+  outline: none;
+  box-shadow: none;
   color: #fff;
   text-decoration: none;
 }
@@ -259,7 +262,8 @@ form label {
   font-family: ProximaNova, sans-serif;
 }
 
-input[type='text'].form-control {
+input[type='text'] {
+  border: none;
   outline: none;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;

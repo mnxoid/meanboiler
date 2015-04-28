@@ -27,15 +27,17 @@ body {
 
 @include previews(200px,75%);
 
-.btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open>.dropdown-toggle.btn-custom {
-  font-family: 'ProximaNova Bold';
+.btn-custom.active, .btn-custom.focus, .btn-custom, .open>.dropdown-toggle.btn-custom {
+  //font-family: 'ProximaNova Light';
   border: none;
   background-color: #fff;
   color: $orange;
   text-decoration: none;
-  &:hover {
+  &:hover, &:focus, &:active {
     background-color: $orange;
-      border: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
     color: #fff;
     text-decoration: none;
   }
@@ -73,7 +75,8 @@ form {
     }
 }
 
-input[type='text'].form-control {
+input[type='text'] {
+  border: none;
   outline: none;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
