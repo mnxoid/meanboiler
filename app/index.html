@@ -33,41 +33,26 @@
     <!-- endbuild -->
   </head>
   <body ng-app="RHalls" ng-cloak>
-    <header ng-controller="NavCtrl">
-      <nav class="full-width mx-auto fixed top-0 left-0 z1 navbar">
+    <header ng-controller="NavCtrl" class="">
+        <nav class="flex flex-start z1 white fixed top-0 full-width navbar">
+                <div class="px2 py1 border border-aqua" style="margin-left: 10%;">
+                    <a class="navbar-brand">RHalls β</a>
+                </div>
+                <div class="px2 py1 border border-aqua">
+                    <a ng-href="/" ui-sref-active="active" ui-sref="home" class=" mr2">Home</a>
+                    <a ng-href="/about" ui-sref-active="active" ui-sref="about" class=" mr2">About</a>
+                    <a ng-href="/contact" ui-sref-active="active" ui-sref="contact" class=" mr2">Contact</a>
+                    <a ng-href="/todo" ui-sref-active="active" ui-sref="todo" class=" mr2">Todo</a>
+                    <a ng-href="/test" ui-sref-active="active" ui-sref="test" class=" mr2">Test</a>
+                </div>
 
-        <div class="mx-auto clearfix" style="width:80%;">
+                <div class="flex-auto border border-aqua"></div>
+                <div class="px2 py1 border border-aqua" style="margin-right: 10%;">
+                    <a ng-href="/login" class="white mr2"><i class="fa fa-unlock-alt"></i> Log in</a>
+                    <a ng-href="/signup" class="white"><i class="fa fa-pencil"></i> Sign up</a>
+                </div>
+        </nav>
 
-            <div class="left">
-                <span class="navbar-brand white mr3" href="/">RHalls β</span>
-                <a href="#" ui-sref-active="active" ng-href="/" ui-sref="home" class="h3 white mr2">Home</a>
-                <a href="#" ui-sref-active="active" ng-href="/about" ui-sref="about" class="h3 white mr2">About</a>
-                <a href="#" ui-sref-active="active" ng-href="/contact" ui-sref="contact" class="h3 white mr2">Contact</a>
-                <a href="#" ui-sref-active="active" ng-href="/todo" ui-sref="todo" class="h3 white mr2">Todo</a>
-                <a href="#" ui-sref-active="active" ng-href="/test" ui-sref="test" class="h3 white mr2">Test</a>
-            </div>
-
-            <div class="right" ng-if="!logged_in()">
-                <a ng-href="/login" class="white"><i class="fa fa-unlock-alt"></i> Log in</a>
-                <a ng-href="/signup" class="white"><i class="fa fa-pencil"></i> Sign up</a>
-            </div>
-
-            <div class="right" ng-if="logged_in()">
-                <span>Hello,</span>
-                <span style="border: 1px solid rgb(242, 120, 75);
-                      border-radius:5px;
-                      padding: 0.25em;"
-                      ng-bind="get_username()"
-                      data-placement="bottom"
-                      html="true"
-                      bs-popover="popover">
-                </span>
-                <a href="#" ng-click="logout()">Log out</a>
-            </div>
-            <div class="clearfix sm-hide"></div>
-
-        </div>
-      </nav>
     </header>
 
     <div class="container" ui-view style="width:80%;"></div>
