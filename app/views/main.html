@@ -12,28 +12,30 @@
                 </div>
 
                 <div class="row mx-auto row-main" style="width:70%;background-color: rgba(0,0,0,.4);padding:1em;border-radius: 5px;">
-                    <div class="col-md-9">
-                        <form class="form-inline">
-                            <div class="form-group" style="width:100%;">
-                                <!--<input type="text" style="width:100%;" class="form-control input-lg" id="" placeholder="">-->
-                                <angucomplete id="ex1"
-                                              placeholder="Search halls"
-                                              pause="100"
-                                              selectedobject="selectedCountry"
-                                              url="/api/halls/searchall/"
-                                              searchfields="name"
-                                              titlefield="name"
-                                              minlength="1"
-                                              inputclass="form-control input-lg"/>
-                            </div>
-                        </form>
-                    </div>
+                    <form class="form-inline" action="/search" method="GET">                
+                        <div class="col-md-9">
+                            <!--  -->
+                                <div class="form-group" style="width:100%;">
+                                    <!--<input type="text" style="width:100%;" class="form-control input-lg" id="" placeholder="">-->
+                                    <angucomplete id="ex1"
+                                                  placeholder="Search halls"
+                                                  pause="100"
+                                                  selectedobject="selectedCountry"
+                                                  url="/api/halls/searchall/"
+                                                  searchfields="name"
+                                                  titlefield="name"
+                                                  minlength="1"
+                                                  inputclass="form-control input-lg">
+                                    </angucomplete>
+                                </div>
+                           
+                        </div>
 
-                    <div class="col-md-3">
-                        <form action="/search"><button type="submit" class="btn-custom btn-lg" style="width:100%;">Search</button></form>
-                        <!-- <a ng-href="/#/search" class="btn-custom btn-lg" style="width:100%;margin:20px">Search</a> -->
-                    </div>
-
+                        <div class="col-md-3">
+                            <button type="submit" class="btn-custom btn-lg" style="width:100%;">Search</button>
+                            <!-- <a ng-href="/#/search" class="btn-custom btn-lg" style="width:100%;margin:20px">Search</a> -->
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

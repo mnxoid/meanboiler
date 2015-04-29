@@ -48,7 +48,7 @@
                     controller: 'TestCtrl'
                 })
                 .state('search', {
-                    url: '/search',
+                    url: '/search?q=',
                     templateUrl: 'views/search.html',
                     controller: 'SearchCtrl'
                 })

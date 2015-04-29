@@ -129,7 +129,7 @@ module.exports = function (app) {
 		// });
 	});
 
-	app.get('/api/halls/:hall_id', function(req, res) {
+	app.get('/api/halls/view/:hall_id', function(req, res) {
         Hall.find({
             _id: req.params.hall_id
         }, function(err, hall){
@@ -206,6 +206,50 @@ module.exports = function (app) {
             for (h in hall){ 
                 if (results.indexOf(hall[h]["city"])==-1) {
                     results.push(hall[h]["city"]);
+                }
+            }
+            res.json(results);
+        });
+    });
+
+    app.get('/api/halls/cities', function(req, res) {
+        Hall.find(function(err, halls){
+            if (err)
+                res.send(err);
+            results = [];
+            for (h in halls){ 
+                if (results.indexOf(halls[h]["city"])==-1) {
+                    results.push(halls[h]["city"]);
+                }
+            }
+            res.json(results);
+        });
+    });
+
+    app.get('/api/halls/countries/:q', function(req, res) {
+        Hall.find({
+            city: new RegExp(req.params.q, "i")
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            results = [];
+            for (h in hall){ 
+                if (results.indexOf(hall[h]["country"])==-1) {
+                    results.push(hall[h]["country"]);
+                }
+            }
+            res.json(results);
+        });
+    });
+
+    app.get('/api/halls/countries', function(req, res) {
+        Hall.find(function(err, halls){
+            if (err)
+                res.send(err);
+            results = [];
+            for (h in halls){ 
+                if (results.indexOf(halls[h]["country"])==-1) {
+                    results.push(halls[h]["country"]);
                 }
             }
             res.json(results);

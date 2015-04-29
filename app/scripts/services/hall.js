@@ -16,5 +16,14 @@ angular
         getCities: function(country) {
           return $http.get('/api/halls/cities/' + country);
         },
+        country: function() {
+          return $http.get('/api/halls/countries');
+        },
+        getAllCities: function() {
+          return $http.get('/api/halls/cities');
+        },
+        getCountryByCity: function(city) {
+          return $http.get('/api/halls/countries/' + city);
+        }
       }
   }]);
