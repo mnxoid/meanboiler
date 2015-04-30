@@ -33,7 +33,7 @@
 nav > div > a {
   color: #fff;
   font-family: 'ProximaNova Light';
-  font-size: 0.88em;
+  font-size: 0.75em;
 }
 nav > div > a:hover {
   text-decoration: none;
@@ -55,12 +55,12 @@ nav > div > a:hover {
 /* Active nav link */
 nav > div > a.active {
   color: #f2784b;
-  padding-bottom: 0.63em;
+  padding-bottom: 0.77em;
   border-bottom: 3px solid #f2784b;
 }
 nav > div > a.active:hover {
   color: #f2784b;
-  padding-bottom: 0.63em;
+  padding-bottom: 0.77em;
   border-bottom: 3px solid #f7ae92;
 }
 
@@ -71,7 +71,7 @@ nav > div > a {
 }
 nav > div > a:hover {
   color: #fff;
-  padding-bottom: 0.63em;
+  padding-bottom: 0.77em;
   border-bottom: 3px solid #f7ae92;
 }
 
@@ -289,10 +289,10 @@ p > button {
 }
 
 .txtblock {
-  font-size: 1.2em;
+  font-size: 0.75em;
   font-weight: 300;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .col-md-4 {
@@ -362,7 +362,7 @@ section.module h2 {
   margin-bottom: 40px;
 }
 
-section.module p {
+section.module p:not(.caption) {
   margin-bottom: 40px;
 }
 

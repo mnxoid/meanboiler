@@ -5,7 +5,7 @@
 nav > div  > a {
     color: #fff;
     font-family: 'ProximaNova Light';
-    font-size: 0.88em;
+    font-size: 0.75em;
     &:hover {
         text-decoration: none;
     }
@@ -29,11 +29,11 @@ nav > div  > a {
 /* Active nav link */
 nav > div > a.active {
     color: $orange;
-    padding-bottom: 0.63em;
+    padding-bottom: 0.77em;
     border-bottom: 3px solid $orange;
     &:hover {
         color: $orange;
-        padding-bottom: 0.63em;
+        padding-bottom: 0.77em;
         border-bottom: 3px solid lighten($orange, 15%);
     }
 }
@@ -44,7 +44,7 @@ nav > div > a {
   border-bottom: 2px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
-    padding-bottom: 0.63em;
+    padding-bottom: 0.77em;
     border-bottom: 3px solid lighten($orange, 15%);
   }
 }
