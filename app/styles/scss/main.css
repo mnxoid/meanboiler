@@ -55,11 +55,13 @@ nav > div > a:hover {
 /* Active nav link */
 nav > div > a.active {
   color: #f2784b;
-  border-bottom: 2px solid #f2784b;
+  padding-bottom: 0.63em;
+  border-bottom: 3px solid #f2784b;
 }
 nav > div > a.active:hover {
   color: #f2784b;
-  border-bottom: 2px solid #f7ae92;
+  padding-bottom: 0.63em;
+  border-bottom: 3px solid #f7ae92;
 }
 
 /* Nav link */
@@ -69,7 +71,8 @@ nav > div > a {
 }
 nav > div > a:hover {
   color: #fff;
-  border-bottom: 2px solid #f7ae92;
+  padding-bottom: 0.63em;
+  border-bottom: 3px solid #f7ae92;
 }
 
 *, *:after, *:before {

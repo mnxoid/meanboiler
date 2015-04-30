@@ -29,10 +29,12 @@ nav > div  > a {
 /* Active nav link */
 nav > div > a.active {
     color: $orange;
-    border-bottom: 2px solid $orange;
+    padding-bottom: 0.63em;
+    border-bottom: 3px solid $orange;
     &:hover {
         color: $orange;
-        border-bottom: 2px solid lighten($orange, 15%);
+        padding-bottom: 0.63em;
+        border-bottom: 3px solid lighten($orange, 15%);
     }
 }
 
@@ -42,6 +44,7 @@ nav > div > a {
   border-bottom: 2px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
-    border-bottom: 2px solid lighten($orange, 15%);
+    padding-bottom: 0.63em;
+    border-bottom: 3px solid lighten($orange, 15%);
   }
 }
