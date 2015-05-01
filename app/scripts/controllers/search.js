@@ -34,32 +34,30 @@ function SearchCtrl ($scope, $rootScope, $http, $hall, $stateParams) {
           $scope.fil.city=data[h]["city"];
           $scope.fil.capacity=data[h]["capacity"];
           $scope.fil.price=data[h]["price"];
-          guessed=true;
-          break;
+          return;
         }
       }
-    });
-  $hall.country()
-    .success(function(data) {
-      if(!guessed){
-        if(data.indexOf($stateParams.q)>=0) {
-          $scope.fil.country=$stateParams.q;
-          guessed=true;
+      for(var h in data)
+      {
+        if(data[h]["country"]==$stateParams.q)
+        {
+          $scope.fil.country=data[h]["country"];
+          $scope.getCities($scope.fil.country);
+          return;
         }
-        if($scope.fil.country!=undefined) $scope.getCities($scope.fil.country);
       }
-    });
-  $hall.getAllCities()
-    .success(function(data) {
-      if(!guessed){
-        if(data.indexOf($stateParams.q)>=0)
+      for (var h in data)
+      {
+        if (data[h]["city"]==$stateParams.q) 
+        {
+          $scope.fil.city=$stateParams.q;
           $hall.getCountryByCity($stateParams.q)
             .success(function(data) {
               $scope.fil.country=data[0];
-              $scope.getCities($scope.fil.country);
-              $scope.fil.city=$stateParams.q;
-              guessed = true;
+              $scope.getCities(data[0]);
             });
+          return;
+        }
       }
     });
 }
