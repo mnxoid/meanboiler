@@ -6,20 +6,20 @@ var jwt      = require('jsonwebtoken');
 var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 
 //--------------------------------------------------
-Array.prototype.unique =
-  function() {
-    var a = [];
-    var l = this.length;
-    for(var i=0; i<l; i++) {
-      for(var j=i+1; j<l; j++) {
-        // If this[i] is found later in the array
-        if (this[i]["name"] == this[j]["name"])
-          j = ++i;
-      }
-      a.push(this[i]);
-    }
-    return a;
-  };
+// Array.prototype.unique =
+//   function() {
+//     var a = [];
+//     var l = this.length;
+//     for(var i=0; i<l; i++) {
+//       for(var j=i+1; j<l; j++) {
+//         // If this[i] is found later in the array
+//         if (this[i]["name"] == this[j]["name"])
+//           j = ++i;
+//       }
+//       a.push(this[i]);
+//     }
+//     return a;
+//   };
 //--------------------------------------------------
 
 

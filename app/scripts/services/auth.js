@@ -8,7 +8,7 @@ angular
         var cacheSession = function(data) {
             $session.set('authenticated', data.success);
             $session.set('token', data.token);
-            $session.set('username', data.user.local.email);
+            $session.set('username', data.user.local.user);
         };
 
         var uncacheSession = function() {

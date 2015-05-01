@@ -4,7 +4,10 @@ function AuthCtrl ($scope, $session, $auth) {
 
     $scope.credentials = {
         email: '',
-        password: ''
+        password: '',
+        firstname: '',
+        lastname: '',
+        user: ''
     };
 
     $scope.err_msg_passport = null;
@@ -34,6 +37,8 @@ function AuthCtrl ($scope, $session, $auth) {
 
     $scope.signup = function() {
         $auth.signup($scope.credentials);
+        $auth.login($scope.credentials);
+        $scope.loggedIn = $session.get('authenticated');
     };
 }
 

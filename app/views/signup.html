@@ -1,5 +1,4 @@
-<vspace height="70px"/>
-<div class="mx-auto" style="">
+<div class="mx-auto" style="margin-top: 70px">
     <form name="signUpForm" ng-submit="signup(signUpForm)" class="mx-auto" style="width:70%;" novalidate>
         <center>
         <div class="form-group" style="width:34%;display:inline-block;" ng-class="{'has-feedback': signUpForm.email.$valid, ' has-feedback': signUpForm.email.$invalid}">
@@ -24,19 +23,22 @@
             <label for="" style="font-size: 1.67em;">Username</label>
             <input type="text"
                    class="form-control form-auth-custom"
+                   ng-model="credentials.user"
                 />
         </div>
 
         <div class="form-group" style="width:34%;display:inline-block;" ng-class="">
             <label for="" style="font-size: 1.67em;">First Name</label>
             <input type="text"
-                   class="form-control form-auth-custom"/>
+                   class="form-control form-auth-custom"
+                   ng-model="credentials.firstname"/>
         </div>
 
         <div class="form-group" style="width:34%;display:inline-block;" ng-class="">
             <label for="" style="font-size: 1.67em;">Last Name</label>
             <input type="text"
-                   class="form-control form-auth-custom"/>
+                   class="form-control form-auth-custom"
+                   ng-model="credentials.lastname"/>
         </div>
 
         <div class="form-group" style="width:34%;display:inline-block;" ng-class="">
