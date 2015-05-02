@@ -47,9 +47,13 @@
                 </div>
 
                 <div class="flex-auto"></div>
-                <div class="px2 py1" style="margin-right: 10%;">
-                    <a ng-href="/login" class="white mr2"><i class="fa fa-unlock-alt"></i> Log in</a>
-                    <a ng-href="/signup" class="white"><i class="fa fa-pencil"></i> Sign up</a>
+                <div class="px2 py1" style="margin-right: 10%;" ng-if="!logged_in()">
+                    <a ng-href="/login" class="white mr2 auth"><i class="fa fa-unlock-alt"></i> Log in</a>
+                    <a ng-href="/signup" class="white auth p1 rounded"><i class="fa fa-pencil"></i> Sign up</a>
+                </div>
+                <div class="px2 py1" style="margin-right: 10%;" ng-if="logged_in()">
+                    <span ng-bind="get_username()"></span>
+                    <a href="#" ng-click="logout()">Log out</a>
                 </div>
         </nav>
 

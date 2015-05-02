@@ -6,64 +6,158 @@
                 <h1 class="mt0 mb1" style="font-family: 'ProximaNova Bold';font-size:4.25em;color:#fff;text-shadow: 1px 1px 10px #080808;">RHalls β</h1>
             </div>
 
-            <div class="mx-auto rounded px2 py2 flex flex-stretch" style="width:60%;background-color: rgba(0,0,0,.4);height: auto;">
-                <div class=" flex-auto ">
-                    <form class="fieldset-reset">
-                        <div class="full-width">
-                            <angucomplete id="ex1"
-                                          placeholder="Search halls"
-                                          pause="100"
-                                          selectedobject="selectedCountry"
-                                          url="/api/halls/search/"
-                                          searchfields="name"
-                                          titlefield="name"
-                                          minlength="1"
-                                          inputclass="input-lg"/>
-                        </div>
-                    </form>
-                </div>
+            <form action="/search" name="search" class="fieldset-reset mx-auto" style="width:60%;">
 
-                <div class="">
-                    <form action="/search">
+                <div class="mx-auto rounded px2 py2 flex" style="background-color: rgba(0,0,0,.4);height: auto;">
+                    <div class="flex-auto ">
+                        <angucomplete id="ex1"
+                                      placeholder="Search halls"
+                                      pause="100"
+                                      selectedobject="selectedCountry"
+                                      url="/api/halls/search/"
+                                      searchfields="name"
+                                      titlefield="name"
+                                      minlength="1"
+                                      inputclass="input-lg rounded"/>
+                    </div>
+
+                    <div class="" >
                         <button type="submit"
-                                class="btn-custom btn-lg"
-                                style="border:1px solid #F2784B;background-color: #F2784B;color:#fff;font-weight: 300;">
+                                class="btn-custom btn-lg rounded"
+                                style="border:1px solid #F2784B;background-color:#fff;color: #F2784B;font-weight: 400;">
                             Search
                         </button>
-                    </form>
+                    </div>
+                </div>
+
+                <div class=" mx-auto white" ng-if="search.q.$untouched">
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="mx-auto module content bg-lighter-gray full-width" style="background-color: #fafafa;">
+
+        <div class="clearfix mx-auto mxn1" style="width: 75%;">
+
+            <div class="clearfix mxn2 full-width">
+                <p class="h1 text-center mt2" style="text-align: center;">Why?</p>
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/buildings-2.svg" class="mx-auto"  style=""></csvg>
+                        <p class="h1 mb1" style="font-family: 'ProximaNova Bold';text-align: center;">Assistance</p>
+                        <p class="txtblock">We <strong>help you rent </strong> a place for an event.</p>
+                    </div>
+                </div>
+
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/checklist.svg" class="mx-auto"></csvg>
+                        <p class="h1" style="font-family: 'ProximaNova Bold';text-align: center;">Convenience</p>
+                        <p class="txtblock">You can get the needed info as fast as possible, without googling, because all the relevant <strong>data is already gathered.</strong></p>
+                    </div>
+                </div>
+
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/check.svg" class=""></csvg>
+                        <p class="h1" style="font-family: 'ProximaNova Bold';text-align: center;">Perfection</p>
+                        <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
+                    </div>
                 </div>
             </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">How it works?</p>
+
+            <div class="mx-auto" style="width:100%; height: auto;">
+                <img class="block mx-auto" style="width:100%;" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Featured Halls</p>
+            <div class="mxn1">
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Our customers</p>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Testimonials</p>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+
         </div>
     </section>
-
-    <section class="module content">
-        <div class="mx-auto flex" style="width:75%;">
-            <div class="mt1 flex-auto" style="height:100px;width:100px;">
-                <csvg src="icons/buildings-2.svg" class="mx-auto"  style=""></csvg>
-                <p class="caption" style="font-size:1.75em; font-family: 'ProximaNova Bold';text-align: center;">Assistance</p>
-                <p class="txtblock">We <strong>help you rent </strong> a place for an event.</p>
-            </div>
-            <div class="mt1 flex-auto" style="height:100px;width:100px;">
-                <csvg src="icons/checklist.svg" class="mx-auto" style=""></csvg>
-                <p class="caption" style="font-size:1.75em; font-family: 'ProximaNova Bold';text-align: center;">Convenience</p>
-                <p class="txtblock">You can get the needed info as fast as possible, without googling, because all the relevant <strong>data is already gathered.</strong></p>
-            </div>
-            <div class="mt1 flex-auto" style="height:100px;width:100px;">
-                <csvg src="icons/check.svg"></csvg>
-                <p class="caption" style="font-size:1.75em; font-family: 'ProximaNova Bold';text-align: center;">Perfection</p>
-                <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- more parallax
-    <section class="module parallax parallax-2">
-    </section>
-
-    <section class="module content">
-        test this is after 2 paralax module
-    </section>
-    -->
 </div>
-

@@ -1,18 +1,19 @@
 <div class="mx-auto" style="width:30%;">
-    <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:25%" novalidate>
+    <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:45%" novalidate>
 
         <!-- flash message from the server -->
         <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport" style="margin:1em;">
             <span ng-bind="err_msg_passport"></span>
         </p>
 
-        <div class="form-group" ng-class="{'has-feedback': logInForm.email.$valid, ' has-feedback': logInForm.email.$invalid}">
+        <div class="" ng-class="{'has-feedback': logInForm.email.$valid, ' has-feedback': logInForm.email.$invalid}">
 
-            <label for="input-email" style="font-size: 1.67em;">Email</label>
+            <label for="input-email" style="font-size: 1.25em;">Email</label>
             <input id="input-email"
                    type="email"
                    name="email"
-                   class="form-control form-auth-custom"
+                   style="height:100%;"
+                   class="form-auth-custom full-width"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.email"
                    ng-minlength="5"
@@ -22,28 +23,23 @@
             <!-- Show 'OK' icon if email is valid -->
             <span ng-show="logInForm.email.$valid" style="color:rgb(38, 194, 129);" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
             <!-- Show 'X' icon if email isn't valid -->
-            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="color:rgb(242, 120, 75);" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="color:rgb(242, 120, 75);" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 
-            <!-- validation info messages TODO: decide if there is real need in these alert, now that we have inline validation icons-->
-            <!--
-            <p ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="margin-top: 1em;padding:0.2em;" class="alert alert-danger">You valid email is required.</p>
-            -->
-            <!--<p ng-show="logInForm.email.$error.minlength" class="alert alert-danger">Email is too short.</p>-->
-            <!-- validation messages end -->
         </div>
 
-        <div class="form-group" ng-class="">
-            <label for="input-pass" style="font-size: 1.67em;">Password</label>
+        <div class="form-group mt3" ng-class="">
+            <label for="input-pass" style="font-size: 1.25em;">Password</label>
             <input id="input-pass"
                    type="password"
                    name="password"
-                   class="form-control form-auth-custom"
+                   style="height:100%;"
+                   class="form-auth-custom full-width"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.password" />
         </div>
 
 
-        <button class="btn btn-primary" ng-disabled="logInForm.$invalid" style="width:100%;margin-top:1.5em;font-size:1.5em;">Log in</button>
+        <button class="btn-primary p2 mt4" ng-disabled="logInForm.$invalid" style="width:100%;;font-size:1em;">Log in</button>
     </form>
 
 </div>

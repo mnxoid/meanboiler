@@ -1,3 +1,20 @@
+/* Basscss import
+@import "bower_components/basscss/scss/_base-buttons.scss";
+@import "bower_components/basscss/scss/base-forms";
+@import "bower_components/basscss/scss/base-reset";
+@import "bower_components/basscss/scss/base-typography";
+@import "bower_components/basscss/scss/defaults";
+@import "bower_components/basscss/scss/flex-object";
+@import "bower_components/basscss/scss/positions";
+@import "bower_components/basscss/scss/utility-headings";
+@import "bower_components/basscss/scss/utility-layout";
+@import "bower_components/basscss/scss/ui-utility-groups";
+@import "bower_components/basscss/scss/ui-utility-button-sizes";
+@import "bower_components/basscss/scss/utility-responsive-states";
+@import "bower_components/basscss/scss/utility-white-space";
+@import "bower_components/basscss/scss/utility-typography";
+*/
+/* local import */
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
@@ -8,10 +25,6 @@
 @font-face {
   font-family: 'ProximaNova Light';
   src: url("../../fonts/Proxima Nova L.otf");
-}
-@font-face {
-  font-family: RalewayR;
-  src: url("../../fonts/Raleway-Regular.ttf");
 }
 @font-face {
   font-family: 'ProximaNova Bold';
@@ -26,6 +39,27 @@
 /* Colors */
 /* Sizing */
 /* card */
+/* Fonts */
+@font-face {
+  font-family: ProximaNova;
+  src: url("../../fonts/Proxima Nova R.otf");
+}
+@font-face {
+  font-family: 'ProximaNova Light';
+  src: url("../../fonts/Proxima Nova L.otf");
+}
+@font-face {
+  font-family: 'ProximaNova Bold';
+  src: url("../../fonts/Proxima Nova Bold.otf");
+}
+@font-face {
+  font-family: 'ProximaNova Black';
+  src: url("../../fonts/Proxima Nova Black.otf");
+}
+/* Font Colors */
+/* Font sizes */
+/* Colors */
+/* Sizing */
 .navbar {
   background: rgba(0, 0, 0, 0.7);
 }
@@ -40,6 +74,7 @@ nav > div > a:hover {
 }
 
 .navbar-brand {
+  cursor: default;
   font-family: 'ProximaNova';
   font-size: 1.3em;
   font-weight: 700;
@@ -53,26 +88,29 @@ nav > div > a:hover {
 }
 
 /* Active nav link */
-nav > div > a.active {
+nav > div > a.active:not(.auth) {
   color: #f2784b;
   padding-bottom: 0.77em;
   border-bottom: 3px solid #f2784b;
 }
-nav > div > a.active:hover {
+nav > div > a.active:not(.auth):hover {
   color: #f2784b;
   padding-bottom: 0.77em;
   border-bottom: 3px solid #f7ae92;
 }
 
 /* Nav link */
-nav > div > a {
+nav > div > a:not(.navbar-brand) {
   border: none;
-  border-bottom: 2px solid transparent;
 }
-nav > div > a:hover {
+nav > div > a:not(.navbar-brand):hover {
   color: #fff;
   padding-bottom: 0.77em;
   border-bottom: 3px solid #f7ae92;
+}
+
+a.auth:last-child {
+  background-color: #f2784b;
 }
 
 *, *:after, *:before {
@@ -89,8 +127,18 @@ body {
   font-variant-ligatures: common-ligatures;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ProximaNova Bold";
+}
+
 ::selection {
   background: #f5cdaa;
+}
+
+.resize {
+  height: 100px;
+  width: 100px;
 }
 
 .angucomplete-dropdown {
@@ -235,7 +283,6 @@ body {
   background-color: #26c281;
   color: #fff;
   border: none;
-  padding: 0.33em 1em;
 }
 
 .btn-primary:disabled {
@@ -250,15 +297,12 @@ body {
 .form-auth-custom {
   outline: none;
   border: none;
-  margin-top: 0.75em;
-  font-size: 1.33em;
   border-bottom: 2px solid #d2d7d3;
-  border-radius: 0;
   background-color: transparent;
 }
 
 form label {
-  font-family: ProximaNova, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 input[type='text'] {
@@ -291,7 +335,7 @@ p > button {
 .txtblock {
   font-size: 0.75em;
   font-weight: 300;
-  text-align: center;
+  text-align: left;
   margin-top: 0.5em;
 }
 
@@ -303,15 +347,6 @@ p > button {
 
 .col-md-4:hover {
   transform: scale(1.1, 1.1);
-}
-
-svg path {
-  fill-opacity: 1;
-  stroke-width: 0.25;
-  stroke-dasharray: 217;
-  stroke-dashoffset: 0;
-  animation: draw 3s infinite linear;
-  -webkit-animation: draw 3s linear;
 }
 
 .circular {
@@ -362,7 +397,7 @@ section.module h2 {
   margin-bottom: 40px;
 }
 
-section.module p:not(.caption) {
+section.module p:not(.h1) {
   margin-bottom: 40px;
 }
 
@@ -389,7 +424,7 @@ section.module.parallax h1 {
 }
 
 section.module.parallax-1 {
-  background-image: url("http://www.abouttoblow.com/wp-content/uploads/blog-1.jpg");
+  background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg");
 }
 
 section.module.parallax-2 {

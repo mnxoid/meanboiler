@@ -1,3 +1,5 @@
+@import "_variables";
+
 .navbar{
   background: rgba(0,0,0,0.7);
 }
@@ -13,6 +15,7 @@ nav > div  > a {
 
 
  .navbar-brand {
+  cursor: default;
   font-family: 'ProximaNova';
   font-size:  1.3em;
   font-weight: 700;
@@ -27,7 +30,7 @@ nav > div  > a {
 
 
 /* Active nav link */
-nav > div > a.active {
+nav > div > a.active:not(.auth) {
     color: $orange;
     padding-bottom: 0.77em;
     border-bottom: 3px solid $orange;
@@ -39,12 +42,15 @@ nav > div > a.active {
 }
 
 /* Nav link */
-nav > div > a {
+nav > div > a:not(.navbar-brand) {
   border: none;
-  border-bottom: 2px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
     padding-bottom: 0.77em;
     border-bottom: 3px solid lighten($orange, 15%);
   }
+}
+
+a.auth:last-child {
+    background-color: $orange;
 }
