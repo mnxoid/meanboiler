@@ -22,7 +22,7 @@ module.exports = function(passport) {
 
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
-        usernameField : 'user',
+        usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
@@ -71,6 +71,7 @@ module.exports = function(passport) {
                         var newUser = new User();
                         newUser.local.email    = email;
                         newUser.local.password = newUser.hashPassword(password);
+                        console.log(JSON.stringify(req.body));
                         newUser.save(function(err) {
                             if (err)
                                 throw err;
