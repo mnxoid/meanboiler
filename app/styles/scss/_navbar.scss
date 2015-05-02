@@ -42,7 +42,7 @@ nav > div > a.active:not(.auth) {
 }
 
 /* Nav link */
-nav > div > a:not(.navbar-brand) {
+nav > div > a:not(.navbar-brand):not(.auth) {
   border: none;
   &:hover {
     color: #fff;

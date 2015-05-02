@@ -38,6 +38,42 @@
 /* Font sizes */
 /* Colors */
 /* Sizing */
+.width-90 {
+  width: 90%;
+}
+
+.width890 {
+  width: 80%;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
 /* card */
 /* Fonts */
 @font-face {
@@ -100,10 +136,10 @@ nav > div > a.active:not(.auth):hover {
 }
 
 /* Nav link */
-nav > div > a:not(.navbar-brand) {
+nav > div > a:not(.navbar-brand):not(.auth) {
   border: none;
 }
-nav > div > a:not(.navbar-brand):hover {
+nav > div > a:not(.navbar-brand):not(.auth):hover {
   color: #fff;
   padding-bottom: 0.77em;
   border-bottom: 3px solid #f7ae92;

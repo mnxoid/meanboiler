@@ -2,10 +2,12 @@
     <form name="logInForm" ng-submit="login(logInForm)" style="margin-top:45%" novalidate>
 
         <!-- flash message from the server -->
+        <!--Currently testing new system-->
+        <!--
         <p ng-class="{'show-notification': err_msg_passport}" ng-show="err_msg_passport" style="margin:1em;">
             <span ng-bind="err_msg_passport"></span>
         </p>
-
+        -->
         <div class="" ng-class="{'has-feedback': logInForm.email.$valid, ' has-feedback': logInForm.email.$invalid}">
 
             <label for="input-email" style="font-size: 1.25em;">Email</label>
@@ -13,6 +15,7 @@
                    type="email"
                    name="email"
                    style="height:100%;"
+                   ng-class="{'animated shake': is_email_err}"
                    class="form-auth-custom full-width"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.email"
@@ -33,6 +36,7 @@
                    type="password"
                    name="password"
                    style="height:100%;"
+                   ng-class="{'animated shake': is_pswd_err}"
                    class="form-auth-custom full-width"
                    ng-change="clear_err_msg()"
                    ng-model="credentials.password" />
