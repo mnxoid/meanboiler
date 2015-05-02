@@ -1,31 +1,28 @@
+@import "_variables";
+
 .navbar{
-  width: $navbar-width;
-  border-radius: 0;
-  border: 0px;
   background: rgba(0,0,0,0.7);
-  z-index: 2;
 }
 
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>span {
-  font-family: 'ProximaNova Light';
-  font-size: $font-size-nav;
-  color: #fff;
+nav > div  > a {
+    color: #fff;
+    font-family: 'ProximaNova Light';
+    font-size: 0.75em;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
-body .navbar-brand {
-  font-size: $font-size-big;
+
+ .navbar-brand {
+  cursor: default;
+  font-family: 'ProximaNova';
+  font-size:  1.3em;
   font-weight: 700;
   color: #fff;
   &:hover {
-    color: #fff;
+      text-decoration: none;
   }
-}
-
-.navbar-default .navbar-brand {
-  font-family: 'ProximaNova';
-  font-size: $font-size-big;
-  font-weight: 700;
-  color: #fff;
   &:focus {
     color: #fff;
   }
@@ -33,53 +30,27 @@ body .navbar-brand {
 
 
 /* Active nav link */
-body .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a {
-  /*background-color: $orange;/*/
-  background-color: rgba(0,0,0,0);
-  border-bottom: 5px solid $orange;
-  //color: $font-color-primary;
-  color: #fff;
-  span {
+nav > div > a.active:not(.auth) {
     color: $orange;
-  }
-  span:hover {
-
-  }
-
-  &:hover {
-    background-color: rgba(0,0,0,0);
-  }
-  // &:hover {
-  //   background-color: lighten($orange, 10%);
-  //   color: #fff;
-  // }
-
+    padding-bottom: 0.77em;
+    border-bottom: 3px solid $orange;
+    &:hover {
+        color: $orange;
+        padding-bottom: 0.77em;
+        border-bottom: 3px solid lighten($orange, 15%);
+    }
 }
 
 /* Nav link */
-body .navbar-default .navbar-nav>li>a {
+nav > div > a:not(.navbar-brand):not(.auth) {
   border: none;
-  border-bottom: 5px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
-    border-bottom: 5px solid lighten($orange, 15%);
+    padding-bottom: 0.77em;
+    border-bottom: 3px solid lighten($orange, 15%);
   }
-  // &:hover {
-  //   color: lighten($font-color-primary, 10%);
-  //   background-color: lighten($orange, 25%);
-  //   border-bottom: 5px solid lighten($orange, 15%);
-  // }
 }
 
-body .navbar-right>li:last-child>a{
-  color: $orange;
-  &:hover {
-    color: $orange;
-  }
-
-}
-
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  color: #fff;
-  background-color: rgba(0,0,0,0);
+a.auth:last-child {
+    background-color: $orange;
 }

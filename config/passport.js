@@ -17,33 +17,26 @@ module.exports = function(passport) {
         });
     });
 
-    // - Local strategy
-    // -- Log in
-
     passport.use('local-login', new LocalStrategy({
-        // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
         passwordField : 'password',
-        passReqToCallback : true // allows us to pass back the entire request to the callback
+        passReqToCallback : true
     },
     function(req, email, password, done) {
-        //console.warn("Calling findOne");//This actually gets executed
 
         User.findOne({ 'local.email' :  email }, function(err, user) {
             if (err)
                 return done(err);
 
-            //console.warn("!user: "+ !user);
-            //console.warn(JSON.stringify(user));
             if (!user)
             {
                 console.warn("Bad user");
-                return done(null, false, {errmsg: 'No user with this username exists. Please, check your email again.'});
+                return done(null, false, {code: 0, errmsg: 'No user with this username exists. Please, check your email again.'});
             }
 
 
             if (!user.validPassword(password))
-                return done(null, false, {errmsg: 'Wrong password, please enter your password again.'});
+                return done(null, false, {code: 1, errmsg: 'Wrong password, please enter your password again.'});
 
             return done(null, user);
         });

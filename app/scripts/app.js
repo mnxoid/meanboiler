@@ -3,7 +3,7 @@
 
     var app;
     app = angular
-        .module('RHalls', ['ui.bootstrap', 'ui.router', 'angucomplete'])
+        .module('RHalls', ['ui.router', 'angucomplete', 'mgcrea.ngStrap', 'ngSanitize'])
         .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('/404');

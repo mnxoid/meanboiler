@@ -1,79 +1,163 @@
-<!--
-<div class="mx-auto" style="background-image: url(http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg);background-size: cover; position:absolute;height:100%;width:100%;margin:0;left:0;top:0;">
--->
-<div style="position:absolute;height:100%;width:100%;margin:0;left:0;top:0;">
+<div class="absolute full-width m0 left-0 top-0 " style="height:100%;">
     <section class="module parallax parallax-1">
-        <div class="container">
-
-            <div style="margin-top: 15%;margin-bottom: 1em;">
-                <div class="mx-auto">
-                    <img src="images/logo.png" alt=""  class="mx-auto" style="display:block;height:100px;width:100px;border-radius: 50%;"/>
-                    <h1 style="font-family: 'ProximaNova Bold';font-size:6em;color:#fff;text-shadow: 1px 1px 10px #080808;">RHalls β</h1>
-                </div>
-
-                <div class="row mx-auto row-main" style="width:70%;background-color: rgba(0,0,0,.4);padding:1em;border-radius: 5px;">
-                    <form class="form-inline" action="/search" method="GET">                
-                        <div class="col-md-9">
-                            <!--  -->
-                                <div class="form-group" style="width:100%;">
-                                    <!--<input type="text" style="width:100%;" class="form-control input-lg" id="" placeholder="">-->
-                                    <angucomplete id="ex1"
-                                                  placeholder="Search halls"
-                                                  pause="100"
-                                                  selectedobject="selectedCountry"
-                                                  url="/api/halls/searchall/"
-                                                  searchfields="name"
-                                                  titlefield="name"
-                                                  minlength="1"
-                                                  inputclass="form-control input-lg">
-                                    </angucomplete>
-                                </div>
-                           
-                        </div>
-
-                        <div class="col-md-3">
-                            <button type="submit" class="btn-custom btn-lg" style="width:100%;">Search</button>
-                            <!-- <a ng-href="/#/search" class="btn-custom btn-lg" style="width:100%;margin:20px">Search</a> -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="module content">
-        <div class="row mx-auto row-main" >
-
-            <div class="mx-auto" style="width:80%;">
-                <div class="col-md-4" style>
-                    <csvg src="icons/buildings-2.svg" class="mx-auto"  style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
-                    <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Assistance</p>
-                    <p class="txtblock">We <strong>help you rent </strong> a place for an event.</p>
-                </div>
-                <div class="col-md-4">
-                    <csvg src="icons/checklist.svg" class="mx-auto" style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
-                    <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Convenience</p>
-                    <p class="txtblock">You can get the needed info as fast as possible, without googling, because all the relevant <strong>data is already gathered.</strong></p>
-                </div>
-                <div class="col-md-4">
-                    <csvg src="icons/check.svg" class="mx-auto" style="margin-top:1em;height:100px;width:100px;background-color:#fff;border-radius:50%;padding:0.75em;"></csvg>
-                    <p class="h2" style="font-family: 'ProximaNova Bold';font-size:3em;text-align: center;">Perfection</p>
-                    <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
-                </div>
-
+        <div class="py4">
+            <div class="mx-auto mt4">
+                <img src="images/logo.png" alt="" class="mx-auto block" style="height:100px;width:100px;border-radius: 50%;"/>
+                <h1 class="mt0 mb1" style="font-family: 'ProximaNova Bold';font-size:4.25em;color:#fff;text-shadow: 1px 1px 10px #080808;">RHalls β</h1>
             </div>
 
+            <form action="/search" name="search" class="fieldset-reset mx-auto" style="width:60%;">
+
+                <div class="mx-auto px2 py2 mxn1 rounded" style="background-color: rgba(0,0,0,.4);height: 100%;width:auto;overflow:auto">
+                    <div class="col col-9 px1 relative">
+                        <angucomplete id="ex1"
+                                      placeholder="Search halls"
+                                      pause="100"
+                                      selectedobject="selectedCountry"
+                                      url="/api/halls/searchall/"
+                                      searchfields="name"
+                                      titlefield="name"
+                                      minlength="1"
+                                      inputclass="input-lg rounded full-with relative"/>
+                    </div>
+
+                    <div class="col col-3 px1 relative">
+                        <button type="submit"
+                                class="rounded full-width relative"
+                                style="background-color: #fff;boorder:1px solid #F2784B; color: #F2784B; font-size: 0.8em;">
+                            Search
+                        </button>
+                    </div>
+                
+
+                <div class="px2 mx-auto white" ng-if="search.q.$untouched">
+                    Try entering 'Australia'.
+                </div>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="mx-auto module content bg-lighter-gray full-width" style="background-color: #fafafa;">
+
+        <div class="clearfix mx-auto mxn1" style="width: 75%;">
+
+            <div class="clearfix mxn2 full-width">
+                <p class="h1 text-center mt2" style="text-align: center;">Why?</p>
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/buildings-2.svg" class="mx-auto"  style=""></csvg>
+                        <p class="h1 mb1" style="font-family: 'ProximaNova Bold';text-align: center;">Assistance</p>
+                        <p class="txtblock">We <strong>help you rent </strong> a place for an event.</p>
+                    </div>
+                </div>
+
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/checklist.svg" class="mx-auto"></csvg>
+                        <p class="h1" style="font-family: 'ProximaNova Bold';text-align: center;">Convenience</p>
+                        <p class="txtblock">You can get the needed info as fast as possible, without googling, because all the relevant <strong>data is already gathered.</strong></p>
+                    </div>
+                </div>
+
+                <div class="sm-col sm-col-12 md-col-4 lg-col-4 px2 py2">
+                    <div class="" style="/*box-shadow: 1px 1px 3px #c5c5c5;*/">
+                        <csvg src="icons/check.svg" class=""></csvg>
+                        <p class="h1" style="font-family: 'ProximaNova Bold';text-align: center;">Perfection</p>
+                        <p class="txtblock">We'll <strong>find a perfect match</strong> for all your needs and requests</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">How it works?</p>
+
+            <div class="mx-auto" style="width:100%; height: auto;">
+                <img class="block mx-auto" style="width:100%;" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Featured Halls</p>
+            <div class="mxn1">
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="px1 col col-4">
+                    <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Our customers</p>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <p class="h1 text-center mt3" style="text-align: center;">Testimonials</p>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
+            <div class="col col-4">
+                <div class="left mr1">
+                    <img class="resize" src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+                </div>
+                <div class="overflow-hidden">
+                    <p>test company, probably sydney opera</p>
+                </div>
+            </div>
+
 
         </div>
     </section>
-
-    <!-- more parallax
-    <section class="module parallax parallax-2">
-    </section>
-
-    <section class="module content">
-        test this is after 2 paralax module
-    </section>
-    -->
 </div>
-

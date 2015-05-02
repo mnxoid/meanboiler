@@ -1,3 +1,20 @@
+/* Basscss import
+@import "bower_components/basscss/scss/_base-buttons.scss";
+@import "bower_components/basscss/scss/base-forms";
+@import "bower_components/basscss/scss/base-reset";
+@import "bower_components/basscss/scss/base-typography";
+@import "bower_components/basscss/scss/defaults";
+@import "bower_components/basscss/scss/flex-object";
+@import "bower_components/basscss/scss/positions";
+@import "bower_components/basscss/scss/utility-headings";
+@import "bower_components/basscss/scss/utility-layout";
+@import "bower_components/basscss/scss/ui-utility-groups";
+@import "bower_components/basscss/scss/ui-utility-button-sizes";
+@import "bower_components/basscss/scss/utility-responsive-states";
+@import "bower_components/basscss/scss/utility-white-space";
+@import "bower_components/basscss/scss/utility-typography";
+*/
+/* local import */
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
@@ -8,10 +25,6 @@
 @font-face {
   font-family: 'ProximaNova Light';
   src: url("../../fonts/Proxima Nova L.otf");
-}
-@font-face {
-  font-family: RalewayR;
-  src: url("../../fonts/Raleway-Regular.ttf");
 }
 @font-face {
   font-family: 'ProximaNova Bold';
@@ -25,74 +38,115 @@
 /* Font sizes */
 /* Colors */
 /* Sizing */
-/* card */
-.navbar {
+.width-90 {
+  width: 90%;
+}
+
+.width890 {
   width: 80%;
-  border-radius: 0;
-  border: 0px;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 2;
 }
 
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > span {
+.width-70 {
+  width: 70%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+/* card */
+/* Fonts */
+@font-face {
+  font-family: ProximaNova;
+  src: url("../../fonts/Proxima Nova R.otf");
+}
+@font-face {
   font-family: 'ProximaNova Light';
-  font-size: 1.2em;
-  color: #fff;
+  src: url("../../fonts/Proxima Nova L.otf");
+}
+@font-face {
+  font-family: 'ProximaNova Bold';
+  src: url("../../fonts/Proxima Nova Bold.otf");
+}
+@font-face {
+  font-family: 'ProximaNova Black';
+  src: url("../../fonts/Proxima Nova Black.otf");
+}
+/* Font Colors */
+/* Font sizes */
+/* Colors */
+/* Sizing */
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
 }
 
-body .navbar-brand {
-  font-size: 2em;
-  font-weight: 700;
+nav > div > a {
   color: #fff;
+  font-family: 'ProximaNova Light';
+  font-size: 0.75em;
 }
-body .navbar-brand:hover {
-  color: #fff;
+nav > div > a:hover {
+  text-decoration: none;
 }
 
-.navbar-default .navbar-brand {
+.navbar-brand {
+  cursor: default;
   font-family: 'ProximaNova';
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: 700;
   color: #fff;
 }
-.navbar-default .navbar-brand:focus {
+.navbar-brand:hover {
+  text-decoration: none;
+}
+.navbar-brand:focus {
   color: #fff;
 }
 
 /* Active nav link */
-body .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a {
-  /*background-color: $orange;/*/
-  background-color: transparent;
-  border-bottom: 5px solid #f2784b;
-  color: #fff;
-}
-body .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span, .navbar-default .navbar-nav > .active > a span {
+nav > div > a.active:not(.auth) {
   color: #f2784b;
+  padding-bottom: 0.77em;
+  border-bottom: 3px solid #f2784b;
 }
-body .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: transparent;
+nav > div > a.active:not(.auth):hover {
+  color: #f2784b;
+  padding-bottom: 0.77em;
+  border-bottom: 3px solid #f7ae92;
 }
 
 /* Nav link */
-body .navbar-default .navbar-nav > li > a {
+nav > div > a:not(.navbar-brand):not(.auth) {
   border: none;
-  border-bottom: 5px solid transparent;
 }
-body .navbar-default .navbar-nav > li > a:hover {
+nav > div > a:not(.navbar-brand):not(.auth):hover {
   color: #fff;
-  border-bottom: 5px solid #f7ae92;
+  padding-bottom: 0.77em;
+  border-bottom: 3px solid #f7ae92;
 }
 
-body .navbar-right > li:last-child > a {
-  color: #f2784b;
-}
-body .navbar-right > li:last-child > a:hover {
-  color: #f2784b;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  color: #fff;
-  background-color: transparent;
+a.auth:last-child {
+  background-color: #f2784b;
 }
 
 *, *:after, *:before {
@@ -109,8 +163,18 @@ body {
   font-variant-ligatures: common-ligatures;
 }
 
-b, strong {
-  font-weight: 400;
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ProximaNova Bold";
+}
+
+::selection {
+  background: #f5cdaa;
+}
+
+.resize {
+  height: 100px;
+  width: 100px;
 }
 
 .angucomplete-dropdown {
@@ -236,37 +300,17 @@ b, strong {
     min-width: 300px;
   }
 }
-.mx-auto {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mx-auto-noblock {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.row {
-  width: 100%;
-  text-align: justify;
-}
-.row:first-child {
-  padding-left: 0;
-}
-.row:last-child {
-  padding-right: 0;
-}
-
-.btn-custom.active, .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
+.btn-custom.active, .btn-custom.focus, .btn-custom, .open > .dropdown-toggle.btn-custom {
   border: none;
   background-color: #fff;
   color: #f2784b;
   text-decoration: none;
 }
-.btn-custom.active:hover, .btn-custom.focus:hover, .btn-custom:active:hover, .btn-custom:focus:hover, .btn-custom:hover, .open > .dropdown-toggle.btn-custom:hover {
+.btn-custom.active:hover, .btn-custom.active:focus, .btn-custom.active:active, .btn-custom.focus:hover, .btn-custom.focus:focus, .btn-custom.focus:active, .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .open > .dropdown-toggle.btn-custom:hover, .open > .dropdown-toggle.btn-custom:focus, .open > .dropdown-toggle.btn-custom:active {
   background-color: #f2784b;
   border: none;
+  outline: none;
+  box-shadow: none;
   color: #fff;
   text-decoration: none;
 }
@@ -275,7 +319,6 @@ b, strong {
   background-color: #26c281;
   color: #fff;
   border: none;
-  padding: 0.33em 1em;
 }
 
 .btn-primary:disabled {
@@ -290,18 +333,16 @@ b, strong {
 .form-auth-custom {
   outline: none;
   border: none;
-  margin-top: 0.75em;
-  font-size: 1.33em;
   border-bottom: 2px solid #d2d7d3;
-  border-radius: 0;
   background-color: transparent;
 }
 
 form label {
-  font-family: ProximaNova, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
-input[type='text'].form-control {
+input[type='text'] {
+  border: none;
   outline: none;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -328,10 +369,10 @@ p > button {
 }
 
 .txtblock {
-  font-size: 1.2em;
+  font-size: 0.75em;
   font-weight: 300;
-  text-align: center;
-  margin-top: 1em;
+  text-align: left;
+  margin-top: 0.5em;
 }
 
 .col-md-4 {
@@ -342,15 +383,6 @@ p > button {
 
 .col-md-4:hover {
   transform: scale(1.1, 1.1);
-}
-
-svg path {
-  fill-opacity: 1;
-  stroke-width: 0.25;
-  stroke-dasharray: 217;
-  stroke-dashoffset: 0;
-  animation: draw 3s infinite linear;
-  -webkit-animation: draw 3s linear;
 }
 
 .circular {
@@ -401,7 +433,7 @@ section.module h2 {
   margin-bottom: 40px;
 }
 
-section.module p {
+section.module p:not(.h1) {
   margin-bottom: 40px;
 }
 
@@ -428,7 +460,7 @@ section.module.parallax h1 {
 }
 
 section.module.parallax-1 {
-  background-image: url("http://www.abouttoblow.com/wp-content/uploads/blog-1.jpg");
+  background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg");
 }
 
 section.module.parallax-2 {

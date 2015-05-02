@@ -11,6 +11,8 @@ function AuthCtrl ($scope, $session, $auth) {
     };
 
     $scope.err_msg_passport = null;
+    $scope.is_email_err = false;
+    $scope.is_pswd_err = false;
 
     $scope.clear_err_msg = function() {
         $scope.err_msg_passport = null;
@@ -28,7 +30,10 @@ function AuthCtrl ($scope, $session, $auth) {
             .success(function(res) {
             })
             .error(function(e) {
-                $scope.err_msg_passport = e.error;
+                console.log(e);
+                $scope.err_msg_passport = e.error.errmsg;
+                $scope.is_email_err = (e.error.code === 0) ? 1 : 0;
+                $scope.is_pswd_err = (e.error.code === 1) ? 1 : 0;
             });
 
         $scope.loggedIn = $session.get('authenticated');

@@ -71,7 +71,7 @@ module.exports = function (app) {
                 });
             } else {
                 res.json(401, {
-                    error: info.errmsg,
+                    error: info,
                     success: false,
                     user: undefined
                 });
