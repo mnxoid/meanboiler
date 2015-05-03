@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-      <base href="/">
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>RHalls - Home</title>
@@ -39,12 +39,10 @@
             <div class="px2 py1" style="margin-left: 10%;">
                 <a class="navbar-brand">RHalls β</a>
             </div>
-            <div class="px2 py1">
-                <a ng-href="/" ui-sref-active="active" ui-sref="home" class=" mr2">Home</a>
-                <a ng-href="/about" ui-sref-active="active" ui-sref="about" class=" mr2">About</a>
-                <a ng-href="/contact" ui-sref-active="active" ui-sref="contact" class=" mr2">Contact</a>
-                <a ng-href="/todo" ui-sref-active="active" ui-sref="todo" class=" mr2">Todo</a>
-                <a ng-href="/test" ui-sref-active="active" ui-sref="test" class=" mr2">Test</a>
+            <div class="px2 " style="padding-top=1px">
+                <div class="inline-block center py1 h100" ng-repeat = "l in navlinks" ui-sref-active="active" ui-sref="{{l.uisr}}">
+                    <a ng-href="{{l.nghr}}"  class="col-2 m2 center">{{l.text}}</a>
+                </div>
             </div>
             <div class="flex-auto"></div>
             <div class="px2 py1" style="margin-right: 10%;" ng-if="!logged_in()">
