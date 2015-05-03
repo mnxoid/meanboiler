@@ -6,6 +6,33 @@ function NavCtrl ($scope, $auth, $session, ngDialog) {
         "avatar": 'Profile',
         "content": "Hello Popover<br /><img src='http://netgon.ru/upload/avatars/default-avatar-male.png'> <br> <a href='#' ng-click='logout()'>Log out</a>"
     };
+    $scope.navlinks = [
+        {
+            nghr: "/",
+            uisr: "home",
+            text: "Home"
+        },
+        {
+            nghr: "/about",
+            uisr: "about",
+            text: "About"
+        },
+        {
+            nghr: "/contact",
+            uisr: "contact",
+            text: "Contact"
+        },
+        {
+            nghr: "/todo",
+            uisr: "todo",
+            text: "Todo"
+        },
+        {
+            nghr: "/test",
+            uisr: "test",
+            text: "Test"
+        }
+    ];
 
     $scope.open_login = function() {
         var container = angular.element('div.container');
