@@ -22,7 +22,7 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true
     },
-    function(req, email, password, done) {
+    function(req, email, password, fullname, done) {
 
         User.findOne({ 'local.email' :  email }, function(err, user) {
             if (err)
@@ -48,7 +48,7 @@ module.exports = function(passport) {
             passwordField : 'password',
             passReqToCallback : true
         },
-        function(req, email, password, done) {
+        function(req, email, password, fullname, done) {
 
             process.nextTick(function() {
 
@@ -64,7 +64,7 @@ module.exports = function(passport) {
                         var newUser = new User();
                         newUser.local.email    = email;
                         newUser.local.password = newUser.hashPassword(password);
-                        console.log(JSON.stringify(req.body));
+                        newUser.local.fullname = fullname;
                         newUser.save(function(err) {
                             if (err)
                                 throw err;

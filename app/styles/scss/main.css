@@ -375,13 +375,13 @@ p > button {
   margin-top: 0.5em;
 }
 
-.col-md-4 {
+.hoverzoom, .col-md-4 {
   -webkit-user-select: none;
   cursor: default;
   transition: 0.33s ease-in-out;
 }
 
-.col-md-4:hover {
+.hoverzoom:hover, .col-md-4:hover {
   transform: scale(1.1, 1.1);
 }
 

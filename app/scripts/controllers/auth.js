@@ -5,9 +5,7 @@ function AuthCtrl ($scope, $session, $auth) {
     $scope.credentials = {
         email: '',
         password: '',
-        firstname: '',
-        lastname: '',
-        user: ''
+        fullname: ''
     };
 
     $scope.err_msg_passport = null;
@@ -24,7 +22,7 @@ function AuthCtrl ($scope, $session, $auth) {
             console.log('You\'ve bypassed disabled button, huh?\n You shall not pass!');
             return;
         }
-
+        $scope.credentials.fullname='dummy';
         $auth
             .login($scope.credentials)
             .success(function(res) {
@@ -41,9 +39,11 @@ function AuthCtrl ($scope, $session, $auth) {
     };
 
     $scope.signup = function() {
-        $auth.signup($scope.credentials);
-        $auth.login($scope.credentials);
-        $scope.loggedIn = $session.get('authenticated');
+        $auth.signup($scope.credentials)
+            .success(function(){
+                $auth.login($scope.credentials);
+                $scope.loggedIn = $session.get('authenticated');
+            });
     };
 }
 
