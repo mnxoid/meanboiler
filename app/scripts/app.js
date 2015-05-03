@@ -18,7 +18,6 @@
                     url: '/login',
                     templateUrl: 'views/login.html',
                     controller: 'AuthCtrl'
-                    //resolve
                 })
                 .state('signup', {
                     url: '/signup',
@@ -31,7 +30,6 @@
                     controller: 'TodoCtrl',
                     resolve: {
                         halls: function ($hall) {
-                            //console.log($hall.get());
                             return $hall.get();
                         }
                     }
