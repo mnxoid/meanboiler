@@ -42,7 +42,7 @@
   width: 90%;
 }
 
-.width890 {
+.width-80 {
   width: 80%;
 }
 
@@ -101,6 +101,7 @@
 }
 
 nav > div > div > a {
+  cursor: pointer;
   color: #fff;
   font-family: 'ProximaNova Light';
   font-size: 0.75em;
@@ -110,6 +111,7 @@ nav > div > div > a:hover {
 }
 
 nav > div > a {
+  cursor: pointer;
   color: #fff;
   font-family: 'ProximaNova Light';
   font-size: 0.75em;
@@ -162,6 +164,7 @@ a.auth:last-child {
 }
 
 body {
+  background-color: #fafafa;
   font: 1.5em "Lato";
   color: #777;
   height: 100%;
@@ -328,18 +331,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:disabled {
+  cursor: default;
   background-color: #6ce2b1;
   color: #fafafa;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(.btn-primary[disabled=disabled]) {
   background-color: #1e9765;
 }
 
 .form-auth-custom {
   outline: none;
-  border: none;
-  border-bottom: 2px solid #d2d7d3;
+  border-radius: 5px;
+  border: 1px solid #d2d7d3;
   background-color: transparent;
 }
 
@@ -500,6 +504,12 @@ section.module.parallax-3 {
 
 .h100 {
   height: 100%;
+}
+
+.ngdialog.ngdialog-theme-plain.custom .ngdialog-content {
+  border-radius: 5px;
+  padding: 0;
+  width: 25%;
 }
 
 /*# sourceMappingURL=main.css.map */

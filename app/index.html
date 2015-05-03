@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="bower_components/angucomplete/angucomplete.css" />
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css"/>
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css"/>
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-plain.css"/>
     <link rel="stylesheet" href="styles/scss/main.css"/>
     <!-- endbuild -->
   </head>
@@ -46,8 +49,8 @@
             </div>
             <div class="flex-auto"></div>
             <div class="px2 py1" style="margin-right: 10%;" ng-if="!logged_in()">
-                <a ng-href="/login" class="white mr2 auth"><i class="fa fa-unlock-alt"></i> Log in</a>
-                <a ng-href="/signup" class="white auth p1 rounded"><i class="fa fa-pencil"></i> Sign up</a>
+                <a ng-click="open_login()" class="white mr2 auth"><i class="fa fa-unlock-alt"></i> Log in</a>
+                <a class="white auth p1 rounded"><i class="fa fa-pencil"></i> Sign up</a>
             </div>
             <div class="px2 py1" style="margin-right: 10%;" ng-if="logged_in()">
                 <span ng-bind="get_username()"></span>
@@ -56,7 +59,7 @@
         </nav>
     </header>
 
-    <div class="container" ui-view style="width:80%;"></div>
+    <div class="container width-80" ui-view></div>
 
     <!-- Libraries -->
     <script src="bower_components/jquery/jquery.js"></script>
@@ -68,9 +71,10 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angucomplete/angucomplete.js"></script>
-    <!-- <script src="scripts/ui-bootstrap-tpls-0.9.0.min.js"></script>-->
+    <script src="bower_components/ngDialog/js/ngDialog.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
