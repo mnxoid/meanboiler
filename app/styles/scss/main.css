@@ -144,8 +144,10 @@ nav > div > div:not(.navbar-brand):not(.auth):hover {
 }
 
 nav > div > div.active:not(.auth) {
-  color: #f2784b;
   border-bottom: 4px solid #f2784b;
+}
+nav > div > div.active:not(.auth) > a {
+  color: #f2784b;
 }
 nav > div > div.active:not(.auth):hover {
   color: #f2784b;

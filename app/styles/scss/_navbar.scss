@@ -62,7 +62,7 @@ nav > div > div:not(.navbar-brand):not(.auth) {
 }
 
 nav > div > div.active:not(.auth) {
-    color: $orange;
+    & > a {color: $orange;}
     // padding-bottom: 0.77em;
     border-bottom: 4px solid $orange;
     &:hover {
