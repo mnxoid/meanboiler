@@ -42,7 +42,7 @@
   width: 90%;
 }
 
-.width890 {
+.width-80 {
   width: 80%;
 }
 
@@ -156,6 +156,7 @@ a.auth:last-child {
 }
 
 body {
+  background-color: #fafafa;
   font: 1.5em "Lato";
   color: #777;
   height: 100%;
@@ -322,18 +323,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:disabled {
+  cursor: default;
   background-color: #6ce2b1;
   color: #fafafa;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(.btn-primary[disabled=disabled]) {
   background-color: #1e9765;
 }
 
 .form-auth-custom {
   outline: none;
-  border: none;
-  border-bottom: 2px solid #d2d7d3;
+  border-radius: 5px;
+  border: 1px solid #d2d7d3;
   background-color: transparent;
 }
 

@@ -28,6 +28,7 @@
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 body {
+  background-color: #fafafa;
   font: $font-size-reg 'Lato';
   color: $font-color-primary;
   height: 100%;
@@ -78,18 +79,19 @@ body {
 }
 
 .btn-primary:disabled {
+    cursor: default;
     background-color: lighten($green, 20%);
     color: #fafafa;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(.btn-primary[disabled=disabled]) {
     background-color: darken($green, 10%);
 }
 
 .form-auth-custom {
     outline:none;
-    border:none;
-    border-bottom: 2px solid rgb(210, 215, 211);
+    border-radius: 5px;
+    border: 1px solid rgb(210, 215, 211);
     background-color: transparent;
 }
 
