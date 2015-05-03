@@ -8,11 +8,17 @@ function NavCtrl ($scope, $auth, $session, ngDialog) {
     };
 
     $scope.open_login = function() {
-        ngDialog.open({ template: 'views/login.html',
+        var container = angular.element('div.container');
+        angular.element('div.container').css('-webkit-filter', 'blur(3px)');
+        ngDialog
+            .open({ template: 'views/login.html',
                         controller: 'AuthCtrl',
-                        className: 'ngdialog-theme-plain',
-                        overlay: false
-        });
+                        className: 'ngdialog-theme-plain custom',
+                        overlay: false,
+                        preCloseCallback: function(val) {
+                            container.css('-webkit-filter', '');
+                        }
+            });
     };
 
     $scope.logged_in = function() {

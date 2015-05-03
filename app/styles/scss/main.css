@@ -101,6 +101,7 @@
 }
 
 nav > div > a {
+  cursor: pointer;
   color: #fff;
   font-family: 'ProximaNova Light';
   font-size: 0.75em;
@@ -490,5 +491,10 @@ section.module.parallax-3 {
     }
 }
 */
+.ngdialog.ngdialog-theme-plain.custom .ngdialog-content {
+  border-radius: 5px;
+  padding: 0;
+  width: 25%;
+}
 
 /*# sourceMappingURL=main.css.map */
