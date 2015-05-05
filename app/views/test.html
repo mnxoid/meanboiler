@@ -1,22 +1,42 @@
-<div class="container">
+
+<link rel="stylesheet" href=styles/scss/set2.css">
             <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
             <div id="theSidebar" class="sidebar">
-                <button class="close-button fa fa-fw fa-close"></button>
-                <div class="codrops-links">
-                    <a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Tutorials/MotionBlurEffect/" title="Previous Demo"><span>Previous Demo</span></a>
-                    <a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=23872" title="Back to the article"><span>Back to the Codrops article</span></a>
-                </div>
-                <h1><span>Animated<span> Grid Layout</h1>
-                <nav class="codrops-demos">
-                    <a class="current-demo" href="index.html">Demo 1</a>
-                    <a href="index2.html">Demo 2</a>
-                </nav>
-                <div class="related">
-                    <h3>Related Demos</h3>
-                    <a href="http://tympanus.net/Development/BookPreview/">Book Preview</a>
-                    <a href="http://tympanus.net/Tutorials/ThumbnailGridExpandingPreview/">Thumbnail Grid</a>
-                    <a href="http://tympanus.net/Development/3DGridEffect/">3D Grid Effect</a>
-                </div>
+                <h1>Search</h1>
+                <form>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="fil.country" ng-model-options="{ debounce: 200 }" ng-change="getCities(fil.country)">
+                    </div>
+
+                    <div class="form-group">
+                        <label>City</label>
+                        <select class="form-control" ng-model="fil.city" >
+                            <option ng-repeat="city in cities">{{city}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Capacity</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="fil.capacity">
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="fil.price">
+                    </div>
+                    <button type="submit" class="btn btn-default" style="display:inline-block">Search</button>
+                    <button type="reset" ng-click="" class="btn btn-default" style="display:inline-block">Clear</button>
+                </form>
             </div>
             <div id="theGrid" class="main">
                 <section class="grid">
@@ -32,7 +52,7 @@
                         <div class="loader"></div>
                         <span class="category">Stories for humans</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" /> 
+                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
                         </div>
@@ -42,7 +62,7 @@
                         <div class="loader"></div>
                         <span class="category">Love &amp; Hate</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" /> 
+                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 7 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 5 min read</span>
                         </div>
@@ -52,19 +72,32 @@
                         <div class="loader"></div>
                         <span class="category">Nutrition</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" /> 
+                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
                     </a>
                     <a class="grid__item" href="#">
-                        <h2 class="title title--preview">Hope for Amy Walters</h2>
+                        <h2 class="title title--preview">Lily</h2>
                         <div class="loader"></div>
-                        <span class="category">Life &amp; Death</span>
+                        <span class="category">Nature vs. Nurture</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
+
+                            <img class="meta__avatar" src="img/authors/5.png" alt="author05" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+                            <!--
+                            <figure class="effect-lily">
+                                <img src="http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg" alt="img12"/>
+                                <figcaption>
+                                    <div>
+                                        <h2>Nice <span>Lily</span></h2>
+                                        <p>Lily likes to play with crayons and pencils</p>
+                                    </div>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                            -->
                         </div>
                     </a>
                     <a class="grid__item" href="#">
@@ -72,7 +105,7 @@
                         <div class="loader"></div>
                         <span class="category">Nature vs. Nurture</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/5.png" alt="author05" /> 
+                            <img class="meta__avatar" src="img/authors/5.png" alt="author05" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -82,7 +115,7 @@
                         <div class="loader"></div>
                         <span class="category">Neuroscience</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/6.png" alt="author06" /> 
+                            <img class="meta__avatar" src="img/authors/6.png" alt="author06" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -92,7 +125,7 @@
                         <div class="loader"></div>
                         <span class="category">Food Ethics</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/7.png" alt="author07" /> 
+                            <img class="meta__avatar" src="img/authors/7.png" alt="author07" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -102,7 +135,7 @@
                         <div class="loader"></div>
                         <span class="category">Philosophy</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/8.png" alt="author08" /> 
+                            <img class="meta__avatar" src="img/authors/8.png" alt="author08" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -112,7 +145,7 @@
                         <div class="loader"></div>
                         <span class="category">Morality &amp; History</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" /> 
+                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -122,7 +155,7 @@
                         <div class="loader"></div>
                         <span class="category">Philosophy</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" /> 
+                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -132,7 +165,7 @@
                         <div class="loader"></div>
                         <span class="category">Society</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" /> 
+                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -142,7 +175,7 @@
                         <div class="loader"></div>
                         <span class="category">Mental Health</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
+                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -152,7 +185,7 @@
                         <div class="loader"></div>
                         <span class="category">Stories for humans</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" /> 
+                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
                         </div>
@@ -162,7 +195,7 @@
                         <div class="loader"></div>
                         <span class="category">Love &amp; Hate</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" /> 
+                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 7 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 5 min read</span>
                         </div>
@@ -172,7 +205,7 @@
                         <div class="loader"></div>
                         <span class="category">Nutrition</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" /> 
+                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -182,7 +215,7 @@
                         <div class="loader"></div>
                         <span class="category">Life &amp; Death</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
+                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -192,7 +225,7 @@
                         <div class="loader"></div>
                         <span class="category">Nature vs. Nurture</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/5.png" alt="author05" /> 
+                            <img class="meta__avatar" src="img/authors/5.png" alt="author05" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -202,7 +235,7 @@
                         <div class="loader"></div>
                         <span class="category">Neuroscience</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/6.png" alt="author06" /> 
+                            <img class="meta__avatar" src="img/authors/6.png" alt="author06" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -212,7 +245,7 @@
                         <div class="loader"></div>
                         <span class="category">Food Ethics</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/7.png" alt="author07" /> 
+                            <img class="meta__avatar" src="img/authors/7.png" alt="author07" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -222,7 +255,7 @@
                         <div class="loader"></div>
                         <span class="category">Philosophy</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/8.png" alt="author08" /> 
+                            <img class="meta__avatar" src="img/authors/8.png" alt="author08" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -232,7 +265,7 @@
                         <div class="loader"></div>
                         <span class="category">Morality &amp; History</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" /> 
+                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -242,7 +275,7 @@
                         <div class="loader"></div>
                         <span class="category">Philosophy</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" /> 
+                            <img class="meta__avatar" src="img/authors/2.png" alt="author02" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -252,7 +285,7 @@
                         <div class="loader"></div>
                         <span class="category">Society</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" /> 
+                            <img class="meta__avatar" src="img/authors/3.png" alt="author03" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -262,7 +295,7 @@
                         <div class="loader"></div>
                         <span class="category">Mental Health</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
+                            <img class="meta__avatar" src="img/authors/4.png" alt="author04" />
                             <span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
                             <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
                         </div>
@@ -681,6 +714,5 @@
                     <button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
                 </section>
             </div>
-        </div>
 <script src="scripts/classie.js"></script>
-        <script src="scripts/main.js"></script>
+<script src="scripts/main.js"></script>

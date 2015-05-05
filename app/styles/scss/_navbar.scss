@@ -39,48 +39,23 @@ nav > div > a {
   }
 }
 
-
-/* Active nav link */
-// nav > div > div > a.active:not(.auth) {
-//     color: $orange;
-//     padding-bottom: 0.77em;
-//     border-bottom: 4px solid $orange;
-//     &:hover {
-//         color: $orange;
-//         padding-bottom: 0.77em;
-//         border-bottom: 4px solid lighten($orange, 15%);
-//     }
-// }
-
 nav > div > div:not(.navbar-brand):not(.auth) {
-  border: 4px solid rgba(0,0,0,0);
+  //border: 4px solid rgba(0,0,0,0);
   &:hover {
     color: #fff;
-    // padding-bottom: 0.77em;
-    border-bottom: 4px solid lighten($orange, 15%);
+    border-bottom: 3px solid lighten($orange, 5%);
   }
 }
 
 nav > div > div.active:not(.auth) {
     & > a {color: $orange;}
-    // padding-bottom: 0.77em;
-    border-bottom: 4px solid $orange;
+    border-bottom: 3px solid $orange;
     &:hover {
         color: $orange;
         // padding-bottom: 0.77em;
-        border-bottom: 4px solid lighten($orange, 15%);
+        border-bottom: 3px solid lighten($orange, 5%);
     }
 }
-
-/* Nav link */
-// nav > div > div > a:not(.navbar-brand):not(.auth) {
-//   border: none;
-//   &:hover {
-//     color: #fff;
-//     padding-bottom: 0.77em;
-//     border-bottom: 4px solid lighten($orange, 15%);
-//   }
-// }
 
 a.auth:last-child {
     background-color: $orange;
