@@ -134,25 +134,27 @@ nav > div > a:hover {
   color: #fff;
 }
 
+/* Active nav link */
 nav > div > div:not(.navbar-brand):not(.auth) {
   border-bottom: 4px solid transparent;
 }
 nav > div > div:not(.navbar-brand):not(.auth):hover {
   color: #fff;
-  border-bottom: 3px solid #f48a63;
+  border-bottom: 4px solid #f7ae92;
 }
 
 nav > div > div.active:not(.auth) {
-  border-bottom: 3px solid #f2784b;
+  border-bottom: 4px solid #f2784b;
 }
 nav > div > div.active:not(.auth) > a {
   color: #f2784b;
 }
 nav > div > div.active:not(.auth):hover {
   color: #f2784b;
-  border-bottom: 3px solid #f48a63;
+  border-bottom: 4px solid #f7ae92;
 }
 
+/* Nav link */
 a.auth:last-child {
   background-color: #f2784b;
 }
