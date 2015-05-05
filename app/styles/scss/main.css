@@ -136,7 +136,7 @@ nav > div > a:hover {
 
 /* Active nav link */
 nav > div > div:not(.navbar-brand):not(.auth) {
-  border: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 nav > div > div:not(.navbar-brand):not(.auth):hover {
   color: #fff;
