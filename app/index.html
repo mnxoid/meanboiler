@@ -39,11 +39,11 @@
   </head>
   <body ng-app="RHalls" ng-cloak>
     <header ng-controller="NavCtrl" class="">
-        <nav class="flex flex-stretch z1 white fixed top-0 full-width navbar">
+        <nav class="flex flex-stretch z1 white fixed top-0 full-width navbar" style="z-index:1000;">
             <div class="px2 py1" style="margin-left: 10%;">
                 <a class="navbar-brand">RHalls β</a>
             </div>
-            <div class="px2 " style="padding-top=1px">
+            <div class="px2 " style="padding-top:1px">
                 <div class="inline-block center py1 h100" ng-repeat = "l in navlinks" ui-sref-active="active" ui-sref="{{l.uisr}}">
                     <a ng-href="{{l.nghr}}"  class="col-2 m2 center">{{l.text}}</a>
                 </div>

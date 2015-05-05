@@ -36,7 +36,8 @@ function NavCtrl ($scope, $auth, $session, ngDialog) {
 
     $scope.open_login = function() {
         var container = angular.element('div.container');
-        angular.element('div.container').css('-webkit-filter', 'blur(3px)');
+        container.css('transition', '-webkit-filter 0.2s');
+        container.css('-webkit-filter', 'blur(2px)');
         ngDialog
             .open({ template: 'views/login.html',
                         controller: 'AuthCtrl',

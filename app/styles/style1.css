@@ -1,64 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700,900|Raleway:500|Martel+Sans:400,700);
-@font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'codropsicons';
-  src: url("../fonts/codropsicons/codropsicons.eot");
-  src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
-}
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.clearfix:before, .clearfix:after {
-  display: table;
-  content: '';
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-body {
-  background: #fff;
-  color: #7b7b7b;
-  font-weight: 400;
-  font-size: 16px;
-  font-family: "Martel Sans", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
-  overflow-y: scroll;
-  /* force scroll to appear */
-}
-
-/* helper class when showing content */
 .noscroll {
   overflow: hidden;
 }
 
-a {
-  outline: none;
-  color: #81c483;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #333;
-  outline: none;
-}
-
-button:focus {
-  outline: none;
-}
-
-/* Sidebar */
 .sidebar {
-  text-align: center;
-  background: #f5f5f5;
-  z-index: 1000;
+  z-index: 999;
   position: fixed;
   width: 300px;
   max-width: 100%;
@@ -69,119 +14,13 @@ button:focus {
   padding: 2em 1em;
 }
 
-.sidebar h1 {
-  margin: 0.75em 0 0;
-  font-size: 2em;
-  line-height: 1;
-  font-family: "Playfair Display", serif;
-}
-
-.sidebar h1 span {
-  display: block;
-}
-
-/* Codrops links */
-.codrops-links {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  min-height: 45px;
-}
-
-.codrops-links::after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background: #ddd;
-  content: '';
-  -webkit-transform: rotate3d(0, 0, 1, 22.5deg);
-  transform: rotate3d(0, 0, 1, 22.5deg);
-}
-
-.codrops-icon {
-  display: inline-block;
-  margin: 0.5em;
-  padding: 0em 0;
-  width: 1.5em;
-  text-decoration: none;
-}
-
-.codrops-icon span {
-  display: none;
-}
-
-.codrops-icon:before {
-  margin: 0 5px;
-  text-transform: none;
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  font-family: 'codropsicons';
-  line-height: 1;
-  speak: none;
-}
-
-.codrops-icon--drop:before {
-  content: "\e001";
-}
-
-.codrops-icon--prev:before {
-  content: "\e004";
-}
-
-/* Demo links */
-.codrops-demos {
-  margin: 2em 0 0;
-  font-size: 0.75em;
-}
-
-.codrops-demos a {
-  display: inline-block;
-  margin: 0 0.5em;
-}
-
-.codrops-demos a.current-demo {
-  color: #333;
-  font-weight: bold;
-}
-
-.codrops-demos a.current-demo:focus {
-  color: #aaa;
-}
-
-.related {
-  font-size: 0.85em;
-  padding-bottom: 1em;
-}
-
-.related h3 {
-  margin: 3em 0 0.5em 0;
-  font-size: 0.95em;
-}
-
-.related a {
-  display: block;
-  color: inherit;
-}
-
-.related a:hover,
-.related a:focus {
-  color: #414741;
-}
-
-/* Main content */
 .main {
   position: relative;
   z-index: 50;
 }
 
 /* Grid container */
-.grid {
-  position: relative;
-}
+.grid {}
 
 /* Overlay */
 .grid::after {
@@ -214,11 +53,6 @@ button:focus {
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-}
-
-.top-bar__headline {
-  margin: 0;
-  font-size: 0.75em;
 }
 
 /* Menu button for toggling the sidebar (appears on small screen) */
@@ -274,35 +108,13 @@ button:focus {
   transform: translateY(7px);
 }
 
-/* Filter/dropdown dummy on the right */
-.filter {
-  text-align: right;
-  font-size: 0.75em;
-  margin-left: auto;
-}
-
-.dropdown {
-  font-weight: bold;
-  margin-left: 5px;
-  cursor: pointer;
-  color: #81c483;
-}
-
-.dropdown::after {
-  content: '\25BC';
-  margin-left: 2px;
-  font-size: 80%;
-}
 
 /* Grid item */
 .grid__item {
-  padding: 45px 55px 30px;
-  position: relative;
+  //padding: 45px 55px 30px;
   color: inherit;
-  background: #fff;
   min-height: 300px;
   cursor: pointer;
-  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -329,14 +141,6 @@ button:focus {
 
 .grid__item * {
   z-index: 10;
-}
-
-/* grid item element and full content element styles */
-.title {
-  margin: 0;
-  font-size: 1.875em;
-  font-family: "Playfair Display", serif;
-  text-align: center;
 }
 
 .title--preview {
@@ -380,16 +184,6 @@ button:focus {
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
-}
-
-.category {
-  margin: 0;
-  position: relative;
-  font-size: 0.95em;
-  font-style: italic;
-  font-family: "Playfair Display", serif;
-  text-align: center;
-  display: block;
 }
 
 .title--preview,
@@ -631,7 +425,6 @@ button:focus {
   opacity: 0;
   padding: 60px 60px 80px 60px;
   pointer-events: none;
-  font-size: 0.85em;
 }
 .content__item p {
   max-width: 1200px;
@@ -639,7 +432,6 @@ button:focus {
   text-align: justify;
 }
 .content__item p:first-of-type {
-  font-size: 1.35em;
 }
 
 .content__item.content__item--show {
@@ -653,17 +445,14 @@ button:focus {
 
 /* content elements */
 .category--full {
-  font-size: 1.25em;
   margin-bottom: 20px;
   color: #81c483;
 }
 
 .title--full {
-  font-size: 3.25em;
 }
 
 .meta--full {
-  font-size: 1em;
   margin: 0 auto 2em;
   max-width: 1200px;
 }
@@ -681,7 +470,6 @@ button:focus {
   font-style: italic;
   float: left;
   margin: 0 5px;
-  font-family: "Playfair Display", serif;
 }
 .meta--full .meta__category::before {
   content: "in ";
@@ -820,11 +608,12 @@ button:focus {
 
   .main {
     height: 100%;
-    margin-left: 300px;
+    width: 100%;
+    margin-left: 150px;
   }
 
   .content__item {
-    font-size: 1em;
+    //font-size: 1em;
   }
 
   .grid__item {
@@ -951,7 +740,7 @@ button:focus {
   }
 
   .title--full {
-    font-size: 2em;
+   // font-size: 2em;
   }
 
   .content__item {

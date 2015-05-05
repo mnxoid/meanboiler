@@ -153,24 +153,6 @@ p > button {
     -moz-border-radius: 150px;
 }
 
-.show-notification {
-    border-radius: 0.33em;
-    padding: 1em;
-    background-color: #c12e2a;
-    color: #fff;
-    -webkit-animation-name: thumb;
-    -webkit-animation-duration: 200ms;
-    -webkit-transform-origin:50% 50%;
-    -webkit-animation-iteration-count: 2;
-    -webkit-animation-timing-function: linear;
-}
-
-@-webkit-keyframes thumb {
-    0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(0.95); }
-    100% { -webkit-transform: scale(1); }
-}
-
 input.form-control {
     box-shadow: none;
 }
@@ -206,7 +188,6 @@ section.module.parallax h1 {
     font-size: 48px;
     font-weight: 700;
     text-align: center;
-    //text-transform: uppercase;
 }
 section.module.parallax-1 {
     background-image: url("http://skillcrush.com/wp-content/uploads/2014/07/coworking-space.jpg"); //http://www.abouttoblow.com/wp-content/uploads/blog-1.jpg
@@ -216,27 +197,6 @@ section.module.parallax-2 {
     //height: 300px;
     background-image: url("http://media.tumblr.com/tumblr_mddrbbNjkm1rza399.jpg");
 }
-/*
-section.module.parallax-3 {
-    background-image: url("../img/demo/_small/3.jpg");
-}
-@media all and (min-width: 600px) {
-    section.module h2 {
-        font-size: 42px;
-    }
-    section.module p {
-        font-size: 20px;
-    }
-    section.module.parallax h1 {
-        font-size: 96px;
-    }
-}
-@media all and (min-width: 960px) {
-    section.module.parallax h1 {
-        font-size: 160px;
-    }
-}
-*/
 
 
 .pt1 {
@@ -251,6 +211,7 @@ section.module.parallax-3 {
     border-radius: 5px;
     padding: 0;
     width: 25%;
+    box-shadow: 1px 1px 5px #b7b7b7;
 }
 
 
