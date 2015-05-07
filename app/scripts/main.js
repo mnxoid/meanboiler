@@ -8,7 +8,7 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-$(document).ready(function() {
+var gridStrap = function(){
 
 	var bodyEl = document.body,
 		docElem = window.document.documentElement,
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		gridEl = document.getElementById('theGrid'),
 		sidebarEl = document.getElementById('theSidebar'),
 		gridItemsContainer = gridEl.querySelector('section.grid'),
-		contentItemsContainer = gridEl.querySelector('section.content'),
+		contentItemsContainer = gridEl.querySelector('section.content-grid'),
 		gridItems = gridItemsContainer.querySelectorAll('.grid__item'),
 		contentItems = contentItemsContainer.querySelectorAll('.content__item'),
 		closeCtrl = contentItemsContainer.querySelector('.close-button'),
@@ -208,4 +208,6 @@ $(document).ready(function() {
 
 	init();
 
-});
+}
+
+setTimeout(function() { gridStrap(); }, 200);
