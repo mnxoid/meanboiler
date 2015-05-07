@@ -39,21 +39,21 @@
   </head>
   <body ng-app="RHalls" ng-cloak>
     <header ng-controller="NavCtrl" class="">
-        <nav class="flex flex-stretch z1 white fixed top-0 full-width navbar" style="z-index:1000;vertical-align:middle;">
-            <div class="px2 py1" style="margin-left: 10%;padding-top:0.75rem;margin-top:-5px;">
+        <nav class="flex flex-stretch z1 white fixed top-0 full-width navbar vamid z1000">
+            <div class="px2 py1 pt075 mr10pc mtn5" >
                 <a class="navbar-brand">RHalls β</a>
             </div>
-            <div class="px2 " style="">
-                <div class="inline-block center py1 h100" style="padding-bottom: 0.75rem" ng-repeat = "l in navlinks" ui-sref-active="active" ui-sref="{{l.uisr}}">
+            <div class="px2">
+                <div class="inline-block center py1 h100 pb075" ng-repeat = "l in navlinks" ui-sref-active="active" ui-sref="{{l.uisr}}">
                     <a ng-href="{{l.nghr}}"  class="col-2 m2 center">{{l.text}}</a>
                 </div>
             </div>
             <div class="flex-auto"></div>
-            <div class="px2 py1" style="margin-right: 10%;padding-top:0.5rem" ng-if="!logged_in()">
+            <div class="px2 py1 pb075 mr10pc" ng-if="!logged_in()">
                 <a ng-click="open_login()" class="white mr2 auth"><i class="fa fa-unlock-alt"></i> Log in</a>
                 <a class="white auth p1 rounded"><i class="fa fa-pencil"></i> Sign up</a>
             </div>
-            <div class="px2" style="margin-right: 10%;padding-top: 0.5rem" ng-if="logged_in()">
+            <div class="px2 pt05 mr10pc" ng-if="logged_in()">
                 <span ng-bind="get_username()"></span>
                     <a href="#" ng-click="logout()">Log out</a>
             </div>
