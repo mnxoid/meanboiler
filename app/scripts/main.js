@@ -8,7 +8,7 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-(function() {
+$(document).ready(function() {
 
 	var bodyEl = document.body,
 		docElem = window.document.documentElement,
@@ -208,4 +208,4 @@
 
 	init();
 
-})();
+});

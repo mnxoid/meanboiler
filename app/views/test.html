@@ -43,14 +43,14 @@
                     <header class="top-bar">
                         <h2 class="top-bar__headline">Latest articles</h2>
                     </header>
-                    <a class="grid__item relative bg-white text-center p2" href="#">
-                        <h2 class="title title--preview">On Humans &amp; other Beings</h2>
+                    <a ng-repeat="g in gItems" class="grid__item relative bg-white text-center p2" href="#">
+                        <h2 class="title title--preview">{{g.title}}</h2>
                         <div class="loader"></div>
-                        <span class="category">Stories for humans</span>
+                        <span class="category">{{g.category}}</span>
                         <div class="meta meta--preview">
-                            <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
-                            <span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
-                            <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
+                            <img class="meta__avatar" src="img/authors/{{g.id}}.png" alt="author0{{g.id}}" />
+                            <span class="meta__date"><i class="fa fa-calendar-o"></i>{{g.date}}</span>
+                            <span class="meta__reading-time"><i class="fa fa-clock-o"></i>{{g.read}}</span>
                         </div>
                     </a>
                     <a class="grid__item relative bg-white text-center p2" href="#">
