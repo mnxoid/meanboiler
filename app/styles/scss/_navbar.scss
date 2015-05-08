@@ -4,6 +4,12 @@
   background: rgba(0,0,0,0.7);
 }
 
+.navbar--shrink {
+    span {
+        display: none;
+    }
+}
+
 nav > div > div > a {
     cursor: pointer;
     color: #fff;

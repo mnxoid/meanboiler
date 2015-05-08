@@ -39,24 +39,35 @@
   </head>
   <body ng-app="RHalls" ng-cloak>
     <header ng-controller="NavCtrl" class="">
-        <nav class="flex flex-stretch z1 white fixed top-0 full-width navbar vamid z1000 ">
+        <nav scroll
+             class="flex flex-stretch z1 white fixed top-0 full-width navbar vamid z1000"
+             ng-class="{'navbar--shrink':boolChangeClass}">
+
             <div class="px2 py1 pt075 ml10pc mtn5" >
                 <a class="navbar-brand">RHalls β</a>
             </div>
             <div class="px2">
                 <div class="inline-block center py1 h100 pb075 mr3" ng-repeat = "l in navlinks" ui-sref-active="active" ui-sref="{{l.uisr}}">
-                    <i class="{{'mr1 fa ' + l.className}}" style="font-size: 0.75em;"></i>
-                    <a ng-href="{{l.nghr}}"  class="col-2 center">{{l.text}}</a>
+                    <a ng-href="{{l.nghr}}"  class="col-2 center">
+                        <i class="{{'mr1 fa ' + l.className}}" style="font-size: 0.75em;"></i>
+                        <span ng-bind="l.text"></span>
+                    </a>
                 </div>
             </div>
             <div class="flex-auto"></div>
             <div class="px2 py1 pb075 mr10pc" ng-if="!logged_in()">
-                <a ng-click="open_login()" class="white mr2 auth"><i class="fa fa-unlock-alt"></i> Log in</a>
-                <a class="white auth p1 rounded"><i class="fa fa-pencil"></i> Sign up</a>
+                <a ng-click="open_login()" class="white mr2 auth">
+                    <i class="fa fa-unlock-alt"></i>
+                    <span>Log in</span>
+                    </a>
+                <a ng-click="open_signup()" class="white auth p1 rounded">
+                    <i class="fa fa-pencil"></i>
+                    <span>Sign up</span>
+                </a>
             </div>
             <div class="px2 pt05 mr10pc" ng-if="logged_in()">
                 <span ng-bind="get_username()"></span>
-                    <a href="#" ng-click="logout()">Log out</a>
+                <a href="#" ng-click="logout()">Log out</a>
             </div>
         </nav>
     </header>
@@ -82,6 +93,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/directives/csvg.js"></script>
+    <script src="scripts/directives/scroll.js"></script>
     <script src="scripts/services/hall.js"></script>
     <script src="scripts/services/auth.js"></script>
     <script src="scripts/services/session.js"></script>

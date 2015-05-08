@@ -54,6 +54,21 @@ function NavCtrl ($scope, $auth, $session, ngDialog) {
             });
     };
 
+    $scope.open_signup = function() {
+        var container = angular.element('div.container');
+        container.css('transition', '-webkit-filter 0.2s');
+        container.css('-webkit-filter', 'blur(2px)');
+        ngDialog
+            .open({ template: 'views/signup.html',
+                controller: 'AuthCtrl',
+                className: 'ngdialog-theme-plain custom',
+                overlay: false,
+                preCloseCallback: function(val) {
+                    container.css('-webkit-filter', '');
+                }
+            });
+    }
+
     $scope.logged_in = function() {
         return $session.get('authenticated');
     };
