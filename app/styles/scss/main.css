@@ -129,7 +129,7 @@
 /* Colors */
 /* Sizing */
 .navbar {
-  background: rgba(0, 0, 0, 0.7);
+  background: #272727;
   transition: all 0.2s;
 }
 
@@ -508,7 +508,7 @@ section.module.parallax-2 {
   border-radius: 5px;
   padding: 0;
   width: 25%;
-  box-shadow: 1px 1px 5px #b7b7b7;
+  box-shadow: 1px 1px 5px #535353;
 }
 
 /*# sourceMappingURL=main.css.map */

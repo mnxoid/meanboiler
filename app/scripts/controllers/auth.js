@@ -5,7 +5,7 @@ function AuthCtrl ($scope, $session, $auth) {
     $scope.credentials = {
         email: '',
         password: '',
-        fullname: ''
+        full_name: ''
     };
 
     $scope.err_msg_passport = null;
