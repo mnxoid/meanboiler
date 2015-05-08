@@ -121,7 +121,7 @@ p > button {
 }
 
 .sidebar {
-  background-color: $grey-primary;
+  background-color: darken($grey-primary, 30%);
   h1 {
     font-weight: 700;
     margin-bottom: 1em;

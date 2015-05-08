@@ -1,7 +1,6 @@
-
 <link rel="stylesheet" href="styles/scss/set2.css">
             <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
-            <div id="theSidebar" class="sidebar">
+            <div id="theSidebar" class="sidebar fixed py2 px1 left-0 top-0">
                 <h1>Search</h1>
                 <form>
                     <div class="form-group">
@@ -38,9 +37,9 @@
                     <button type="reset" ng-click="" class="btn btn-default" style="display:inline-block">Clear</button>
                 </form>
             </div>
-            <div id="theGrid" class="main">
+            <div id="theGrid" class="main relative">
                 <section class="grid relative">
-                    <header class="top-bar">
+                    <header class="top-bar bg-white p2 flex full-width">
                         <h2 class="top-bar__headline">Latest articles</h2>
                     </header>
                     <a ng-repeat="g in gItems" class="grid__item relative bg-white text-center p2" href="#">
