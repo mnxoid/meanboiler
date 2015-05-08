@@ -3,7 +3,7 @@ angular.module('RHalls')
         return function(scope, element, attrs) {
             var initial = 0;
 
-            angular.element($window).bind("scroll", function(e) {
+            angular.element($window).bind("scroll", function() {
 
                 var current = this.pageYOffset;
 

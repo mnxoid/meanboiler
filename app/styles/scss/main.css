@@ -130,8 +130,12 @@
 /* Sizing */
 .navbar {
   background: rgba(0, 0, 0, 0.7);
+  transition: all 0.2s;
 }
 
+.navbar--shrink {
+  display: none;
+}
 .navbar--shrink span {
   display: none;
 }

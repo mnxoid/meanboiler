@@ -2,9 +2,11 @@
 
 .navbar{
   background: rgba(0,0,0,0.7);
+  transition: all 0.2s;
 }
 
-.navbar--shrink {
+ .navbar--shrink {
+    display: none;
     span {
         display: none;
     }
