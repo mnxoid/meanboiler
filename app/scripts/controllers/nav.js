@@ -8,29 +8,34 @@ function NavCtrl ($scope, $auth, $session, ngDialog) {
     };
     $scope.navlinks = [
         {
-            nghr: "/",
-            uisr: "home",
-            text: "Home"
+            className : "fa-home",
+            nghr      : "/",
+            uisr      : "home",
+            text      : "Home"
         },
         {
-            nghr: "/about",
-            uisr: "about",
-            text: "About"
+            className : "fa-info",
+            nghr      : "/about",
+            uisr      : "about",
+            text      : "About"
         },
         {
-            nghr: "/contact",
-            uisr: "contact",
-            text: "Contact"
+            className : "fa-envelope ",
+            nghr      : "/contact",
+            uisr      : "contact",
+            text      : "Contact"
         },
         {
-            nghr: "/todo",
-            uisr: "todo",
-            text: "Todo"
+            className : "fa-diamond ",
+            nghr      : "/todo",
+            uisr      : "todo",
+            text      : "Todo"
         },
         {
-            nghr: "/test",
-            uisr: "test",
-            text: "Test"
+            className : "fa-code-fork",
+            nghr      : "/test",
+            uisr      : "test",
+            text      : "Test"
         }
     ];
 
