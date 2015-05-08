@@ -397,7 +397,7 @@
   overflow: hidden;
 }
 
-.content.content--show {
+.content-grid.content--show {
   height: 100vh;
   pointer-events: auto;
   visibility: visible;
@@ -747,11 +747,11 @@
     padding: 80px 20px 40px;
   }
 
-  .content .close-button {
+  .content-grid .close-button {
     padding: 10px 20px;
   }
 
-  .content .close-button::before {
+  .content-grid .close-button::before {
     content: '';
     position: absolute;
     top: 0;
