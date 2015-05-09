@@ -46,8 +46,12 @@
                     controller: 'TestCtrl'
                 })
                 .state('test.hall', {
-                    url: '/hall',
-                    templateUrl: 'views/hall.html'
+                    url: '/hall/{hall_id}',
+                    templateUrl: 'views/hall.html',
+                    //controller: 'HallCtrl'
+                    controller: function($stateParams) {
+                        console.log($stateParams);
+                    }
                 })
                 .state('search', {
                     url: '/search?q=',

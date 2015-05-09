@@ -42,7 +42,7 @@
                     <header class="top-bar bg-white p2 flex full-width">
                         <h2 class="top-bar__headline">Latest articles</h2>
                     </header>
-                    <a ui-sref=".hall" ng-repeat="g in gItems" class="grid__item relative bg-white text-center p2" href="#">
+                    <a ui-sref=".hall({hall_id: {{g.id}}})" ng-repeat="g in gItems" class="grid__item relative bg-white text-center p2">
                         <h2 class="title title--preview">{{g.title}}</h2>
                         <div class="loader"></div>
                         <span class="category">{{g.category}}</span>
@@ -58,7 +58,6 @@
                 </section>
 
                  <div ui-view></div>
-
             </div>
 <script src="scripts/classie.js"></script>
 <script src="scripts/main.js"></script>
