@@ -1,8 +1,8 @@
-var Todo     = require('../models/todo');
-var Hall     = require('../models/halls');
-var User     = require('../models/user');
-var passport = require('passport');
-var jwt      = require('jsonwebtoken');
+var Todo        = require('../models/todo');
+var Hall        = require('../models/halls');
+var User        = require('../models/user');
+var passport    = require('passport');
+var jwt         = require('jsonwebtoken');
 var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 
 //--------------------------------------------------
@@ -145,8 +145,8 @@ module.exports = function (app) {
         }, function(err, hall){
             if (err)
                 res.send(err);
-            results = [];
-            for (h in hall) results.push({name: hall[h]["name"]});
+            var results = [];
+            for (var h in hall) results.push({name: hall[h]["name"]});
             res.json(results);
         });
     });
@@ -203,7 +203,7 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
             results = [];
-            for (h in hall){ 
+            for (h in hall){
                 if (results.indexOf(hall[h]["city"])==-1) {
                     results.push(hall[h]["city"]);
                 }
@@ -217,7 +217,7 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
             results = [];
-            for (h in halls){ 
+            for (h in halls){
                 if (results.indexOf(halls[h]["city"])==-1) {
                     results.push(halls[h]["city"]);
                 }
@@ -233,7 +233,7 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
             results = [];
-            for (h in hall){ 
+            for (h in hall){
                 if (results.indexOf(hall[h]["country"])==-1) {
                     results.push(hall[h]["country"]);
                 }
@@ -247,7 +247,7 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
             results = [];
-            for (h in halls){ 
+            for (h in halls){
                 if (results.indexOf(halls[h]["country"])==-1) {
                     results.push(halls[h]["country"]);
                 }

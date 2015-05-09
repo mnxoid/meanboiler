@@ -54,11 +54,6 @@ body {
   width: 100%;
 }
 
-.form-input--ok:after {
-    content: "\f016";
-    border: 1px solid green;
-}
-
 @include previews(200px,75%);
 
 .btn-custom.active, .btn-custom.focus, .btn-custom, .open>.dropdown-toggle.btn-custom {
@@ -106,18 +101,6 @@ form {
     }
 }
 
-input[type='text'] {
-  border: none;
-  outline: none;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-
-}
-input[type='text'].input-lg {
-    width: 100%;
-}
-
 p > button {
   display: inline-block;
   margin-left: 1em;
@@ -156,15 +139,6 @@ p > button {
     border-radius: 150px;
     -webkit-border-radius: 150px;
     -moz-border-radius: 150px;
-}
-
-input.form-control {
-    box-shadow: none;
-}
-
-.form-control:focus{
-    border: none;
-    box-shadow: none;
 }
 
 section.module:last-child {
@@ -216,7 +190,7 @@ section.module.parallax-2 {
     border-radius: 5px;
     padding: 0;
     width: 25%;
-    box-shadow: 1px 1px 5px #535353;
+    box-shadow: 1px 1px 5px #000;
 }
 
 
