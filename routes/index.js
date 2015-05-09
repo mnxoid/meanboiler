@@ -5,6 +5,7 @@ var passport    = require('passport');
 var jwt         = require('jsonwebtoken');
 var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 
+/*
 //--------------------------------------------------
 // Array.prototype.unique =
 //   function() {
@@ -21,7 +22,7 @@ var tokenSecret = 'L0n9_l1v3_1337_h4x0rz';
 //     return a;
 //   };
 //--------------------------------------------------
-
+*/
 
 function getTodos(res){
 	Todo.find(function(err, todos) {
@@ -82,6 +83,7 @@ module.exports = function (app) {
         })(req, res, next);
     });
 
+    // end of auth
 
     app.get('/api/halls', function(req, res) {
         Hall.find(function(err, halls) {
@@ -92,7 +94,20 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/api/halls', function(req, res) {
+    app.get('/api/halls/:hall_id', function(req, res) {
+        Hall.find({
+            _id: req.params.hall_id
+        }, function(err, hall){
+            if (err)
+                res.send(err);
+            res.json(hall);
+        });
+    });
+
+
+
+
+    app.post('/api/halls', function(req, res) {
 
 		Hall.create({
 			name     : req.body.name,
@@ -128,16 +143,6 @@ module.exports = function (app) {
   //           });
 		// });
 	});
-
-	app.get('/api/halls/view/:hall_id', function(req, res) {
-        Hall.find({
-            _id: req.params.hall_id
-        }, function(err, hall){
-            if (err)
-                res.send(err);
-            res.json(hall);
-        });
-    });
 
     app.get('/api/halls/search/:q', function(req, res) {
         Hall.find({

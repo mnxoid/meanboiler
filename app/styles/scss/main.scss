@@ -101,6 +101,15 @@ form {
     }
 }
 
+.input--no_border {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+
+}
+
 p > button {
   display: inline-block;
   margin-left: 1em;

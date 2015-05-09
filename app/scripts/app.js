@@ -45,6 +45,10 @@
                     templateUrl: 'views/test.html',
                     controller: 'TestCtrl'
                 })
+                .state('test.hall', {
+                    url: '/hall',
+                    templateUrl: 'views/hall.html'
+                })
                 .state('search', {
                     url: '/search?q=',
                     templateUrl: 'views/search.html',
