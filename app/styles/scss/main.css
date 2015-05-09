@@ -130,7 +130,6 @@
 /* Sizing */
 .navbar {
   background: #272727;
-  transition: all 0.2s;
 }
 
 .navbar--shrink {
@@ -230,6 +229,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .angucomplete-dropdown {
   width: 100%;
+}
+
+.form-input--ok:after {
+  content: "\f016";
+  border: 1px solid green;
 }
 
 .grid {

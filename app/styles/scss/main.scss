@@ -54,6 +54,11 @@ body {
   width: 100%;
 }
 
+.form-input--ok:after {
+    content: "\f016";
+    border: 1px solid green;
+}
+
 @include previews(200px,75%);
 
 .btn-custom.active, .btn-custom.focus, .btn-custom, .open>.dropdown-toggle.btn-custom {

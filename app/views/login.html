@@ -8,7 +8,7 @@
             <span ng-bind="err_msg_passport"></span>
         </p>
         -->
-        <div class="" ng-class="{'has-feedback': logInForm.email.$valid, ' has-feedback': logInForm.email.$invalid}">
+        <div class="relative">
 
             <label class="block mb1" for="input-email" style="font-size: 1em;">Email</label>
             <input id="input-email"
@@ -24,9 +24,15 @@
                    required />
 
             <!-- Show 'OK' icon if email is valid -->
-            <span ng-show="logInForm.email.$valid" style="color:rgb(38, 194, 129);" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="logInForm.email.$valid"
+                  style="color:rgb(38, 194, 129);right:0.25em;top:2em;"
+                  class="absolute fa fa-check" aria-hidden="true">
+            </span>
             <!-- Show 'X' icon if email isn't valid -->
-            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)" style="color:rgb(242, 120, 75);" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <span ng-show="(logInForm.email.$invalid && !logInForm.email.$pristine)"
+                  style="color:rgb(242, 120, 75);right:0.25em;top:2em;"
+                  class="absolute fa fa-remove">
+            </span>
 
         </div>
 
