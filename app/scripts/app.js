@@ -3,7 +3,7 @@
 
     var app;
     app = angular
-        .module('RHalls', ['ui.router', 'angucomplete', 'mgcrea.ngStrap','ngDialog', 'ngSanitize'])
+        .module('RHalls', ['ui.router', 'angucomplete', 'mgcrea.ngStrap','ngDialog', 'ngSanitize', 'smoothScroll'])
         .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('/404');
@@ -44,6 +44,14 @@
                     url: '/test',
                     templateUrl: 'views/test.html',
                     controller: 'TestCtrl'
+                })
+                .state('test.hall', {
+                    url: '/hall/{hall_id}',
+                    templateUrl: 'views/hall.html',
+                    //controller: 'HallCtrl'
+                    controller: function($stateParams) {
+                        console.log($stateParams);
+                    }
                 })
                 .state('search', {
                     url: '/search?q=',

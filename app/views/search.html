@@ -73,8 +73,8 @@
           <img ng-src="{{res.pic}}" alt="img01">
           <figcaption>
             <h3>{{(res.name.length<21) ? res.name : res.name.substring(0,19)+"..."}}</h3>
-            <span>{{res.city+", "+res.country}}</span>
-            <a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+            <span>{{res.city+", "+res.country + ", " + res._id }}</span>
+            <a href="">{{res._id}}</a>
           </figcaption>
         </figure>
       </li>

@@ -130,7 +130,6 @@
 /* Sizing */
 .navbar {
   background: #272727;
-  transition: all 0.2s;
 }
 
 .navbar--shrink {
@@ -393,16 +392,12 @@ form label {
   font-family: Lato, sans-serif;
 }
 
-input[type='text'] {
+.input--no_border {
   border: none;
   outline: none;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-}
-
-input[type='text'].input-lg {
-  width: 100%;
 }
 
 p > button {
@@ -443,15 +438,6 @@ p > button {
   border-radius: 150px;
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
-}
-
-input.form-control {
-  box-shadow: none;
-}
-
-.form-control:focus {
-  border: none;
-  box-shadow: none;
 }
 
 section.module:last-child {
@@ -508,7 +494,7 @@ section.module.parallax-2 {
   border-radius: 5px;
   padding: 0;
   width: 25%;
-  box-shadow: 1px 1px 5px #535353;
+  box-shadow: 1px 1px 5px #000;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 <div class="mx-auto">
-    <form name="signUpForm" ng-submit="signup(signUpForm)" class="mx-auto  py2 px2" style="width:70%;margin-top:10%" novalidate>
-        <div class="mx-auto mb3" style="" ng-class="{'has-feedback': signUpForm.email.$valid, ' has-feedback': signUpForm.email.$invalid}">
-            <label for="input-email" style="font-size: 1.25em;">Email</label>
+    <form name="signUpForm" ng-submit="signup(signUpForm)" class="mx-auto py2 px2" novalidate>
+        <div class="relative">
+            <label for="input-email" style="font-size: 1em;">Email</label>
             <input id="input-email"
                    type="email"
                    name="email"
@@ -12,32 +12,43 @@
                    ng-pattern="/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/"
                    required />
 
-            <span ng-show="signUpForm.email.$valid" style="color:rgb(38, 194, 129);" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-            <span ng-show="(signUpForm.email.$invalid && !signUpForm.email.$pristine)" style="color:rgb(242, 120, 75);" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="signUpForm.email.$valid"
+                  style="color:rgb(38, 194, 129);right:0.25em;top:2em;"
+                  class="absolute fa fa-check" aria-hidden="true">
+            </span>
+            <span ng-show="(signUpForm.email.$invalid && !signUpForm.email.$pristine)"
+                  style="color:rgb(242, 120, 75);right:0.25em;top:2em;"
+                  class="absolute fa fa-remove">
+            </span>
 
         </div>
 
-        <div class="mx-auto mb3" style="" ng-class="">
-            <label  style="font-size: 1.25em;">Full Name</label>
+        <div class="mt3" style="">
+            <label  style="font-size: 1em;">Full Name</label>
             <input  type="text"
                     name="full_name"
-                   style="height:100%;"
-                   class="form-auth-custom full-width"
-                   ng-model="credentials.full_name"/>
+                    style="height:100%;"
+                    class="form-auth-custom full-width"
+                    ng-model="credentials.full_name"
+                    required />
         </div>
 
-        <div class="mx-auto mb3" style="" ng-class="">
-            <label for="input-pass" style="font-size: 1.25em;">Password</label>
+        <div class="mt3" style="" ng-class="">
+            <label for="input-pass" style="font-size: 1em;">Password</label>
             <input id="input-pass"
                    type="password"
                    name="password"
                    style="height:100%;"
                    class="form-auth-custom full-width"
-                   ng-model="credentials.password"/>
+                   ng-model="credentials.password"
+                   required />
 
         </div>
-        <br>
-        <button class="btn-primary p2 mt4" ng-disabled="signUpForm.$invalid" style="width:100%;;font-size:1em;">Sign Up</button>
+        <button class="btn-primary p2 mt4 full-width"
+                ng-disabled="signUpForm.$invalid"
+                style="font-size:0.75em;">
+            Sign Up
+        </button>
     </form>
 
 </div>

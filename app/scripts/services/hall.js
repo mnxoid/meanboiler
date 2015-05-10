@@ -7,6 +7,9 @@ angular
         get: function() {
           return $http.get('/api/halls');
         },
+        get_by_id: function(id) {
+          return $http.get('/api/halls/' + id);
+        },
         create: function(data) {
           return $http.post('/api/halls/', data);
         },
