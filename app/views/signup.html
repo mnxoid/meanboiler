@@ -1,7 +1,7 @@
 <div class="mx-auto">
     <form name="signUpForm" ng-submit="signup(signUpForm)" class="mx-auto py2 px2" novalidate>
         <div class="relative">
-            <label for="input-email" style="font-size: 1em;">Email</label>
+            <label class="block mb1" for="input-email" style="font-size: 1em;">Email</label>
             <input id="input-email"
                    type="email"
                    name="email"
@@ -23,14 +23,27 @@
 
         </div>
 
-        <div class="mt3" style="">
+        <div class="mt3 relative">
             <label  style="font-size: 1em;">Full Name</label>
             <input  type="text"
                     name="full_name"
                     style="height:100%;"
                     class="form-auth-custom full-width"
                     ng-model="credentials.full_name"
+                    ng-minlength="5"
+                    ng-maxlength="51"
+                    ng-pattern="/\D{2,25}\s{1}\D{2,25}/"
                     required />
+
+             <span ng-show="signUpForm.full_name.$valid"
+                   style="color:rgb(38, 194, 129);right:0.25em;top:1.7em;"
+                   class="absolute fa fa-check" aria-hidden="true">
+            </span>
+            <span ng-show="(signUpForm.full_name.$invalid && !signUpForm.full_name.$pristine)"
+                  style="color:rgb(242, 120, 75);right:0.25em;top:1.7em;"
+                  class="absolute fa fa-remove">
+            </span>
+
         </div>
 
         <div class="mt3" style="" ng-class="">

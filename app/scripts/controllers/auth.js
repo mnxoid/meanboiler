@@ -19,9 +19,9 @@ function AuthCtrl ($scope, $session, $auth) {
     $scope.login = function(form) {
 
         if (!form.$valid) {
-            console.log('You\'ve bypassed disabled button, huh?\n You shall not pass!');
             return;
         }
+
         $scope.credentials.fullname='dummy';
         $auth
             .login($scope.credentials)
@@ -38,7 +38,12 @@ function AuthCtrl ($scope, $session, $auth) {
 
     };
 
-    $scope.signup = function() {
+    $scope.signup = function(form) {
+
+        if (!form.$valid) {
+            return;
+        }
+
         $auth.signup($scope.credentials)
             .success(function(){
                 $auth.login($scope.credentials);
