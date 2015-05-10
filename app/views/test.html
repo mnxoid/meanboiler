@@ -57,7 +57,11 @@
                     </footer>
                 </section>
 
-                 <div ui-view></div>
+                <section class="content-grid">
+                    <div class="scroll-wrap">
+                        <article class="content__item" ui-view></article>
+                    </div>
+                    <button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+                </section>
+
             </div>
-<script src="scripts/classie.js"></script>
-<script src="scripts/main.js"></script>
