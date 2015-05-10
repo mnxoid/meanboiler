@@ -129,13 +129,16 @@
 /* Colors */
 /* Sizing */
 .navbar {
+  opacity: 1;
   background: #272727;
+  transition: opacity 0.1s ease-in;
 }
 
-.navbar--shrink {
-  display: none;
+.navbar.navbar--shrink {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
 }
-.navbar--shrink span {
+.navbar.navbar--shrink span {
   display: none;
 }
 

@@ -1,14 +1,17 @@
 @import "_variables";
 
 .navbar{
+  opacity: 1;
   background: rgb(39, 39, 39);
+  transition: opacity 0.1s ease-in;
 }
 
- .navbar--shrink {
-    display: none;
+ .navbar.navbar--shrink {
+    opacity: 0;
     span {
         display: none;
     }
+    transition: opacity 0.1s ease-in;
 }
 
 nav > div > div > a {
